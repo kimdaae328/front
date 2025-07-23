@@ -1,0 +1,51 @@
+.layout-wrapper {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.category-section {
+    display: flex;
+    flex-direction: column;
+    width: 1050px;
+    margin: 0px auto;
+}
+
+.category-title {
+    margin-top: 50px;
+    font-weight: 500;
+    font-size: 28px;
+    color: rgb(51, 51, 51);
+    line-height: 35px;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(4, 180px);
+    gap: 16px 83px;
+    overflow: hidden;
+    margin-top: 28px;
+    padding: 30px 40px;
+    border: 1px solid rgb(226, 226, 226);
+    line-height: 20px;
+    list-style-type: none;
+}
+
+.category-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.category-item.all {
+    letter-spacing: -1px;
+    cursor: pointer;
+    font-weight: 700;
+    color: rgb(95, 0, 128);
+}
+
+.category-link {
+    letter-spacing: -1px;
+    cursor: pointer;
+}
