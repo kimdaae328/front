@@ -1,0 +1,232 @@
+/* 공통 */
+
+*, :after, :before, legend, td, th {
+    padding: 0;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body, span, div, button, input, label, 
+select, option, textarea {
+    font-family: "Noto Sans KR", "malgun gothic", AppleGothic, dotum, sans-serif;
+}
+
+a, abbr, acronym, address, applet, article,
+ aside, audio, b, big, blockquote, body, 
+ button, canvas, caption, center, cite, 
+ code, dd, del, details, dfn, div, dl, dt, 
+em, embed, fieldset, figcaption, figure, 
+footer, form, h1, h2, h3, h4, h5, h6, header, 
+hgroup, html, i, iframe, img, ins, kbd, 
+label, legend, li, mark, menu, nav, object, 
+ol, output, p, pre, q, ruby, s, samp, 
+section, small, span, strike, strong, sub, 
+summary, sup, table, tbody, td, tfoot, th, 
+thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    line-height: 1;
+}
+
+body, button, input, select, textarea {
+    font-size: 14px;
+    color: #333;
+}
+
+canvas, img, video {
+    max-width: 100%;
+}
+
+img, legend {
+    border: 0;
+    vertical-align: top;
+}
+
+/* 메인 로그인 헤더 */
+.css-1rz55qv, .header {
+    width: 1050px;
+    height: 100px;
+    margin: 0 auto;
+    letter-spacing: -0.3px;
+}
+
+.css-r7d2ww, .login-nav {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 12px;
+}
+
+.css-xygizb, .joinus {
+    display: block;
+    color: rgb(95, 0, 128);
+    cursor: pointer;
+}
+
+.css-1qgm48u, .bar {
+    width: 1px;
+    height: 13px;
+    margin: 0 12px;
+    background-color: #d9d9d9;
+}
+
+.css-oyffzd, .login {
+    display: block;
+    cursor: pointer;
+}
+
+.css-1qolcqm, .customer-service {
+    line-height: 35px;
+    position: relative;
+}
+
+.css-oyffzd, .customer-service-url {
+    display: block;
+    cursor: pointer;
+}
+
+.css-1lrerrk, .customer-service-icon {
+    width: 8px;
+    height: 5px;
+    background-image: url("https://res.kurly.com/pc/ico/1908/ico_down_16x10.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-background-position: center;
+    background-position: center;
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+
+.css-1qolcqm:hover .menu, .customer-service-list:hover {
+    display: block;
+}
+
+.css-1qolcqm .menu, .customer-service-list .menu {
+    display: none;
+}
+
+.css-1yheqto, .customer-service-list {
+    position: absolute;
+    z-index: 320;
+    right: 0;
+    top: 34px;
+    width: 130px;
+    padding: 3px 9px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.css-12olpw6, .list-menu {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.css-hj3ig8 .header-top {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.css-boc80u, .logo {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 63px;
+}
+
+.css-17mnrrx, .logo-img {
+    flex: 0 0 82px;
+}
+
+.css-mxd3pm, .main-button {
+    flex-shrink: 0;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: rgb(181, 181, 181);
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.css-mxd3pm.active, .main-button.active {
+    font-weight: 500;
+    color: rgb(95, 0, 128);
+    
+}
+
+.css-mxd3pm:not(:last-of-type)::after, .main-button:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 14px;
+    margin-top: 5px;
+    margin-left: 11px;
+    background-color: rgb(226, 226, 226);
+}
+
+.css-7afvb3, .search-big {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    margin-left: -100px;
+    width: 400px;
+}
+
+.css-vdi47h, .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left: 325px;
+    top: -55px;
+    width: 400px;
+    height: 48px;
+    padding-left: 14px;
+    border: 1px solid rgb(95, 0, 128);
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
+}
+
+.css-11ntk83, .search-input {
+    width: 300px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: -0.33px;
+}
+
+.css-ywxmlw, .search-button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    bottom: 3px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==") 0px 0px no-repeat;
+}
+
+.css-il0ckv, .header-icon {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+
+}
