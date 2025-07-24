@@ -128,8 +128,7 @@ input[type="checkbox"], input[type="radio"] {
     cursor: pointer;
 }
 
-.btn-check-box .check-title,
-.btn-radio-box .radio-title {
+.btn-check-box .title {
     margin-right: 4px;
     font-weight: 400;
     font-size: 14px;
@@ -143,8 +142,7 @@ input[type="checkbox"], input[type="radio"] {
     -webkit-box-orient: vertical;
 }
 
-.btn-check-box .check-number,
-.btn-radio-box .radio-number {
+.btn-check-box .number {
     flex-shrink: 0;
     font-weight: 400;
     font-size: 12px;
@@ -152,15 +150,15 @@ input[type="checkbox"], input[type="radio"] {
     color: rgb(204, 204, 204);
 }
 
-/* category */
-.category-section {
+/* menu */
+.menu-section {
     display: flex;
     flex-direction: column;
     width: 1050px;
     margin: 0px auto;
 }
 
-.category-title {
+.menu-title {
     margin-top: 50px;
     font-weight: 500;
     font-size: 28px;
@@ -170,7 +168,7 @@ input[type="checkbox"], input[type="radio"] {
     text-align: center;
 }
 
-.category-list {
+.menu-list {
     display: grid;
     grid-template-columns: repeat(4, 180px);
     gap: 16px 83px;
@@ -182,20 +180,22 @@ input[type="checkbox"], input[type="radio"] {
     list-style-type: none;
 }
 
-.category-item {
+.menu-item {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.category-item.all {
-    letter-spacing: -1px;
+.menu-item.on button {
+     letter-spacing: -1px;
     cursor: pointer;
     font-weight: 700;
     color: rgb(95, 0, 128);
 }
 
-.category-link {
+.menu-btn {
+    display: flex;
+    width: 100%;
     letter-spacing: -1px;
     cursor: pointer;
 }
@@ -292,6 +292,8 @@ input[type="checkbox"], input[type="radio"] {
 .filter-category-list.up .dropdown-content {
     max-height: 0px;
     opacity: 0;
+    pointer-events: none;
+    visibility: hidden; 
 }
 
 .filter-category-list.up .dropdown-btn svg {
@@ -467,10 +469,15 @@ input[type="checkbox"], input[type="radio"] {
 .active-filter-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    padding: 16px 20px 18px;
     border: 1px solid rgb(238, 238, 238);
     margin-bottom: 31px;
+    padding: 16px 20px 18px;
+    gap: 16px;
+}
+
+.active-filter-item {
+    display: flex;
+    align-items: center;
 }
 
 .active-filter-tag {
