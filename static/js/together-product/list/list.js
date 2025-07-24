@@ -5,13 +5,57 @@ const filterSelect = document.querySelectorAll(
 );
 const resetButton = document.querySelector(".btn-reset");
 
-// 리스트 페이지 필터
-filterSelect.forEach((checkbox) => {
-    checkbox.addEventListener("change", (e) => {
-        const title = checkbox
-            .closest("label")
-            .querySelector(".title").textContent;
+// 라디오 두번 클릭
+const radioLabels = document.querySelectorAll(".btn-radio-box label");
+const radioInputs = document.querySelectorAll(
+    ".btn-radio-box input[type=radio]:checked"
+);
+let lastClickedRadio = null;
 
+radioLabels.forEach((label) => {
+    const radio = label.querySelector('input[type="radio"]');
+
+    label.addEventListener("click", (e) => {
+        if (radio.checked) {
+            lastClickedRadio = radio;
+            console.log(lastClickedRadio);
+        }
+
+        if (lastClickedRadio === radio) {
+            setTimeout(() => {
+                radio.checked = false;
+                lastClickedRadio = null;
+                console.log("같은 라디오??");
+            }, 0);
+        }
+    });
+});
+
+// let currentCheckedRadio = null;
+
+// 라디오 전체 선택
+// const radios = document.querySelectorAll('.filter-list input[type="radio"]');
+
+// radios.forEach((radio) => {
+//     radio.addEventListener("click", function (e) {
+//         if (currentCheckedRadio === this) {
+//             // 같은 걸 다시 클릭했을 때 → 해제
+//             setTimeout(() => {
+//                 this.checked = false;
+//                 currentCheckedRadio = null;
+//                 console.log("✅ 해제됨:", this.value);
+//             }, 0);
+//         } else {
+//             // 새로 선택 → 이걸 기억
+//             currentCheckedRadio = this;
+//             console.log("🔄 선택됨:", this.value);
+//         }
+//     });
+// });
+
+// 리스트 페이지 필터
+filterSelect.forEach((input) => {
+    input.addEventListener("change", (e) => {
         // 초기화 버튼 on/off
         const isFilterSelected =
             document.querySelectorAll(".filter-sidebar input:checked").length >
@@ -19,11 +63,12 @@ filterSelect.forEach((checkbox) => {
         resetButton.classList.toggle("on", isFilterSelected);
         resetButton.disabled = !isFilterSelected;
 
-        const isRadio = checkbox.type === "radio";
-        const isChecked = checkbox.checked;
+        // 라디오 값 중복없이
+        const isRadio = input.type === "radio";
+        const isChecked = input.checked;
 
-        if (isRadio) {
-            const groupName = checkbox.name;
+        if (isRadio && isChecked) {
+            const groupName = input.name;
             const allGroupRadios = document.querySelectorAll(
                 `.filter-sidebar input[type=radio][name="${groupName}"]`
             );
@@ -31,19 +76,39 @@ filterSelect.forEach((checkbox) => {
             allGroupRadios.forEach((radio) => {
                 const label = radio.closest("label");
                 const labelTitle = label.querySelector(".title").textContent;
+                const activeTag =
+                    document.querySelectorAll(".active-filter-tag");
 
-                document
-                    .querySelectorAll(".active-filter-tag")
-                    .forEach((tag) => {
-                        if (tag.textContent === labelTitle) {
-                            tag.closest(".active-filter-item").remove();
-                        }
-                    });
+                activeTag.forEach((tag) => {
+                    if (tag.textContent === labelTitle) {
+                        tag.closest(".active-filter-item").remove();
+                    }
+                });
+
+                // if (radio.checked) {
+                //     console.log("asdasdasd");
+                // }
             });
+
+            // const selected = document.querySelector(
+            //     `.filter-sidebar input[name="${groupName}"]:checked`
+            // );
+
+            // const selectedValue = selected.value;
+            // const selectedLabel = selected
+            //     ?.closest("label")
+            //     .querySelector(".title").textContent;
+
+            // console.log(`[${groupName}] 현재 선택된 값:`, selectedValue);
+            // console.log(`[${groupName}] 선택된 라벨 제목:`, selectedLabel);
         }
 
         // 중복체크
+        const title = input
+            .closest("label")
+            .querySelector(".title").textContent;
         let isDuplicated = false;
+
         document.querySelectorAll(".active-filter-tag").forEach((tag) => {
             if (tag.textContent === title) {
                 isDuplicated = true;
@@ -89,6 +154,7 @@ filterSelect.forEach((checkbox) => {
             });
         }
 
+        // 태그 없을때
         const filterActiveBox = document.querySelector(".active-filter-list");
 
         if (filterActiveBox) {
@@ -101,7 +167,7 @@ filterSelect.forEach((checkbox) => {
     });
 });
 
-// 필터 섹션에서 remove
+// 필터 섹션에서 삭제
 document.addEventListener("click", (e) => {
     const removeBtn = e.target.closest(".remove-btn");
     if (!removeBtn) return;
@@ -231,6 +297,52 @@ recentlyButtons.forEach((button) => {
             container.scrollBy({ top: -150, behavior: "smooth" });
         } else if (btn.classList.contains("next")) {
             container.scrollBy({ top: 150, behavior: "smooth" });
+        }
+    });
+});
+
+// 팝업 수량 카운트
+const quantityBoxes = document.querySelectorAll(".product-quantity-box");
+
+quantityBoxes.forEach((box) => {
+    const plusBtn = box.querySelector(".quantity-btn.plus");
+    const minusBtn = box.querySelector(".quantity-btn.minus");
+    const countEl = box.querySelector(".count");
+
+    console.log("초기 count:", countEl.textContent);
+
+    plusBtn.addEventListener("click", () => {
+        let count = parseInt(countEl.textContent, 10);
+        count++;
+        countEl.textContent = count;
+    });
+
+    minusBtn.addEventListener("click", () => {
+        let count = parseInt(countEl.textContent, 10);
+        if (count > 0) count--;
+        countEl.textContent = count;
+    });
+});
+
+// 팝업
+const openButtons = document.querySelectorAll(".popup-trigger");
+const closeButtons = document.querySelectorAll(".popup-close");
+
+openButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const targetSelector = btn.dataset.target;
+        const targetModal = document.querySelector(targetSelector);
+        if (targetModal) {
+            targetModal.style.display = "block";
+        }
+    });
+});
+
+closeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const targetModal = btn.closest(".popup-wrapper");
+        if (targetModal) {
+            targetModal.style.display = "none";
         }
     });
 });
