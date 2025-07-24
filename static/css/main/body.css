@@ -927,5 +927,195 @@ button {
     background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxjaXJjbGUgc3Ryb2tlPSIjRTNFM0UzIiBzdHJva2Utd2lkdGg9IjEuMiIgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJub256ZXJvIiBjeD0iMzIiIGN5PSIzMiIgcj0iMzEuNCIvPgogICAgICAgIDxwYXRoIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLXdpZHRoPSIxLjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0ibTI4LjQ0NCAyMS4zMzMgMTEuMzc4IDExLjY5OC0xMS4zNzggMTEuMDU4Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=) 50% center / contain no-repeat;
 }
 
+/* 망설이면 늦어요 */
 
+.time-sale {
+    width: 1050px;
+    margin: 0px auto;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 80px 0px
+}
 
+.show-time-zone {
+    width: 249px;
+}
+
+.show-time-text {
+    padding-top: 1px;
+    font-size: 28px;
+    color: rgb(51, 51, 51);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.26px;
+}
+
+.show-time-text-bar {
+    padding-top: 11px;
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    font-weight: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+}
+
+.show-time {
+    display: flex;
+    padding: 24px 0px 6px;
+}
+
+.lottie-timer {
+    width: 36px;
+    height: 47px;
+    margin-right: 5px;
+}
+
+.show-timer {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 136px;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(51, 51, 51);
+}
+
+.show-time .time-units span {
+    position: relative;
+    flex-shrink: 0;
+    min-width: 38px;
+    line-height: 47px;
+}
+
+.show-time .time-units span:not(:last-of-type) {
+    margin-right: 10px;
+}
+
+.show-time .time-units span:not(:last-of-type)::after {
+    content: ":";
+    position: absolute;
+    width: 11px;
+    height: 50px;
+    top: 0px;
+    right: -11px;
+    font-size: 25px;
+}
+
+.show-time-zone-p-tag {
+    padding-top: 26px;
+    font-size: 14px;
+    color: rgb(204, 204, 204);
+    font-weight: normal;
+    line-height: 1.43;
+    letter-spacing: -0.4px;
+}
+
+.time-sale-product {
+    display: flex;
+    gap: 18px;
+}
+
+.time-sale-product-link {
+    display: block;
+    width: fit-content;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    padding: 0px;
+}
+
+.time-sale-product-link.deal-size-1 {
+    width: 694px;
+}
+
+.deal-img-wrap {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.deal-img {
+    position: relative;
+    width: 100%;
+}
+
+.deal-img-icon {
+    position: absolute;
+    inset: 0px;
+}
+
+.top-icon {
+    position: absolute;
+    border-radius: 4px;
+    padding: 6px 8px;
+    overflow: hidden;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.bottom-icon {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 50%;
+}
+
+.bottom-icon-in {
+    position: relative;
+    width: 100%;
+}
+
+.bottom-icon-in-in {
+    position: absolute;
+    inset: 0px;
+}
+
+.button-img {
+    color: #222;
+}
+
+.time-sale-product-link .product-function {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    margin-top: 6px;
+    padding-bottom: 1px;
+    font-size: 16px;
+    line-height: 29px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+}
+
+.button-img > svg {
+    pointer-events: none;
+}
+
+.time-sale-product-link .product-function > svg {
+    width: 22px;
+    height: 22px;
+    margin: 1px 4px 0px 0px;
+}
+
+.time-sale-product-link .css-1nqogjr .product-info {
+    position: relative;
+    padding: 8px 10px 0px 0px;
+}
+
+.time-sale-product-link .product-info .product-name {
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    letter-spacing: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
