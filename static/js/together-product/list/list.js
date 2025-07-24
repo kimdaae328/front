@@ -7,7 +7,7 @@ const filterActiveBox = document.querySelector(".active-filter-list");
 const resetButton = document.querySelector(".btn-reset");
 const removeButton = document.querySelector(".active-filter-list .remove-btn");
 
-// 필터
+// 리스트 페이지 필터
 filterSelect.forEach((checkbox) => {
     checkbox.addEventListener("change", (e) => {
         const title = checkbox
@@ -28,19 +28,6 @@ filterSelect.forEach((checkbox) => {
             const allGroupRadios = document.querySelectorAll(
                 `.filter-sidebar input[type=radio][name="${groupName}"]`
             );
-
-            allGroupRadios.forEach((radio) => {
-                const label = radio.closest("label");
-                const labelTitle = label.querySelector(".title").textContent;
-
-                document
-                    .querySelectorAll(".active-filter-tag")
-                    .forEach((tag) => {
-                        if (tag.textContent === labelTitle) {
-                            tag.closest(".active-filter-item").remove();
-                        }
-                    });
-            });
         }
 
         // 중복체크
@@ -68,7 +55,7 @@ filterSelect.forEach((checkbox) => {
         }
 
         // tag 삭제
-        if (!isChecked && checkbox.type === "checkbox") {
+        if (!isChecked) {
             document.querySelectorAll(".active-filter-tag").forEach((tag) => {
                 if (tag.textContent === title) {
                     tag.closest(".active-filter-item").remove();
@@ -76,16 +63,13 @@ filterSelect.forEach((checkbox) => {
             });
         }
 
-        // 0개 이하면 사라지게
-        // const count = document.querySelectorAll(".filter-item");
-        // console.log(count.length);
-        // if (count.length <= 0) {
-        //     console.log("adsadad");
-        // }
+        const allTagsCount = document.querySelectorAll(".active-filter-item");
+        filterActiveBox.style.display =
+            allTagsCount.length > 0 ? "flex" : "none";
     });
 });
 
-// 상단 메뉴
+// 상단 메뉴 버튼 on/off
 const menuButtons = document.querySelectorAll(".menu-item .menu-btn");
 document.querySelector(".menu-list .menu-item").classList.add("on");
 
@@ -98,7 +82,7 @@ menuButtons.forEach((button) => {
     });
 });
 
-// 제품 상단 필터
+// 제품 상단 필터 버튼 on/off
 const productFilterButtons = document.querySelectorAll(
     ".product-sort-options .sort-button"
 );
@@ -112,6 +96,21 @@ productFilterButtons.forEach((button) => {
             .querySelectorAll(".product-sort-item")
             .forEach((item) => item.classList.remove("on"));
         e.target.closest(".product-sort-item").classList.add("on");
+    });
+});
+
+// 사이드 필터 버튼 on/off
+const categorySortButtons = document.querySelectorAll(
+    ".category-sort-options .category-sort-btn"
+);
+
+categorySortButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        document
+            .querySelectorAll(".category-sort-item")
+            .forEach((item) => item.classList.remove("on"));
+
+        button.closest(".category-sort-item").classList.add("on");
     });
 });
 
