@@ -473,3 +473,28 @@ a {
 .boot-check:hover {
     cursor: pointer;
 }
+.boot-check .boot-check-box {
+  position: relative; 
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.boot-check .boot-check-box i { 
+display: none !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #4caf50;
+ 
+}
+
+/* 체크된 상태에서 보이게 */
+.boot-check .boot-check-box.checked i {
+   display: block !important; 
+}
+
