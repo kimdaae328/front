@@ -28,6 +28,19 @@ filterSelect.forEach((checkbox) => {
             const allGroupRadios = document.querySelectorAll(
                 `.filter-sidebar input[type=radio][name="${groupName}"]`
             );
+
+            allGroupRadios.forEach((radio) => {
+                const label = radio.closest("label");
+                const labelTitle = label.querySelector(".title").textContent;
+
+                document
+                    .querySelectorAll(".active-filter-tag")
+                    .forEach((tag) => {
+                        if (tag.textContent === labelTitle) {
+                            tag.closest(".active-filter-item").remove();
+                        }
+                    });
+            });
         }
 
         // 중복체크
