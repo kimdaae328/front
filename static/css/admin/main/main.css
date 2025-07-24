@@ -277,3 +277,15 @@ address, dl, ol, ul {
 .mdi-format-list-text:before {
     content: "\F126F";
 }
+.mdi-form-textbox-password:before {
+    content: "\F07F5";
+}
+.mdi-chevron-down:before {
+    content: "\F0140";
+}
+.mdi-chevron-down:before {
+    content: "\F0140";
+}
+.mdi-credit-card-clock-outline:before {
+    content: "\F0EE2";
+}
