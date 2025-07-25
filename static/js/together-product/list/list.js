@@ -1,59 +1,52 @@
 NodeList.prototype.filter = Array.prototype.filter;
 
-const filterSelect = document.querySelectorAll(
-    ".filter-sidebar input[type=checkbox], .filter-sidebar input[type=radio]"
-);
-const resetButton = document.querySelector(".btn-reset");
-
 // 라디오 두번 클릭
-const radioLabels = document.querySelectorAll(".btn-radio-box label");
-const radioInputs = document.querySelectorAll(
-    ".btn-radio-box input[type=radio]:checked"
-);
-let lastClickedRadio = null;
+const radios = document.querySelectorAll('input[type="radio"]');
+let selected = null;
+const aaa = document.querySelectorAll(".active-filter-tag");
+console.log(aaa);
 
-radioLabels.forEach((label) => {
-    const radio = label.querySelector('input[type="radio"]');
+radios.forEach((radio) => {
+    const title = radio.closest("label").querySelector(".title").textContent;
 
-    label.addEventListener("click", (e) => {
-        if (radio.checked) {
-            lastClickedRadio = radio;
-            console.log(lastClickedRadio);
-        }
+    radio.addEventListener("click", (e) => {
+        if (selected === radio) {
+            radio.checked = false;
+            selected = null;
 
-        if (lastClickedRadio === radio) {
-            setTimeout(() => {
-                radio.checked = false;
-                lastClickedRadio = null;
-                console.log("같은 라디오??");
-            }, 0);
+            // tag 삭제
+            const activeTag = document.querySelectorAll(".active-filter-tag");
+            activeTag.forEach((tag) => {
+                if (tag.textContent === title) {
+                    tag.closest(".active-filter-item").remove();
+                }
+            });
+
+            console.log(activeTag);
+
+            // tag 없을때
+            const filterActiveBox = document.querySelector(
+                ".active-filter-list"
+            );
+
+            if (filterActiveBox) {
+                const allTagsCount = filterActiveBox.querySelectorAll(
+                    ".active-filter-item"
+                );
+                filterActiveBox.style.display =
+                    allTagsCount.length > 0 ? "flex" : "none";
+            }
+        } else {
+            selected = radio;
         }
     });
 });
 
-// let currentCheckedRadio = null;
-
-// 라디오 전체 선택
-// const radios = document.querySelectorAll('.filter-list input[type="radio"]');
-
-// radios.forEach((radio) => {
-//     radio.addEventListener("click", function (e) {
-//         if (currentCheckedRadio === this) {
-//             // 같은 걸 다시 클릭했을 때 → 해제
-//             setTimeout(() => {
-//                 this.checked = false;
-//                 currentCheckedRadio = null;
-//                 console.log("✅ 해제됨:", this.value);
-//             }, 0);
-//         } else {
-//             // 새로 선택 → 이걸 기억
-//             currentCheckedRadio = this;
-//             console.log("🔄 선택됨:", this.value);
-//         }
-//     });
-// });
-
 // 리스트 페이지 필터
+const filterSelect = document.querySelectorAll(
+    ".filter-sidebar input[type=checkbox], .filter-sidebar input[type=radio]"
+);
+const resetButton = document.querySelector(".btn-reset");
 filterSelect.forEach((input) => {
     input.addEventListener("change", (e) => {
         // 초기화 버튼 on/off
@@ -84,23 +77,7 @@ filterSelect.forEach((input) => {
                         tag.closest(".active-filter-item").remove();
                     }
                 });
-
-                // if (radio.checked) {
-                //     console.log("asdasdasd");
-                // }
             });
-
-            // const selected = document.querySelector(
-            //     `.filter-sidebar input[name="${groupName}"]:checked`
-            // );
-
-            // const selectedValue = selected.value;
-            // const selectedLabel = selected
-            //     ?.closest("label")
-            //     .querySelector(".title").textContent;
-
-            // console.log(`[${groupName}] 현재 선택된 값:`, selectedValue);
-            // console.log(`[${groupName}] 선택된 라벨 제목:`, selectedLabel);
         }
 
         // 중복체크
@@ -167,63 +144,66 @@ filterSelect.forEach((input) => {
     });
 });
 
-// 필터 섹션에서 삭제
-document.addEventListener("click", (e) => {
-    const removeBtn = e.target.closest(".remove-btn");
-    if (!removeBtn) return;
+// 필터 섹션
+const removeBtn = document.querySelectorAll(".remove-btn");
 
-    const filterItem = removeBtn.closest(".active-filter-item");
-    const title = filterItem.querySelector(".active-filter-tag").textContent;
-    const filterSelect = document.querySelectorAll(
-        ".filter-sidebar input:checked"
-    );
-    const removeCount = document.querySelectorAll(".remove-btn").length;
+// document.addEventListener("click", (e) => {
+//     const removeBtn = e.target.closest(".remove-btn");
+//     if (!removeBtn) return;
 
-    filterSelect.forEach((input) => {
-        const label = input.closest("label");
-        const labelTitle = label.querySelector(".title")?.textContent;
+//     const filterSelect = document.querySelectorAll(
+//         ".filter-sidebar input:checked"
+//     );
+//     const tagContent = document.querySelector(
+//         ".active-filter-item .active-filter-tag"
+//     ).textContent;
+//     const filterItem = removeBtn.closest(".active-filter-item");
 
-        if (labelTitle === title) {
-            input.checked = false;
+//     filterSelect.forEach((input) => {
+//         const label = input.closest("label");
+//         const labelTitle = label.querySelector(".title").textContent;
 
-            if (input.type === "radio") {
-                const groupName = input.name;
-                const radios = document.querySelectorAll(
-                    `.filter-sidebar input[type=radio][name="${groupName}"]`
-                );
+//         if (labelTitle === tagContent) {
+//             input.checked = false;
 
-                radios.forEach((radio) => {
-                    const label = radio.closest("label");
-                    const labelTitle =
-                        label.querySelector(".title")?.textContent;
+//             if (input.type === "radio") {
+//                 const groupName = input.name;
+//                 const radios = document.querySelectorAll(
+//                     `.filter-sidebar input[type=radio][name="${groupName}"]`
+//                 );
 
-                    document
-                        .querySelectorAll(".active-filter-tag")
-                        .forEach((tag) => {
-                            if (tag.textContent === labelTitle) {
-                                tag.closest(".active-filter-item")?.remove();
-                            }
-                        });
-                });
-            }
-        }
-    });
+//                 radios.forEach((radio) => {
+//                     const label = radio.closest("label");
+//                     const labelTitle =
+//                         label.querySelector(".title")?.textContent;
 
-    filterItem.remove();
+//                     document
+//                         .querySelectorAll(".active-filter-tag")
+//                         .forEach((tag) => {
+//                             if (tag.textContent === labelTitle) {
+//                                 tag.closest(".active-filter-item")?.remove();
+//                             }
+//                         });
+//                 });
+//             }
+//         }
+//     });
 
-    const filterActiveBox = document.querySelector(".active-filter-list");
-    const tagCount = filterActiveBox.querySelectorAll(
-        ".active-filter-item"
-    ).length;
-    if (tagCount === 0) {
-        filterActiveBox.remove();
-    }
+//     filterItem.remove();
 
-    const isFilterSelected =
-        document.querySelectorAll(".filter-sidebar input:checked").length > 0;
-    resetButton.classList.toggle("on", isFilterSelected);
-    resetButton.disabled = !isFilterSelected;
-});
+//     const filterActiveBox = document.querySelector(".active-filter-list");
+//     const tagCount = filterActiveBox.querySelectorAll(
+//         ".active-filter-item"
+//     ).length;
+//     if (tagCount === 0) {
+//         filterActiveBox.remove();
+//     }
+
+//     const isFilterSelected =
+//         document.querySelectorAll(".filter-sidebar input:checked").length > 0;
+//     resetButton.classList.toggle("on", isFilterSelected);
+//     resetButton.disabled = !isFilterSelected;
+// });
 
 // 상단 메뉴 버튼 on/off
 const menuButtons = document.querySelectorAll(".menu-item .menu-btn");
@@ -332,8 +312,10 @@ openButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         const targetSelector = btn.dataset.target;
         const targetModal = document.querySelector(targetSelector);
+        const htmlScroll = document.querySelector("html");
         if (targetModal) {
             targetModal.style.display = "block";
+            htmlScroll.style.overflow = "hidden";
         }
     });
 });
@@ -341,8 +323,10 @@ openButtons.forEach((btn) => {
 closeButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         const targetModal = btn.closest(".popup-wrapper");
+        const htmlScroll = document.querySelector("html");
         if (targetModal) {
             targetModal.style.display = "none";
+            htmlScroll.style.overflow = "";
         }
     });
 });
