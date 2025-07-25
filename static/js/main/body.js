@@ -1,3 +1,16 @@
+// 알림 버튼
+
+const icon = document.querySelector("div.alarm-icon");
+const alarmTap = document.querySelector(".alarm-icon-wrap");
+
+icon.addEventListener("click", (e) => {
+    if (alarmTap.classList.contains("showIcon")) {
+        alarmTap.classList.remove("showIcon");
+    } else {
+        alarmTap.classList.add("showIcon");
+    }
+});
+
 // 배너
 
 // 배너 무한 슬라이드
@@ -142,7 +155,7 @@ nextButton.addEventListener("click", (e) => {
 
     if (productCount === listCount - 1) {
         const move =
-            productSlideWidth * productCount - (productSlideWidth - 320);
+            productSlideWidth * productCount - (productSlideWidth - 265);
         showProduct.style.transform = `translate(-${move}px)`;
     }
 });
@@ -163,6 +176,21 @@ backButton.addEventListener("click", (e) => {
         nextButton.style.display = "block";
     }
 });
+
+// 일일특가 시간
+
+const now = new Date();
+const date = new Date(datetime);
+
+const timeShow = document.querySelector("show-timer");
+
+let gap = Math.floor((date.getTime() - now.getTime()) / 1000);
+
+let second = gap % 60;
+let minute = second % 60;
+let hour = minute % 24;
+
+const restTime = () => {};
 
 // 실시간 인기랭킹
 
@@ -193,6 +221,7 @@ rankingNextButton.addEventListener("click", (e) => {
             rankingSlideWidth * rankingProductCount -
             (rankingProductCount - 200);
         rankingShowProduct.style.transform = `translate(-${move}px)`;
+        rankingNextButton.style.display = "none";
     }
 });
 
@@ -211,4 +240,62 @@ rankingBackButton.addEventListener("click", (e) => {
     if (rankingProductCount < rankingCount - 1) {
         rankingNextButton.style.display = "block";
     }
+});
+
+// 사이드 필터 드롭다운
+const filterDropdownButtons = document.querySelectorAll(
+    ".filter-category-list .dropdown-btn"
+);
+filterDropdownButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        e.target.closest(".filter-category-list").classList.toggle("up");
+    });
+});
+const scrollTopButton = document.querySelector(".scroll-top-btn");
+scrollTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// 최근본 상품
+const recentlyButtons = document.querySelectorAll(
+    ".recently-viewed-section button"
+);
+const container = document.querySelector(".recently-viewed-scroll");
+
+recentlyButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (btn.classList.contains("prev")) {
+            container.scrollBy({ top: -150, behavior: "smooth" });
+        } else if (btn.classList.contains("next")) {
+            container.scrollBy({ top: 150, behavior: "smooth" });
+        }
+    });
+});
+
+// 팝업
+const openButtons = document.querySelectorAll(".popup-trigger");
+const closeButtons = document.querySelectorAll(".popup-close");
+
+openButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const targetSelector = btn.dataset.target;
+        const targetModal = document.querySelector(targetSelector);
+        const htmlScroll = document.querySelector("html");
+        if (targetModal) {
+            targetModal.style.display = "block";
+            htmlScroll.style.overflow = "hidden";
+        }
+    });
+});
+
+closeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const targetModal = btn.closest(".popup-wrapper");
+        const htmlScroll = document.querySelector("html");
+        if (targetModal) {
+            targetModal.style.display = "none";
+            htmlScroll.style.overflow = "";
+        }
+    });
 });
