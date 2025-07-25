@@ -289,4 +289,16 @@ address, dl, ol, ul {
 .mdi-credit-card-clock-outline:before {
     content: "\F0EE2";
 }
-/* ss */
+#bootpay #bootpay-main {
+    flex: 1 1;
+    overflow-y: auto;
+}
+.header-placeholder {
+    height: 40px;
+}
+#bootpay-header {
+    height: 50px;
+}
+.d-flex {
+    display: flex !important;
+}
