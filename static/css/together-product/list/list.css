@@ -941,7 +941,6 @@ svg:not(:root) {
 .popup-content {
     height: auto;
     width: 360px;
-    overflow-x: hidden;
     border-radius: 12px;
     box-shadow: none;
     background: #fff;
@@ -954,6 +953,10 @@ svg:not(:root) {
 .popup-container.popup-product .popup-content {
     padding: 30px;
     width: 440px;
+}
+
+.popup-container.popup-product .popup-footer {
+    border: none;
 }
 
 .popup-message {
@@ -974,7 +977,7 @@ svg:not(:root) {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     display: flex;
-    border-top: 1px solid rgb(247, 247, 247);
+    border-top: 1px solid rgb(238, 238, 238);
     justify-content: flex-start;
     padding: 0px;
     margin-top: 0px;
