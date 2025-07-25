@@ -53,7 +53,7 @@ input[type="checkbox"], input[type="radio"] {
 
 /* text-color */
 .text-primary {
-    color: rgb(141, 76, 196) !important;
+    color: rgb(50, 116, 63) !important;
 }
 
 /* layout */
@@ -110,7 +110,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .btn-check-box label:hover .title,
 .btn-radio-box label:hover .title {
-    color: rgb(141, 76, 196);
+    color: rgb(50, 116, 63);
 }
 
 .btn-check-box svg,
@@ -120,7 +120,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .btn-check-box input:checked ~ svg path,
 .btn-radio-box input:checked ~ svg path {
-  fill: #5f0080;
+  fill: rgb(50, 116, 63);
 }
 
 .btn-radio-box input:checked ~ svg path + path {
@@ -197,7 +197,7 @@ input[type="checkbox"], input[type="radio"] {
      letter-spacing: -1px;
     cursor: pointer;
     font-weight: 700;
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
 }
 
 .menu-btn {
@@ -209,7 +209,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .menu-btn:hover {
     font-weight: 700;
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
 }
 
 /* filter */
@@ -357,7 +357,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .category-sort-options li.on button {
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
     font-weight: 500;
 }
 
@@ -496,7 +496,7 @@ input[type="checkbox"], input[type="radio"] {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    color: rgb(141, 76, 196);
+    color: rgb(50, 116, 63);
 }
 
 .active-filter-list .remove-btn {
@@ -552,7 +552,7 @@ input[type="checkbox"], input[type="radio"] {
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    background-color: rgb(189, 118, 255);
+    background-color: rgb(84 156 98);
     top: 8px;
     left: 8px;
     padding: 6px 8px;
@@ -616,7 +616,7 @@ input[type="checkbox"], input[type="radio"] {
     background-color: rgb(244, 244, 244);
     font-weight: 500;
     font-size: 12px;
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
     line-height: 16px;
 }
 
@@ -1045,9 +1045,7 @@ svg:not(:root) {
 
 .product-price-box {
     display: flex;
-    -webkit-box-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
     align-items: center;
     padding-top: 5px;
 }
@@ -1096,7 +1094,14 @@ svg:not(:root) {
 .product-quantity-box .quantity-btn.minus {
     background-size: cover;
     background-color: transparent;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iIzMzMyIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=)
+}
+
+.product-quantity-box .quantity-btn.minus:disabled {
+    background-size: cover;
+    background-color: transparent;
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iI0RERCIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=);
+    
 }
 
 .product-quantity-box .quantity-btn.plus {
@@ -1168,6 +1173,7 @@ svg:not(:root) {
     padding: 0px 10px;
 }
 
+/* button - color */
 .btn-default {
     display: block;
     width: 100%;
@@ -1175,7 +1181,7 @@ svg:not(:root) {
     padding: 0px;
     font-weight: 500;
     font-size: 16px;
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
 }
 
 .btn-primary {
@@ -1186,7 +1192,7 @@ svg:not(:root) {
     overflow: hidden;
     border-radius: 3px;
     color: rgb(255, 255, 255);
-    background-color: rgb(95, 0, 128);
+    background-color: rgb(50, 116, 63);
     border: 0px none;
 }
 
@@ -1201,3 +1207,46 @@ svg:not(:root) {
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(221, 221, 221);
 }
+
+.btn-circle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    border-radius: 22px;
+    padding: 12px 20px;
+    margin-top: 28px;
+}
+
+/* no-data */
+.no-data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 396px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 100px 0px;
+}
+
+.no-data .btn-circle {
+    width: 138px;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 16px;
+    align-items: center;
+    padding: 0;
+}
+
+.no-data .btn-circle span {
+    line-height: 20px;
+    margin-left: 6px;
+}
+
+.no-data-message {
+    font-size: 16px;
+    color: rgb(181, 181, 181);
+    margin-top: 16px;
+}
+
