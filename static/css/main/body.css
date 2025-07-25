@@ -499,6 +499,7 @@ button {
     padding-right: 4px;
     width: 44px;
     height: 52px;
+    cursor: pointer;
 }
 
 .start-img,

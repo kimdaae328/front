@@ -269,6 +269,16 @@ ol, ul {
 
 /* 헤더 네비게이션 */
 
+.header-nav-big {
+    min-width: 1050px;
+    letter-spacing: -0.3px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+    width: 100%;
+    z-index: 300;
+}
+
 .header-nav {
     min-width: 1050px;
     letter-spacing: -0.3px;
@@ -321,6 +331,73 @@ ol, ul {
 .category-text:hover {
     color: rgb(95, 0, 128);
 }
+
+.category-list {
+    max-height: calc(-55px + 95vh);
+    min-height: 200px;
+    position: absolute;
+    display: flex;
+    top: 46px;
+    padding-top: 10px;
+    display: none;
+}
+
+.category:hover .category-list {
+    display: block;
+}
+
+.category:hover .category-text {
+    color: rgb(95, 0, 128);
+}
+
+
+.category-list-inner {
+    position: relative;
+    z-index: 321;
+    width: 249px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: rgb(255, 255, 255);
+}
+
+.category-ul {
+    overflow-y: auto;
+    width: 247px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.category-li {
+    padding: 7px 0px 9px 14px;  
+}
+
+.category-li-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.category-li-img {
+    flex: 0 1 0%;
+    width: 24px;
+    height: 24px;
+}
+
+.category-li-text {
+    flex: 1 1 0%;
+    padding: 1px 20px 0px 10px;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.category-li:hover .category-li-text {
+    font-weight: 500;
+    color: rgb(95, 0, 128);
+}
+
+/* 헤더 네비게이션 */
 
 .nav-ul {
     display: flex;
@@ -376,4 +453,14 @@ ol, ul {
 .hidden {
     min-height: 56px;
     display: none;
+}
+
+/* 내렸을때 헤더 */
+
+.header-nav-big {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
 }
