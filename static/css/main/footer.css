@@ -8,10 +8,6 @@
     margin: 0;
 }
 
-html, body, span, div, button, input, label, select, option, textarea {
-    font-family: var(--kpds_ldmw170);
-}
-
 a, abbr, acronym, address, applet, article, 
 aside, audio, b, big, blockquote, body, 
 button, canvas, caption, center, cite, code, 
@@ -54,7 +50,6 @@ ol, ul {
     padding-bottom: 30px;
 }
 
-/* 여기욥 */
 .footer-constructor {
     display: flex;
     align-items: center;
@@ -73,18 +68,6 @@ ol, ul {
     line-height: 40px;
     margin-left: 30px;
 }
-
-/* .team-name-members::before {
-    content: '';
-    position: absolute;
-    left: -14px;
-    top: 50%;
-    display: block;
-    width: 1px;
-    height: 15px;
-    background-color: #c3c3c3;
-    transform: translateY(-50%);
-} */
 
 .css-1p6dp6j, .footer-top-floor {
     display: flex;
