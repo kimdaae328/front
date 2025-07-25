@@ -37,7 +37,6 @@ const slideWidth = 1900;
 let pageNumber = 1;
 
 banner.style.transform = `translate(-${slideWidth * count}px)`;
-console.log(nowPage);
 const autoSlide = () => {
     count++;
     pageNumber++;
@@ -179,18 +178,35 @@ backButton.addEventListener("click", (e) => {
 
 // 일일특가 시간
 
-const now = new Date();
-const date = new Date(datetime);
+const timeShow = document.querySelector(".show-timer");
 
-const timeShow = document.querySelector("show-timer");
+const restTime = (datetime) => {
+    const date = new Date(datetime);
 
-let gap = Math.floor((date.getTime() - now.getTime()) / 1000);
+    const update = () => {
+        const now = new Date();
+        let gap = Math.floor((date.getTime() - now.getTime()) / 1000);
 
-let second = gap % 60;
-let minute = second % 60;
-let hour = minute % 24;
+        if (gap <= 0) {
+            timeShow.innerHTML = "다음에 또 만나요🥲";
+            clearInterval(timer);
+            return;
+        }
 
-const restTime = () => {};
+        const hours = String(Math.floor(gap / 3600)).padStart(2, "0");
+        const minutes = String(Math.floor((gap % 3600) / 60)).padStart(2, "0");
+        const seconds = String(gap % 60).padStart(2, "0");
+
+        timeShow.innerHTML = `<span>${hours}</span><span>${minutes}</span><span>${seconds}</span>`;
+    };
+
+    update();
+    const timer = setInterval(update, 1000);
+};
+
+restTime("2025-07-28T00:00:00");
+
+// restTime("2025-07-18");
 
 // 실시간 인기랭킹
 
@@ -270,6 +286,30 @@ recentlyButtons.forEach((button) => {
         } else if (btn.classList.contains("next")) {
             container.scrollBy({ top: 150, behavior: "smooth" });
         }
+    });
+});
+
+// 팝업 수량 카운트
+const quantityBoxes = document.querySelectorAll(".product-quantity-box");
+
+quantityBoxes.forEach((box) => {
+    const plusBtn = box.querySelector(".quantity-btn.plus");
+    const minusBtn = box.querySelector(".quantity-btn.minus");
+    const countEl = box.querySelector(".count");
+    minusBtn.disabled = true;
+
+    plusBtn.addEventListener("click", () => {
+        let count = Number(countEl.textContent);
+        count++;
+        countEl.textContent = count;
+        minusBtn.disabled = count <= 0;
+    });
+
+    minusBtn.addEventListener("click", () => {
+        let count = Number(countEl.textContent);
+        if (count > 0) count--;
+        countEl.textContent = count;
+        minusBtn.disabled = count == 0;
     });
 });
 
