@@ -6,9 +6,11 @@
     <title>너도 먹고 나도 먹고</title>
     <link rel="stylesheet" href="../../static/css/main/body.css">
     <link rel="stylesheet" href="../../static/fonts/pretendard/font.css">
+    <link rel="shortcut icon" href="../../static/images/main/favicon.png" type="image/x-icon">
+
 </head>
 <body>
-    <div id="__next">
+    <div id="__next" class="main">
         <div>
             <div class="header">
                 <div class="login-nav">
@@ -29,18 +31,142 @@
                 </div>
                 <div class="header-top">
                     <div class="logo"> 
-                        <img src="" class="logo-img">
+                        <img src="../../static/images/main/logo.png" class="logo-img">
                         <button class="active main-button">너도 먹고</button>
                         <button class="main-button">나도 먹고</button>
                     </div>
                     <div class="search-big">
                         <div class="css-vdi47h search">
                             <input placeholder="검색어를 입력해주세요" autocomplete="off" class="search-input">
-                            <button id="submit" class="search-button"></button>
+                            <button id="submit" class="search-button popup-trigger" data-target="#popup2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path fill="none" d="M0 0h36v36H0z"/>
+                                        <g stroke="rgb(50, 116, 63)" stroke-linecap="round" stroke-width="1.7">
+                                            <path d="m26.081 26.081-4.12-4.12M16.467 23.334a6.867 6.867 0 1 0 0-13.734 6.867 6.867 0 0 0 0 13.734z"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="header-icon">
-                        <div class="alarm-icon"></div>
+                        <div class="icon-container">
+                            <div class="alarm-icon"></div>
+                            <div id="root" class="alarm-icon-wrap">
+                                <div class="alarm-icon-in">
+                                    <header class="alarm-icon-header">
+                                        <div class="alarm-icon-inner">
+                                            <h1 class="blind"></h1>
+                                            <div class="title_area">
+                                                <a href="" class="link_title">
+                                                    <h2 class="title">알림</h2>
+                                                </a>
+                                            </div>
+                                            <div ></div>
+                                        </div>
+                                    </header>
+                                    <main class="alarm-icon-content">
+                                        <div class="notice_content">
+                                            <div class="section_notice_preview" style="min-height: 95vh;">
+                                                <div class="comp_card comp_notice">
+                                                    <a href="" class="link_notice">
+                                                        <div class="group_source">
+                                                            <div class="source_box">
+                                                                <div class="thumb">
+                                                                    <img width="26" height="26" src="../../static/images/main/logo.png">
+                                                                </div>
+                                                                <span class="span-title">너도먹고나도먹고</span>
+                                                            </div>
+                                                            <div class="info_box">
+                                                                <span class="info-text">7월 25일</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="group_info">
+                                                            <strong class="info-title">배송 알림!</strong>
+                                                            <div class="info_area">
+                                                                <div class="info_box">
+                                                                    <p class="desc"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="comp_card comp_notice">
+                                                    <a href="" class="link_notice">
+                                                        <div class="group_source">
+                                                            <div class="source_box">
+                                                                <div class="thumb">
+                                                                    <img width="26" height="26" src="">
+                                                                </div>
+                                                                <span class="span-title">너도먹고나도먹고</span>
+                                                            </div>
+                                                            <div class="info_box">
+                                                                <span class="info-text">7월 25일</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="group_info">
+                                                            <strong class="info-title">배송 알림!</strong>
+                                                            <div class="info_area">
+                                                                <div class="info_box">
+                                                                    <p class="desc"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="comp_card comp_notice">
+                                                    <a href="" class="link_notice">
+                                                        <div class="group_source">
+                                                            <div class="source_box">
+                                                                <div class="thumb">
+                                                                    <img width="26" height="26" src="">
+                                                                </div>
+                                                                <span class="span-title">너도먹고나도먹고</span>
+                                                            </div>
+                                                            <div class="info_box">
+                                                                <span class="info-text">7월 25일</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="group_info">
+                                                            <strong class="info-title">배송 알림!</strong>
+                                                            <div class="info_area">
+                                                                <div class="info_box">
+                                                                    <p class="desc"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="comp_card comp_notice">
+                                                    <a href="" class="link_notice">
+                                                        <div class="group_source">
+                                                            <div class="source_box">
+                                                                <div class="thumb">
+                                                                    <img width="26" height="26" src="">
+                                                                </div>
+                                                                <span class="span-title">너도먹고나도먹고</span>
+                                                            </div>
+                                                            <div class="info_box">
+                                                                <span class="info-text">7월 25일</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="group_info">
+                                                            <strong class="info-title">배송 알림!</strong>
+                                                            <div class="info_area">
+                                                                <div class="info_box">
+                                                                    <p class="desc"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </main>
+                                </div>
+                            </div>
+                        </div>
                         <button class="good-icon"></button>
                         <div class="cart-icon">
                             <button class="cart-icon-button"></button>
@@ -53,6 +179,42 @@
                     <div class="category">
                         <span class="category-img"></span>
                         <span class="category-text">카테고리</span>
+                        <div class="category-list">
+                            <div class="category-list-inner">
+                                <ul class="category-ul">
+                                    <li class="category-li">
+                                        <div class="category-li-inner">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/1/4IYbd0CEWkokpqiN00CAL9cDC2Q7nT101TDEn0tF.png" class="category-li-img">
+                                            <span class="category-li-text">채소</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li">
+                                        <div class="category-li-inner">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/2/DNXCcUaXoXakDOdHiGhIMCNUeUjJioG9EyeQ7RRX.png" class="category-li-img">
+                                            <span class="category-li-text">과일·견과·쌀</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li">
+                                        <div class="category-li-inner">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/3/fivaoZPBTeqaDswJUgr3k0xMV0von36Qb9qnn7ZZ.png" class="category-li-img">
+                                            <span class="category-li-text">수산·해산·건어물</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li">
+                                        <div class="category-li-inner">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/4/jj6zZg2sY94aytlc2k1udIAmWWvmUignR9VYaMcm.png" class="category-li-img">
+                                            <span class="category-li-text">정육·가공육·달걀</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li">
+                                        <div class="category-li-inner">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/230/y5jylUkFHNhzAJQ8IqLijPx9RSd474nOZf5dKa6e.png" class="category-li-img">
+                                            <span class="category-li-text">기타</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <ul class="nav-ul">
                         <li class="nav-li">
@@ -71,13 +233,12 @@
                     <div class="announce-button">
                         <a href="">
                             <div class="announce-button-in">
-                                <span class="announce-button-text">일단 만들어놓은 버튼~</span>
+                                <span class="announce-button-text">나도 먹고</span>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="hidden"></div>
 
             <!-- main body 시작 -->
             <div class="main-body">
@@ -171,7 +332,7 @@
                                     <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events now-most-popular-list-in">
                                         <div class="product-swiper-wrapper product-wrap" style="transform: translate(0px, 0px, 0px);">
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="product-thumbnail">
+                                                <div class="product-thumbnail">
                                                     <div class="product-media">
                                                         <div class="product-img">
                                                             <img alt="" src="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg" decoding="async" data-nimg="fill" sizes="100vw" srcset="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 640w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 750w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 828w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1080w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1200w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1920w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 2048w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 3840w">
@@ -181,7 +342,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-btn">
-                                                        <button>
+                                                        <button type="button" class="popup-trigger" data-target="#popup1">
                                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.53516 2.70001H3.93316L5.76816 10.609H13.6482L15.2992 4.35901H4.86916M12.8582 14.933C13.0098 14.9375 13.1609 14.9115 13.3024 14.8566C13.4438 14.8017 13.5728 14.7189 13.6817 14.6132C13.7906 14.5075 13.8771 14.381 13.9363 14.2412C13.9954 14.1015 14.0258 13.9513 14.0258 13.7995C14.0258 13.6478 13.9954 13.4975 13.9363 13.3578C13.8771 13.218 13.7906 13.0915 13.6817 12.9858C13.5728 12.8801 13.4438 12.7974 13.3024 12.7424C13.1609 12.6875 13.0098 12.6615 12.8582 12.666C12.5634 12.6748 12.2836 12.798 12.0782 13.0096C11.8727 13.2213 11.7578 13.5046 11.7578 13.7995C11.7578 14.0944 11.8727 14.3778 12.0782 14.5894C12.2836 14.801 12.5634 14.9243 12.8582 14.933ZM6.49316 14.933C6.64484 14.9375 6.79589 14.9115 6.93735 14.8566C7.07881 14.8017 7.20781 14.7189 7.31669 14.6132C7.42558 14.5075 7.51214 14.381 7.57126 14.2412C7.63037 14.1015 7.66083 13.9513 7.66083 13.7995C7.66083 13.6478 7.63037 13.4975 7.57126 13.3578C7.51214 13.218 7.42558 13.0915 7.31669 12.9858C7.20781 12.8801 7.07881 12.7974 6.93735 12.7424C6.79589 12.6875 6.64484 12.6615 6.49316 12.666C6.19836 12.6748 5.91858 12.798 5.71315 13.0096C5.50773 13.2213 5.39283 13.5046 5.39283 13.7995C5.39283 14.0944 5.50773 14.3778 5.71315 14.5894C5.91858 14.801 6.19836 14.9243 6.49316 14.933Z" stroke="#333333" stroke-linecap="square" stroke-linejoin="round"></path></svg>
                                                             담기
                                                         </button>
@@ -203,13 +364,13 @@
                                                             </span>
                                                         </div>
                                                         <div class="product-badge">
-                                                            <span class="">Kurly Only</span>
+                                                            <span class="">너도나도 Only</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="product-thumbnail">
+                                                <div href="" class="product-thumbnail">
                                                     <div class="product-media">
                                                         <div class="product-img">
                                                             <img alt="" src="https://3p-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/files/127ddc35-1950-4d00-90aa-895b047e95a5/f4991728-b1a1-4cd0-81fc-f5152a218def.jpg">
@@ -219,7 +380,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-btn">
-                                                        <button>
+                                                        <button type="button">
                                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.53516 2.70001H3.93316L5.76816 10.609H13.6482L15.2992 4.35901H4.86916M12.8582 14.933C13.0098 14.9375 13.1609 14.9115 13.3024 14.8566C13.4438 14.8017 13.5728 14.7189 13.6817 14.6132C13.7906 14.5075 13.8771 14.381 13.9363 14.2412C13.9954 14.1015 14.0258 13.9513 14.0258 13.7995C14.0258 13.6478 13.9954 13.4975 13.9363 13.3578C13.8771 13.218 13.7906 13.0915 13.6817 12.9858C13.5728 12.8801 13.4438 12.7974 13.3024 12.7424C13.1609 12.6875 13.0098 12.6615 12.8582 12.666C12.5634 12.6748 12.2836 12.798 12.0782 13.0096C11.8727 13.2213 11.7578 13.5046 11.7578 13.7995C11.7578 14.0944 11.8727 14.3778 12.0782 14.5894C12.2836 14.801 12.5634 14.9243 12.8582 14.933ZM6.49316 14.933C6.64484 14.9375 6.79589 14.9115 6.93735 14.8566C7.07881 14.8017 7.20781 14.7189 7.31669 14.6132C7.42558 14.5075 7.51214 14.381 7.57126 14.2412C7.63037 14.1015 7.66083 13.9513 7.66083 13.7995C7.66083 13.6478 7.63037 13.4975 7.57126 13.3578C7.51214 13.218 7.42558 13.0915 7.31669 12.9858C7.20781 12.8801 7.07881 12.7974 6.93735 12.7424C6.79589 12.6875 6.64484 12.6615 6.49316 12.666C6.19836 12.6748 5.91858 12.798 5.71315 13.0096C5.50773 13.2213 5.39283 13.5046 5.39283 13.7995C5.39283 14.0944 5.50773 14.3778 5.71315 14.5894C5.91858 14.801 6.19836 14.9243 6.49316 14.933Z" stroke="#333333" stroke-linecap="square" stroke-linejoin="round"></path></svg>
                                                             담기
                                                         </button>
@@ -244,10 +405,10 @@
                                                             <span class="">Kurly Only</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="product-thumbnail">
+                                                <div href="" class="product-thumbnail">
                                                     <div class="product-media">
                                                         <div class="product-img">
                                                             <img alt="" src="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg" decoding="async" data-nimg="fill" sizes="100vw" srcset="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 640w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 750w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 828w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1080w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1200w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1920w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 2048w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 3840w">
@@ -282,10 +443,10 @@
                                                             <span class="">Kurly Only</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="product-thumbnail">
+                                                <div href="" class="product-thumbnail">
                                                     <div class="product-media">
                                                         <div class="product-img">
                                                             <img alt="" src="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg" decoding="async" data-nimg="fill" sizes="100vw" srcset="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 640w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 750w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 828w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1080w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1200w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1920w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 2048w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 3840w">
@@ -320,10 +481,10 @@
                                                             <span class="">Kurly Only</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="product-thumbnail">
+                                                <div href="" class="product-thumbnail">
                                                     <div class="product-media">
                                                         <div class="product-img">
                                                             <img alt="" src="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg" decoding="async" data-nimg="fill" sizes="100vw" srcset="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 640w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 750w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 828w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1080w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1200w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1920w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 2048w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 3840w">
@@ -358,10 +519,10 @@
                                                             <span class="">Kurly Only</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="product-thumbnail">
+                                                <div href="" class="product-thumbnail">
                                                     <div class="product-media">
                                                         <div class="product-img">
                                                             <img alt="" src="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg" decoding="async" data-nimg="fill" sizes="100vw" srcset="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 640w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 750w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 828w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1080w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1200w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1920w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 2048w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 3840w">
@@ -396,10 +557,10 @@
                                                             <span class="">Kurly Only</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="product-thumbnail">
+                                                <div href="" class="product-thumbnail">
                                                     <div class="product-media">
                                                         <div class="product-img">
                                                             <img alt="" src="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg" decoding="async" data-nimg="fill" sizes="100vw" srcset="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 640w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 750w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 828w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1080w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1200w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1920w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 2048w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 3840w">
@@ -434,10 +595,10 @@
                                                             <span class="">Kurly Only</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="product-thumbnail">
+                                                <div href="" class="product-thumbnail">
                                                     <div class="product-media">
                                                         <div class="product-img">
                                                             <img alt="" src="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg" decoding="async" data-nimg="fill" sizes="100vw" srcset="https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 640w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 750w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 828w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1080w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1200w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1920w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 2048w, https://product-image.kurly.com/hdims/resize/%5E%3E360x%3E468/cropcenter/360x468/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 3840w">
@@ -447,7 +608,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="product-btn">
-                                                        <button>
+                                                        <button type="button" class="popup-trigger" data-target="#popup1">
                                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.53516 2.70001H3.93316L5.76816 10.609H13.6482L15.2992 4.35901H4.86916M12.8582 14.933C13.0098 14.9375 13.1609 14.9115 13.3024 14.8566C13.4438 14.8017 13.5728 14.7189 13.6817 14.6132C13.7906 14.5075 13.8771 14.381 13.9363 14.2412C13.9954 14.1015 14.0258 13.9513 14.0258 13.7995C14.0258 13.6478 13.9954 13.4975 13.9363 13.3578C13.8771 13.218 13.7906 13.0915 13.6817 12.9858C13.5728 12.8801 13.4438 12.7974 13.3024 12.7424C13.1609 12.6875 13.0098 12.6615 12.8582 12.666C12.5634 12.6748 12.2836 12.798 12.0782 13.0096C11.8727 13.2213 11.7578 13.5046 11.7578 13.7995C11.7578 14.0944 11.8727 14.3778 12.0782 14.5894C12.2836 14.801 12.5634 14.9243 12.8582 14.933ZM6.49316 14.933C6.64484 14.9375 6.79589 14.9115 6.93735 14.8566C7.07881 14.8017 7.20781 14.7189 7.31669 14.6132C7.42558 14.5075 7.51214 14.381 7.57126 14.2412C7.63037 14.1015 7.66083 13.9513 7.66083 13.7995C7.66083 13.6478 7.63037 13.4975 7.57126 13.3578C7.51214 13.218 7.42558 13.0915 7.31669 12.9858C7.20781 12.8801 7.07881 12.7974 6.93735 12.7424C6.79589 12.6875 6.64484 12.6615 6.49316 12.666C6.19836 12.6748 5.91858 12.798 5.71315 13.0096C5.50773 13.2213 5.39283 13.5046 5.39283 13.7995C5.39283 14.0944 5.50773 14.3778 5.71315 14.5894C5.91858 14.801 6.19836 14.9243 6.49316 14.933Z" stroke="#333333" stroke-linecap="square" stroke-linejoin="round"></path></svg>
                                                             담기
                                                         </button>
@@ -469,23 +630,88 @@
                                                             </span>
                                                         </div>
                                                         <div class="product-badge">
-                                                            <span class="">Kurly Only</span>
+                                                            <span class="">너도나도 Only</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                             <div class="product-card" style="width: 249px; margin-right: 18px;">
                                                 <div class="last-product-card">
                                                     <a href="" class="showAll">
-                                                        <span class="icon"></span>
+                                                        <span class="icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+                                                            <g fill="none" fill-rule="evenodd">
+                                                                <circle r="31.4" cy="32" cx="32" fill-rule="nonzero" fill="#FFF" stroke-width="1.2" stroke="#E3E3E3"/>
+                                                                <path stroke="rgb(50, 116, 63)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m28.444 21.333 11.378 11.698-11.378 11.058"/>
+                                                            </g>
+                                                        </svg>
+                                                        </span>
                                                         <span>전체보기</span>
                                                     </a>
                                                 </div> 
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="product-list-button-left"></button>
-                                    <button type="button" class="product-list-button-right"></button>
+                                    <button type="button" class="product-list-button-left">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60">
+                                        <defs>
+                                            <filter x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" id="a">
+                                                <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                                <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+                                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+                                                <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter2"/>
+                                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0" in="shadowOffsetOuter2" result="shadowMatrixOuter2"/>
+                                                <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter3"/>
+                                                <feOffset in="shadowSpreadOuter3" result="shadowOffsetOuter3"/>
+                                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0" in="shadowOffsetOuter3" result="shadowMatrixOuter3"/>
+                                                <feMerge>
+                                                    <feMergeNode in="shadowMatrixOuter1"/>
+                                                    <feMergeNode in="shadowMatrixOuter2"/>
+                                                    <feMergeNode in="shadowMatrixOuter3"/>
+                                                </feMerge>
+                                            </filter>
+                                            <circle id="b" cx="25" cy="25" r="25"/>
+                                        </defs>
+                                        <g fill="none" fill-rule="evenodd">
+                                            <g transform="matrix(-1 0 0 1 55 5)">
+                                                <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+                                                <use fill="#FFF" xlink:href="#b"/>
+                                            </g>
+                                            <path d="M55 5H5v50h50z"/>
+                                            <path stroke="rgb(50, 116, 63)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m32 38-8-7.817L31.723 22"/>
+                                        </g>
+                                    </svg>
+                                    </button>
+                                    <button type="button" class="product-list-button-right">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60">
+                                        <defs>
+                                            <filter x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" id="a">
+                                                <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                                <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+                                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+                                                <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter2"/>
+                                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0" in="shadowOffsetOuter2" result="shadowMatrixOuter2"/>
+                                                <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter3"/>
+                                                <feOffset in="shadowSpreadOuter3" result="shadowOffsetOuter3"/>
+                                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0" in="shadowOffsetOuter3" result="shadowMatrixOuter3"/>
+                                                <feMerge>
+                                                    <feMergeNode in="shadowMatrixOuter1"/>
+                                                    <feMergeNode in="shadowMatrixOuter2"/>
+                                                    <feMergeNode in="shadowMatrixOuter3"/>
+                                                </feMerge>
+                                            </filter>
+                                            <circle id="b" cx="25" cy="25" r="25"/>
+                                        </defs>
+                                        <g fill="none" fill-rule="evenodd">
+                                            <g transform="matrix(-1 0 0 1 55 5)">
+                                                <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+                                                <use fill="#FFF" xlink:href="#b"/>
+                                            </g>
+                                            <path d="M55 5H5v50h50z"/>
+                                            <path stroke="rgb(50, 116, 63)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m32 38-8-7.817L31.723 22"/>
+                                        </g>
+                                    </svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -504,7 +730,7 @@
                                             <g clip-path="url(#__lottie_element_2)">
                                                 <g style="display: block;" transform="matrix(1,0,0,1,3.75,3.75)" opacity="1">
                                                     <g opacity="1" transform="matrix(1,0,0,1,14.25,14.25)">
-                                                        <path fill="rgb(189,118,255)" fill-opacity="1" d=" M14,0 C14,7.73199987411499 7.73199987411499,14 0,14 C-7.73199987411499,14 -14,7.73199987411499 -14,0 C-14,-7.73199987411499 -7.73199987411499,-14 0,-14 C7.73199987411499,-14 14,-7.73199987411499 14,0z"></path>
+                                                        <path fill="rgb(84 156 98)" fill-opacity="1" d=" M14,0 C14,7.73199987411499 7.73199987411499,14 0,14 C-7.73199987411499,14 -14,7.73199987411499 -14,0 C-14,-7.73199987411499 -7.73199987411499,-14 0,-14 C7.73199987411499,-14 14,-7.73199987411499 14,0z"></path>
                                                     </g>
                                                     <g opacity="1" transform="matrix(1,0,0,1,0,0)">
                                                         <path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2" d=" M14.25,8.293999671936035 C14.25,8.293999671936035 14.25,14.293999671936035 14.25,14.293999671936035"></path>
@@ -532,14 +758,13 @@
                                                 <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                                     <img alt="" src="https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg" decoding="async" data-nimg="fill" class="css-1zjvv7" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;" sizes="100vw" srcset="https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg 640w, https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg 750w, https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg 828w, https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg 1080w, https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg 1200w, https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg 1920w, https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg 2048w, https://product-image.kurly.com/hdims/resize/%5E%3E800x%3E400/cropcenter/800x400/quality/85/src/product/image/62d48009-a9be-45f2-a4af-fc2f753f255d.jpg 3840w">
                                                 </span>
-                                                <div class="top-icon" style="background-color: rgb(189, 118, 255); top: 8px; left: 8px; padding: 6px 8px;">
+                                                <div class="top-icon" style="background-color: rgb(84 156 98); top: 8px; left: 8px; padding: 6px 8px;">
                                                     <p style="color: rgb(255, 255, 255); font-size: 14px; font-weight: 500; line-height: 19px;">일일특가</p>
                                                 </div>
                                                 <div class="bottom-icon" style="opacity: 1; width: 25%;">
                                                     <div class="bottom-icon-in" style="padding-bottom: 100%;">
                                                         <div class="bottom-icon-in-in">
                                                             <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                                                <img alt="" src="https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png" decoding="async" data-nimg="fill" class="css-1zjvv7" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;" sizes="100vw" srcset="https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png 640w, https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png 750w, https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png 828w, https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png 1080w, https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png 1200w, https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png 1920w, https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png 2048w, https://product-image.kurly.com/sticker/image/cf07c518-c2aa-4300-8ded-78e37eb8b582.png 3840w">
                                                             </span>
                                                         </div>
                                                     </div>
@@ -610,7 +835,7 @@
                                     <div class="ranking-swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -644,19 +869,19 @@
                                                         </div>
                                                     </div>
                                                     <div class="ranking-button-wrapper">
-                                                        <button type="button" class="ranking-product-function ranking-product-function">
+                                                        <button type="button" class="ranking-product-function ranking-product-function popup-trigger" data-target="#popup1">
                                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M1.53516 2.70001H3.93316L5.76816 10.609H13.6482L15.2992 4.35901H4.86916M12.8582 14.933C13.0098 14.9375 13.1609 14.9115 13.3024 14.8566C13.4438 14.8017 13.5728 14.7189 13.6817 14.6132C13.7906 14.5075 13.8771 14.381 13.9363 14.2412C13.9954 14.1015 14.0258 13.9513 14.0258 13.7995C14.0258 13.6478 13.9954 13.4975 13.9363 13.3578C13.8771 13.218 13.7906 13.0915 13.6817 12.9858C13.5728 12.8801 13.4438 12.7974 13.3024 12.7424C13.1609 12.6875 13.0098 12.6615 12.8582 12.666C12.5634 12.6748 12.2836 12.798 12.0782 13.0096C11.8727 13.2213 11.7578 13.5046 11.7578 13.7995C11.7578 14.0944 11.8727 14.3778 12.0782 14.5894C12.2836 14.801 12.5634 14.9243 12.8582 14.933ZM6.49316 14.933C6.64484 14.9375 6.79589 14.9115 6.93735 14.8566C7.07881 14.8017 7.20781 14.7189 7.31669 14.6132C7.42558 14.5075 7.51214 14.381 7.57126 14.2412C7.63037 14.1015 7.66083 13.9513 7.66083 13.7995C7.66083 13.6478 7.63037 13.4975 7.57126 13.3578C7.51214 13.218 7.42558 13.0915 7.31669 12.9858C7.20781 12.8801 7.07881 12.7974 6.93735 12.7424C6.79589 12.6875 6.64484 12.6615 6.49316 12.666C6.19836 12.6748 5.91858 12.798 5.71315 13.0096C5.50773 13.2213 5.39283 13.5046 5.39283 13.7995C5.39283 14.0944 5.50773 14.3778 5.71315 14.5894C5.91858 14.801 6.19836 14.9243 6.49316 14.933Z" stroke="#333333" stroke-linecap="square" stroke-linejoin="round"></path>
                                                             </svg>
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -697,12 +922,12 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -743,12 +968,12 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -789,12 +1014,12 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -835,12 +1060,12 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -881,12 +1106,12 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -927,12 +1152,12 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -973,12 +1198,12 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -1019,12 +1244,12 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-swiper-slide" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card" style="width: 249px; margin-right: 18px;">
-                                                <a href="" class="ranking-product-thumbnail">
+                                                <div href="" class="ranking-product-thumbnail">
                                                     <div class="ranking-product-media">
                                                         <div class="ranking-product-img">
                                                            <div class="ranking-product-img-in" style="padding-bottom: 123.158%;">
@@ -1065,23 +1290,90 @@
                                                             담기
                                                         </button>
                                                     </div>
-                                                </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ranking-product-card" style="width: 190px; margin-right: 25px;">
                                             <div class="ranking-product-card-last">
                                                 <a href="" class="ranking-product-card-last-link">
-                                                    <span class="icon"></span>
+                                                    <span class="icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+                                                        <g fill="none" fill-rule="evenodd">
+                                                            <circle r="31.4" cy="32" cx="32" fill-rule="nonzero" fill="#FFF" stroke-width="1.2" stroke="#E3E3E3"/>
+                                                            <path stroke="rgb(50, 116, 63)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m28.444 21.333 11.378 11.698-11.378 11.058"/>
+                                                        </g>
+                                                    </svg>
+                                                    </span>
                                                     <span>전체보기</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="ranking-button-left"></button>
-                                <button type="button" class="ranking-button-right"></button>
+                                <button type="button" class="ranking-button-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60">
+                                    <defs>
+                                        <filter x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" id="a">
+                                            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+                                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter2"/>
+                                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0" in="shadowOffsetOuter2" result="shadowMatrixOuter2"/>
+                                            <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter3"/>
+                                            <feOffset in="shadowSpreadOuter3" result="shadowOffsetOuter3"/>
+                                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0" in="shadowOffsetOuter3" result="shadowMatrixOuter3"/>
+                                            <feMerge>
+                                                <feMergeNode in="shadowMatrixOuter1"/>
+                                                <feMergeNode in="shadowMatrixOuter2"/>
+                                                <feMergeNode in="shadowMatrixOuter3"/>
+                                            </feMerge>
+                                        </filter>
+                                        <circle id="b" cx="25" cy="25" r="25"/>
+                                    </defs>
+                                    <g fill="none" fill-rule="evenodd">
+                                        <g transform="matrix(-1 0 0 1 55 5)">
+                                            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+                                            <use fill="#FFF" xlink:href="#b"/>
+                                        </g>
+                                        <path d="M55 5H5v50h50z"/>
+                                        <path stroke="rgb(50, 116, 63)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m32 38-8-7.817L31.723 22"/>
+                                    </g>
+                                </svg>
+                                </button>
+                                <button type="button" class="ranking-button-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60">
+                                    <defs>
+                                        <filter x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" id="a">
+                                            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+                                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter2"/>
+                                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0" in="shadowOffsetOuter2" result="shadowMatrixOuter2"/>
+                                            <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter3"/>
+                                            <feOffset in="shadowSpreadOuter3" result="shadowOffsetOuter3"/>
+                                            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.02 0" in="shadowOffsetOuter3" result="shadowMatrixOuter3"/>
+                                            <feMerge>
+                                                <feMergeNode in="shadowMatrixOuter1"/>
+                                                <feMergeNode in="shadowMatrixOuter2"/>
+                                                <feMergeNode in="shadowMatrixOuter3"/>
+                                            </feMerge>
+                                        </filter>
+                                        <circle id="b" cx="25" cy="25" r="25"/>
+                                    </defs>
+                                    <g fill="none" fill-rule="evenodd">
+                                        <g transform="matrix(-1 0 0 1 55 5)">
+                                            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+                                            <use fill="#FFF" xlink:href="#b"/>
+                                        </g>
+                                        <path d="M55 5H5v50h50z"/>
+                                        <path stroke="rgb(50, 116, 63)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m32 38-8-7.817L31.723 22"/>
+                                    </g>
+                                </svg>
+                                </button>
                             </div>
-                            <a href=""></a>
+                            <a href="" class="showAll-ranking">
+                                전체보기
+                            </a>
                         </div>
                         <div></div>
                     </main>
@@ -1113,6 +1405,152 @@
                     </div>
                     <div class="footer-bottom">
                         <p>© YEIE CORP. ALL RIGHTS RESERVED</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 맨 위로 -->
+    
+        <div class="scroll-to-top">
+                <button type="button" class="scroll-top-btn"></button>
+        </div>
+        <div class="recently-viewed-section">
+            <div class="recently-viewed">
+                <button type="button" class="prev">
+                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 11L9 7L13 11" stroke="#666" stroke-width="1.3"></path></svg>
+                </button>
+                <span class="title">최근 본 상품</span>
+                    <div class="recently-viewed-scroll">
+                    <ul class="recently-viewed-list">
+                        <li class="product-image">
+                            <a href="">
+                                <img src="https://product-image.kurly.com/hdims/resize/%5E%3E120x%3E156/cropcenter/120x156/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg">
+                            </a>
+                        </li>
+                        <li class="product-image">
+                            <a href="">
+                                <img src="https://product-image.kurly.com/hdims/resize/%5E%3E120x%3E156/cropcenter/120x156/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg">
+                            </a>
+                        </li>
+                        <li class="product-image">
+                            <a href="">
+                                <img src="https://product-image.kurly.com/hdims/resize/%5E%3E120x%3E156/cropcenter/120x156/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg">
+                            </a>
+                        </li>
+                        <li class="product-image">
+                            <a href="">
+                                <img src="https://product-image.kurly.com/hdims/resize/%5E%3E120x%3E156/cropcenter/120x156/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg">
+                            </a>
+                        </li>
+                        <li class="product-image">
+                            <a href="">
+                                <img src="https://product-image.kurly.com/hdims/resize/%5E%3E120x%3E156/cropcenter/120x156/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg">
+                            </a>
+                        </li>
+                        <li class="product-image">
+                            <a href="">
+                                <img src="https://product-image.kurly.com/hdims/resize/%5E%3E120x%3E156/cropcenter/120x156/quality/85/src/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="next">
+                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 7L9 11L5 7" stroke="#666" stroke-width="1.3"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 팝업 창 -->
+    <div class="popup-wrapper" id="popup1">
+        <div class="popup-inner">
+            <div class="dim"></div>
+            <div class="popup-container popup-product">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <div class="popup-img">
+                            <img src="https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg" decoding="async" data-nimg="fill" class="css-0" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;" sizes="100vw" srcset="https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 640w, https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 750w, https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 828w, https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1080w, https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1200w, https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 1920w, https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 2048w, https://product-image.kurly.com/product/image/1238a282-7b82-4bf7-8272-54f4e476e769.jpg 3840w">
+                        </div>
+                        <div class="popup-title-wrap">
+                            <p class="popup-title">[샐러드판다] 그린랩 샌드위치 3종</p>
+                        </div>
+                    </div>
+                    <ul class="popup-product-list">
+                        <li class="popup-product-item">
+                            <p class="product-name">[샐러드판다] 허브닭안심 그린랩 샌드위치</h4>
+                            <div class="product-price-box">
+                                <div class="product-price-box">
+                                    <span class="product-price">5,050원</span>
+                                    <span class="product-original-price">6,000원</span>
+                                </div>
+                                <div class="product-quantity-box">
+                                    <button type="button" class="quantity-btn minus"></button>
+                                    <div class="count">0</div>
+                                    <button type="button" class="quantity-btn plus"></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="popup-product-item">
+                            <p class="product-name">[샐러드판다] 허브닭안심 그린랩 샌드위치</h4>
+                            <div class="product-price-box">
+                                <div class="product-price-box">
+                                    <span class="product-price">5,050원</span>
+                                    <span class="product-original-price">6,000원</span>
+                                </div>
+                                <div class="product-quantity-box">
+                                    <button type="button" class="quantity-btn minus"></button>
+                                    <div class="count">0</div>
+                                    <button type="button" class="quantity-btn plus"></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="popup-product-item">
+                            <p class="product-name">[샐러드판다] 허브닭안심 그린랩 샌드위치</h4>
+                            <div class="product-price-box">
+                                <div class="product-price-box">
+                                    <span class="product-price">5,050원</span>
+                                    <span class="product-original-price">6,000원</span>
+                                </div>
+                                <div class="product-quantity-box">
+                                    <button type="button" class="quantity-btn minus"></button>
+                                    <div class="count">0</div>
+                                    <button type="button" class="quantity-btn plus"></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="total-price-box">
+                        <p class="total-label">합계</p>
+                        <div class="total-price">
+                            <span class="total-amount">0</span>
+                            <span class="total-unit">원</span>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <div class="popup-button-box">
+                            <!-- 팝업 닫기 : popup-close 클래스 있을시 -->
+                            <button type="button" class="btn-outline popup-close">취소</button>
+                            <button type="button" class="btn-primary popup-close">장바구니</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-wrapper" id="popup2">
+        <div class="popup-inner">
+            <div class="dim"></div>
+            <div class="popup-container">
+                <div class="popup-content">
+                    <div class="popup-message">
+                        <p>검색어를 입력해주세요.</p>
+                    </div>
+                    <div class="popup-footer">
+                        <button type="button" class="btn-default popup-close">확인</button>
                     </div>
                 </div>
             </div>

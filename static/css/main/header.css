@@ -61,6 +61,10 @@ ol, ul {
 }
 
 /* 메인 로그인 헤더 */
+
+.main {
+    position: relative;
+}
 .header {
     width: 1050px;
     height: 100px;
@@ -77,7 +81,7 @@ ol, ul {
 
 .joinus {
     display: block;
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
     cursor: pointer;
 }
 
@@ -126,7 +130,7 @@ ol, ul {
 
 .customer-service-list {
     position: absolute;
-    z-index: 320;
+    z-index: 9999;
     right: 0;
     top: 34px;
     width: 130px;
@@ -141,6 +145,209 @@ ol, ul {
     line-height: 24px;
     cursor: pointer;
 }
+
+.icon-container {
+    position: relative;
+}
+
+.alarm-icon-wrap {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: block;
+    z-index: 1000;
+    min-height: 100%;
+    box-sizing: border-box;
+    display: none;
+}
+
+.showIcon {
+    display: block;
+}
+
+.alarm-icon-in {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 600px;
+    width: 350px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 2px 10px #cacaca;
+}
+.alarm-icon-wrap::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 8px;
+    top: -14px;
+    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.6bbd194f.png);
+    background-size: 468px 456px;
+    background-position: -203px -301px;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 13px;
+}
+
+.alarm-icon-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    z-index: 400;
+}
+
+.alarm-icon-wrap .alarm-icon-header {
+    border-color: #ebebeb;
+}
+
+.alarm-icon-header .alarm-icon-inner {
+    display: flex;
+    position: relative;
+    max-width: 1080px;
+    height: 49px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.alarm-icon-header .title_area {
+    position: relative;
+    flex: 1;
+}
+
+.link_title {
+    color: inherit;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.link_title .title {
+    font-size: 17px;
+    color: #080808;
+}
+
+.alarm-icon-header .title_area::after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both;
+}
+
+.notice_content {
+       margin: 0 auto;
+    padding: 0 20px; 
+}
+
+.section_notice_preview {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 17px 0 5px;
+    box-sizing: border-box;
+}
+
+.comp_card {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 16px;
+    border: 1px solid var(--color_card_border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+}
+
+.comp_notice {
+    letter-spacing: -.4px;
+    position: relative;
+}
+
+.link_notice {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 16px 17px;
+}
+
+.group_source {
+    display: flex;
+    justify-content: space-between;
+}
+
+.source_box {
+    display: flex;
+    min-width: 0;
+}
+
+.thumb {
+    width: 26px;
+    height: 26px;
+    position: relative;
+    margin-right: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.thumb_img {
+    border-radius: inherit;
+}
+
+.thumb::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: inherit;
+}
+
+.comp_notice .group_source .info_box {
+    display: flex;
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+.info-text {
+    color: #606060;
+    font-size: 15px;
+    line-height: 26px;
+    letter-spacing: -.8px;
+}
+
+.info-text::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 5px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    vertical-align: 3px;
+}
+
+.group_info {
+    font-size: 15px;
+    line-height: 18px;
+    margin-top: 9px;
+}
+
+.info-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    font-weight: 700;
+}
+
+.info_area {
+    display: flex;
+    margin-top: 6px;
+}
+
+.desc {
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 40px;
+    line-height: 20px;
+}
+
 
 /* 헤더 검색바 */
 
@@ -159,6 +366,7 @@ ol, ul {
 
 .logo-img {
     flex: 0 0 82px;
+    width: 82px;
 }
 
 .main-button {
@@ -175,7 +383,7 @@ ol, ul {
 
 .main-button.active, .main-button:hover {
     font-weight: 500;
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
     
 }
 
@@ -206,7 +414,7 @@ ol, ul {
     width: 400px;
     height: 48px;
     padding-left: 14px;
-    border: 1px solid rgb(95, 0, 128);
+    border: 1px solid rgb(50, 116, 63);
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
     box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
@@ -227,7 +435,6 @@ ol, ul {
     height: 30px;
     margin: 10px;
     bottom: 3px;
-    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==") 0px 0px no-repeat;
 }
 
 .header-icon {
@@ -329,7 +536,7 @@ ol, ul {
 }
 
 .category-text:hover {
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
 }
 
 .category-list {
@@ -347,7 +554,7 @@ ol, ul {
 }
 
 .category:hover .category-text {
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
 }
 
 
@@ -394,7 +601,7 @@ ol, ul {
 
 .category-li:hover .category-li-text {
     font-weight: 500;
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
 }
 
 /* 헤더 네비게이션 */
@@ -423,8 +630,8 @@ ol, ul {
 }
 
 .nav-li-text:hover {
-    color: rgb(95, 0, 128);
-    border-bottom: 1px solid rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
+    border-bottom: 1px solid rgb(50, 116, 63);
 }
 
 .announce-button {
@@ -447,7 +654,7 @@ ol, ul {
 
 .announce-button-text {
     font-weight: 500;
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
 }
 
 .hidden {
