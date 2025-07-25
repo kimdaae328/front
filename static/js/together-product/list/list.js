@@ -1,52 +1,11 @@
 NodeList.prototype.filter = Array.prototype.filter;
 
-// 라디오 두번 클릭
-const radios = document.querySelectorAll('input[type="radio"]');
-let selected = null;
-const aaa = document.querySelectorAll(".active-filter-tag");
-console.log(aaa);
-
-radios.forEach((radio) => {
-    const title = radio.closest("label").querySelector(".title").textContent;
-
-    radio.addEventListener("click", (e) => {
-        if (selected === radio) {
-            radio.checked = false;
-            selected = null;
-
-            // tag 삭제
-            const activeTag = document.querySelectorAll(".active-filter-tag");
-            activeTag.forEach((tag) => {
-                if (tag.textContent === title) {
-                    tag.closest(".active-filter-item").remove();
-                }
-            });
-
-            console.log(activeTag);
-
-            // tag 없을때
-            const filterActiveBox = document.querySelector(
-                ".active-filter-list"
-            );
-
-            if (filterActiveBox) {
-                const allTagsCount = filterActiveBox.querySelectorAll(
-                    ".active-filter-item"
-                );
-                filterActiveBox.style.display =
-                    allTagsCount.length > 0 ? "flex" : "none";
-            }
-        } else {
-            selected = radio;
-        }
-    });
-});
-
 // 리스트 페이지 필터
 const filterSelect = document.querySelectorAll(
     ".filter-sidebar input[type=checkbox], .filter-sidebar input[type=radio]"
 );
 const resetButton = document.querySelector(".btn-reset");
+
 filterSelect.forEach((input) => {
     input.addEventListener("change", (e) => {
         // 초기화 버튼 on/off
@@ -56,7 +15,7 @@ filterSelect.forEach((input) => {
         resetButton.classList.toggle("on", isFilterSelected);
         resetButton.disabled = !isFilterSelected;
 
-        // 라디오 값 중복없이
+        // 라디오 값 중복확인
         const isRadio = input.type === "radio";
         const isChecked = input.checked;
 
@@ -93,18 +52,20 @@ filterSelect.forEach((input) => {
         });
 
         // tag 추가
+        const activeFilterBox = document.querySelector(
+            ".active-filter-container"
+        );
+
         if (isChecked && !isDuplicated) {
+            let filterActiveBox = activeFilterBox.querySelector(
+                ".active-filter-list"
+            );
+
             // 생성
-            let filterActiveBox = document.querySelector(".active-filter-list");
             if (!filterActiveBox) {
                 filterActiveBox = document.createElement("div");
                 filterActiveBox.className = "active-filter-list";
-
-                const productList = document.querySelector(".product-list");
-                productList.parentNode.insertBefore(
-                    filterActiveBox,
-                    productList
-                );
+                activeFilterBox.appendChild(filterActiveBox);
             }
 
             // 필터 태그 추가
@@ -118,92 +79,123 @@ filterSelect.forEach((input) => {
                     <path d="M14.4443 5.55566L5.55545 14.4446" stroke="#ccc"></path>
                 </svg>
                 </button>
-            `;
+                `;
             filterActiveBox.appendChild(div);
+
+            // 필터안 태그 remove버튼 클릭시
+            if (filterActiveBox) {
+                const removeBtns =
+                    document.querySelectorAll("button.remove-btn");
+
+                removeBtns.forEach((btn) => {
+                    btn.addEventListener("click", (e) => {
+                        e.target.closest(".active-filter-item").remove();
+
+                        const filterActiveBox = document.querySelector(
+                            ".active-filter-list"
+                        );
+
+                        if (filterActiveBox) {
+                            const allTagsCount =
+                                filterActiveBox.querySelectorAll(
+                                    ".active-filter-item"
+                                );
+                            filterActiveBox.style.display =
+                                allTagsCount.length > 0 ? "flex" : "none";
+                        }
+
+                        // input박스 초기화
+                        const item = e.target.closest(".active-filter-item");
+                        const title =
+                            item.querySelector(
+                                ".active-filter-tag"
+                            ).textContent;
+
+                        document
+                            .querySelectorAll("input:checked")
+                            .forEach((input) => {
+                                const checkedTitle = input
+                                    .closest("label")
+                                    .querySelector(".title").textContent;
+
+                                if (checkedTitle === title) {
+                                    input.checked = false;
+                                }
+                            });
+                    });
+                });
+            }
         }
 
-        // tag 삭제
+        // 태그 삭제
         if (!isChecked) {
-            document.querySelectorAll(".active-filter-tag").forEach((tag) => {
-                if (tag.textContent === title) {
-                    tag.closest(".active-filter-item").remove();
-                }
-            });
+            removeTag(title);
         }
 
         // 태그 없을때
-        const filterActiveBox = document.querySelector(".active-filter-list");
+        noTag();
+    });
+});
 
-        if (filterActiveBox) {
-            const allTagsCount = filterActiveBox.querySelectorAll(
-                ".active-filter-item"
-            );
-            filterActiveBox.style.display =
-                allTagsCount.length > 0 ? "flex" : "none";
+// 태그 삭제
+function removeTag(title) {
+    const tag = document.querySelectorAll(".active-filter-tag");
+    tag.forEach((tag) => {
+        if (tag.textContent === title) {
+            tag.closest(".active-filter-item").remove();
+        }
+    });
+}
+
+// 태그 없을때
+function noTag() {
+    const filterActiveBox = document.querySelector(".active-filter-list");
+
+    if (filterActiveBox) {
+        const allTagsCount = filterActiveBox.querySelectorAll(
+            ".active-filter-item"
+        );
+        filterActiveBox.style.display =
+            allTagsCount.length > 0 ? "flex" : "none";
+    }
+}
+
+// 라디오 두 번 클릭 시 해제
+const radios = document.querySelectorAll('input[type="radio"]');
+let selected = null;
+
+radios.forEach((radio) => {
+    const title = radio.closest("label").querySelector(".title").textContent;
+
+    radio.addEventListener("click", (e) => {
+        if (selected === radio) {
+            radio.checked = false;
+            selected = null;
+
+            // 태그 삭제
+            removeTag(title);
+
+            // 태그 없을때
+            noTag();
+        } else {
+            selected = radio;
         }
     });
 });
 
-// 필터 섹션
-const removeBtn = document.querySelectorAll(".remove-btn");
+// 리셋 클릭시 전체 필터 초기화
+resetButton.addEventListener("click", () => {
+    filterSelect.forEach((input) => {
+        input.checked = false;
 
-// document.addEventListener("click", (e) => {
-//     const removeBtn = e.target.closest(".remove-btn");
-//     if (!removeBtn) return;
+        const title = input
+            .closest("label")
+            .querySelector(".title").textContent;
 
-//     const filterSelect = document.querySelectorAll(
-//         ".filter-sidebar input:checked"
-//     );
-//     const tagContent = document.querySelector(
-//         ".active-filter-item .active-filter-tag"
-//     ).textContent;
-//     const filterItem = removeBtn.closest(".active-filter-item");
-
-//     filterSelect.forEach((input) => {
-//         const label = input.closest("label");
-//         const labelTitle = label.querySelector(".title").textContent;
-
-//         if (labelTitle === tagContent) {
-//             input.checked = false;
-
-//             if (input.type === "radio") {
-//                 const groupName = input.name;
-//                 const radios = document.querySelectorAll(
-//                     `.filter-sidebar input[type=radio][name="${groupName}"]`
-//                 );
-
-//                 radios.forEach((radio) => {
-//                     const label = radio.closest("label");
-//                     const labelTitle =
-//                         label.querySelector(".title")?.textContent;
-
-//                     document
-//                         .querySelectorAll(".active-filter-tag")
-//                         .forEach((tag) => {
-//                             if (tag.textContent === labelTitle) {
-//                                 tag.closest(".active-filter-item")?.remove();
-//                             }
-//                         });
-//                 });
-//             }
-//         }
-//     });
-
-//     filterItem.remove();
-
-//     const filterActiveBox = document.querySelector(".active-filter-list");
-//     const tagCount = filterActiveBox.querySelectorAll(
-//         ".active-filter-item"
-//     ).length;
-//     if (tagCount === 0) {
-//         filterActiveBox.remove();
-//     }
-
-//     const isFilterSelected =
-//         document.querySelectorAll(".filter-sidebar input:checked").length > 0;
-//     resetButton.classList.toggle("on", isFilterSelected);
-//     resetButton.disabled = !isFilterSelected;
-// });
+        removeTag(title);
+        noTag();
+    });
+});
 
 // 상단 메뉴 버튼 on/off
 const menuButtons = document.querySelectorAll(".menu-item .menu-btn");
@@ -288,19 +280,20 @@ quantityBoxes.forEach((box) => {
     const plusBtn = box.querySelector(".quantity-btn.plus");
     const minusBtn = box.querySelector(".quantity-btn.minus");
     const countEl = box.querySelector(".count");
-
-    console.log("초기 count:", countEl.textContent);
+    minusBtn.disabled = true;
 
     plusBtn.addEventListener("click", () => {
-        let count = parseInt(countEl.textContent, 10);
+        let count = Number(countEl.textContent);
         count++;
         countEl.textContent = count;
+        minusBtn.disabled = count <= 0;
     });
 
     minusBtn.addEventListener("click", () => {
-        let count = parseInt(countEl.textContent, 10);
+        let count = Number(countEl.textContent);
         if (count > 0) count--;
         countEl.textContent = count;
+        minusBtn.disabled = count == 0;
     });
 });
 
