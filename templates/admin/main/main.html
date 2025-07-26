@@ -8,368 +8,208 @@
     </head>
     <body>
         <div id="bootpay">
-            <div id="boot-notify-container"></div>
-            <div class="popup-manager" style="width: 0px"></div>
+            <div class="popup-manager" style="width: 0px;"></div>
             <aside id="bootpay-side">
                 <div class="d-flex flex-column" id="side-wrapper">
                     <div class="side-header">
                         <div class="app-wrapper">
                             <div class="provider-name hover-spin">
-                                <span class="comp-provider-name">
-                                    <span class="pn-name">관리자 이름</span>
+                                <span class="comp-provider-name ">
+                                    <span class="pn-name">부트페이 테스트</span>
                                 </span>
+
                             </div>
-                            <a
-                                class="app-name d-flex justify-content-between align-items-center"
-                            >
-                                <span>관리자등급표시</span>
-                                <i class="mdi mdi-apps"> </i>
+                            <a class="app-name d-flex justify-content-between align-items-center " href="">
+                                <span>테스트프로젝트</span>
                             </a>
                         </div>
+
                     </div>
                     <div class="menu-wrapper flex-grow-1">
                         <ul class="menu-list">
                             <li class="menu menu-item d-flex flex-column">
-                                <a
-                                    class="menu-btn d-flex w-100"
-                                    href=""
-                                    data-toggle="collapse"
-                                    aria-expanded="false"
-                                    aria-controls="menu-6109064136799700f1ebced6"
-                                >
-                                    <i
-                                        class="mdi mdi mdi-credit-card-plus-outline"
-                                    >
+                                <a class="menu-btn d-flex w-100 " data-toggle="collapse" aria-expanded="false" aria-controls="menu-6109064136799700f1ebced6"href="">
+                                    <i class="mdi mdi mdi-credit-card-plus-outline"></i>
+                                    <span class="menu-name">PG 신청</span>
+                                    <div class="icon-wrapper flex-grow-1 text-right">
+                                        <i class="mdi mdi-chevron-down">
+
+                                        </i>
+                                    </div>
+                                </a>
+                                <!-- 바로밑 ul show 유무따라 소 카테고리가 열림 -->
+                                <ul class="menu-sub-list collapse show" id="menu-6109064136799700f1ebced6">
+                                    <li class="submenu menu-item ">
+                                        <a class="boot-link "data-param="0" href="">
+                                            -
+                                            PG 신청하기
+                                        </a>
+
+                                    </li>
+                                    <li class="submenu menu-item ">
+                                        <a class="boot-link "data-param="0" href="">
+                                            -
+                                            신청내역
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="menu menu-item d-flex flex-column">
+                                <a class="menu-btn d-flex w-100"data-toggle="collapse" aria-expanded="true" aria-controls="menu-60934381367997007c4c3d2d"href="">
+                                    <i class="mdi mdi mdi-tune-vertical">
+
                                     </i>
-                                    <span class="menu-name">고객관리</span>
-                                    <div
-                                        class="icon-wrapper flex-grow-1 text-right"
-                                    >
-                                        <i class="mdi mdi-chevron-down"> </i>
+                                    <span class="menu-name">상품관</span>
+                                    <div class="icon-wrapper flex-grow-1 text-right">
+                                        <i class="mdi mdi-chevron-down">
+
+                                        </i>
                                     </div>
                                 </a>
-                                <!-- 바로밑에 ul class show class유무로 보이고안보임 -->
-                                <ul
-                                    class="menu-sub-list collapse show"
-                                    id="menu-6109064136799700f1ebced6"
-                                >
-                                    <li class="submenu menu-item">
-                                        <a
-                                            class="boot-link"
-                                            data-param="0"
-                                            href=""
-                                        >
-                                            - 회원 목록
+                                <ul class="menu-sub-list collapse show" id="menu-60934381367997007c4c3d2d">
+                                    <li class="submenu menu-item ">
+                                        <a class="boot-link "data-param="1"href="">
+                                            -
+                                            구매 내역 목록
                                         </a>
+
                                     </li>
-                                    <li class="submenu menu-item">
-                                        <a
-                                            class="boot-link"
-                                            data-param="0"
-                                            href=""
-                                        >
-                                            - 고객 문의 목록
+                                    <li class="submenu menu-item ">
+                                        <a class="boot-link "data-param="1"href="">
+                                            -
+                                            상품 현황 목록
                                         </a>
+
                                     </li>
+
                                 </ul>
                             </li>
                             <li class="menu menu-item d-flex flex-column">
-                                <a
-                                    class="menu-btn d-flex w-100"
-                                    href=""
-                                    data-toggle="collapse"
-                                    aria-expanded="true"
-                                >
-                                    <i class="mdi mdi mdi-tune-vertical"> </i>
-                                    <span class="menu-name">상품관리</span>
-                                    <div
-                                        class="icon-wrapper flex-grow-1 text-right"
-                                    >
-                                        <i class="mdi mdi-chevron-down"> </i>
-                                    </div>
-                                </a>
-                                <ul
-                                    class="menu-sub-list collapse show"
-                                    id="menu-60934381367997007c4c3d2d"
-                                >
-                                    <li class="submenu menu-item">
-                                        <a
-                                            class="boot-link"
-                                            data-param="1"
-                                            href=""
-                                        >
-                                            - 구매 내역 목록
-                                        </a>
-                                    </li>
-                                    <li class="submenu menu-item">
-                                        <a
-                                            class="boot-link"
-                                            data-param="1"
-                                            href=""
-                                        >
-                                            - 상품 현황 목록
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu menu-item d-flex flex-column">
-                                <a class="boot-link menu-btn" href="">
+                                <a class="boot-link menu-btn "href="">
                                     <i class="mdi mdi mdi-format-list-text">
+
                                     </i>
-                                    <span class="menu-name">정산현황</span>
+                                    <span class="menu-name">결제내역</span>
+
                                 </a>
-                                <ul
-                                    class="menu-sub-list collapse"
-                                    id="menu-60934308367997007c4c3d2c"
-                                ></ul>
+                                <ul class="menu-sub-list collapse "id="menu-60934308367997007c4c3d2c">
+
+                                </ul>
+
                             </li>
                             <li class="menu menu-item d-flex flex-column">
-                                <a
-                                    class="menu-btn d-flex w-100"
-                                    data-toggle="collapse"
-                                    haria-expanded="false"
-                                    aria-controls="menu-628c6e30d01c7e001ffdf398"
-                                    ref=""
-                                >
-                                    <i
-                                        class="mdi mdi mdi-form-textbox-password"
-                                    ></i>
+                                <a class="menu-btn d-flex w-100"data-toggle="collapse" aria-expanded="true"aria-controls="menu-628c6e30d01c7e001ffdf398"href="">
+                                    <i class="mdi mdi mdi-form-textbox-password">
+
+                                    </i>
                                     <span class="menu-name">주문결제</span>
                                     <div class="icon-wrapper flex-grow-1 text-right">
-                                        <i class="mdi mdi-chevron-down"> </i>
+                                        <i class="mdi mdi-chevron-down">
+
+                                        </i>
                                     </div>
                                 </a>
-                        
-                                <!-- 이밑에 show유무로보이고안보이고 -->
-                                <ul
-                                    class="menu-sub-list collapse show"
-                                    id="menu-628c6e30d01c7e001ffdf398"
-                                >
-                                    <li class="submenu menu-item">
-                                        <a
-                                            class="boot-link"
-                                            data-param="3"
-                                            href=""
-                                        >
-                                            - 
-                                            판매자 목록
-                                        </a>
-                                    </li>
-                                    <li class="submenu menu-item">
-                                        <a
-                                            class="boot-link"
-                                            data-param="3"
-                                            href=""
-                                        >
+                                <ul class="menu-sub-list collapse show" id="menu-628c6e30d01c7e001ffdf398">
+                                    <li class="submenu menu-item ">
+                                        <a class="boot-link "data-param="3" href="">
                                             -
-                                            판매자 문의 목록
+                                            링크페이 관리
                                         </a>
+
                                     </li>
-                                    <li class="submenu menu-item">
-                                        <a
-                                            class="boot-link"
-                                            data-param="3"
-                                            href=""
-                                        >
-                                           -
-                                           입점 승인 목록
+                                    <li class="submenu menu-item ">
+                                        <a class="boot-link "data-param="3" href="">
+                                            -
+                                            링크페이 관리
                                         </a>
+
                                     </li>
+                                    <li class="submenu menu-item ">
+                                        <a class="boot-link "data-param="3" href="">
+                                            -
+                                            링크페이 관리
+                                        </a>
+
+                                    </li>
+
                                 </ul>
+
                             </li>
                             <li class="menu menu-item d-flex flex-column">
-                                <a
-                                    class="menu-btn d-flex w-100"
-                                    data-toggle="collapse"
-                                    aria-expanded="true"
-                                    aria-controls="menu-6284cdfecf9f6d001b046f3a"
-                                    href=""
-                                >
-                                    <i
-                                        class="mdi mdi mdi-credit-card-clock-outline"
-                                    >
+                                <a class="menu-btn d-flex w-100 "data-toggle="collapse"aria-expanded="false"aria-controls="menu-6284cdfecf9f6d001b046f3a"href="">
+                                    <i class="mdi mdi mdi-credit-card-clock-outline">
+
                                     </i>
-                                    <span class="menu-name"
-                                        >배너관리</span
-                                    >
-                                    <div
-                                        class="icon-wrapper flex-grow-1 text-right"
-                                    >
-                                        <i class="mdi mdi-chevron-down"></i>
+                                    <span class="menu-name" >자동 결제 관리</span>
+                                    <div class="icon-wrapper flex-grow-1 text-right">
+                                        <i class="mdi mdi-chevron-right">
+
+                                        </i>
+
                                     </div>
                                 </a>
-                                <ul class="menu-sub-list collapse show">
-                                    <li class="submenu menu-item ">
-                                        <a class="boot-link " data-param="4" href="">
+                                <ul class="menu-sub-list collapse  show" id="menu-6284cdfecf9f6d001b046f3a">
+                                    <li  class="submenu menu-item ">
+                                        <a class="boot-link "data-param="4"href="">
                                             -
-                                            메인 배너 목록
+                                            빌링키 관리
                                         </a>
+
                                     </li>
-                                    <li class="submenu menu-item ">
-                                        <a class="boot-link " data-param="4" href="">
+                                    <li  class="submenu menu-item ">
+                                        <a class="boot-link "data-param="4"href="">
                                             -
-                                            메인 배너 등록
+                                            빌링키 관리
                                         </a>
+
                                     </li>
+
+
                                 </ul>
+
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </aside>
-            <!-- 여기까지가 왼쪽카테고리 -->
-            <div id="bootpay-main" class="has-menu" >
+            <div id="bootay-main"class="has-menu">
                 <div id="header-wrapper">
-                    <div class="header-placeholder"></div>
                     <div id="bootpay-header" class="d-flex trial-mode">
                         <div class="flex-grow-1"></div>
                         <div>
                             <div class="header-menu-group d-flex">
                                 <a class="boot-link mr-3" target="_blank" href="">
-                                    <div class="header-menu-btn" data-for="70abcb5b-4a05-40dd-b224-1c18a8aaa512" data-toggle="tooltip" data-custom-class="" title="" data-original-title="부트페이 개발메뉴얼">
-                                        <i class="mdi mdi-text-box-outline">
-                                     </i>
-                            </div>
-                        </a>
-                        <a class="boot-link mr-3"href="">
-                            <div class="header-menu-btn " data-for="2c7d19b6-45c2-4090-9f8b-559b95d85fb7" data-toggle="tooltip"data-custom-classtitle data-original-title="공지사항">
-                                <i class="mdi mdi-bullhorn-variant-outline">
-                                    
-                                </i>
-                            </div>
+                                    <div class="header-menu-btn" data-for="f93d1e6f-6299-40e1-87f2-df4223e38459" data-toggle="tooltip" data-custom-class title data-original-title="부트페이 개발메뉴얼">
+                                     <i class="mdi mdi-text-box-outline">
 
-                        </a>
-                        <div class="user-menu">
-                            <div class="user-menu-wrapper d-flex align-items-center cursor-pointer" id="user-menu-handler "data-toggle="dropdown">
-                                <div class="user-avatar">T</div>
-                                <div class="user-menu-email">test@bootpay.co.kr</div> 
-
-                            </div>
-                        <div class="user-menu-content dropdown-menu dropdown-menu-right">
-                            <ul class="menu-body list-unstyled">
-                                <li><a class="boot-link d-block text-dark" href=""><i class="mdi mdi-bell-outline mr-2 mdi-18px"></i>알림</a></li>
-                                <li>
-                                    <a class="d-block text-dark"href="">
-                                        <i class="mdi mdi-account-box-outline mr-2 mdi-18px"></i>
-                                          회원정보
-                                    </a>
-                                </li>
-                                <li>
-                                  <a class="d-block text-dark"href="">
-                                    <i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>
-                                    로그아웃
-                                  </a>  
-                                </li>
-                            </ul>
-                        </div>
-                        </div>
-                            </div>
-                        </div>
-
-                    </div>
-            
-
-                </div>
-                <div class="page ana-good-index wide-page">
-                    <div class="page-header">
-                        <div class="page-title">데이터분석 - 상품</div>
-                        <div class="page-subtitle"></div>
-
-                    </div>
-                    <div class="page-body">
-                        <div class="tab-box">
-                            <div class="tab-row white-panel">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <ul class="tab-name-list list-unstyled list-inline">
-                                            <li class="tab-name active">상품</li>
-                                            <li class="tab-name ">카테고리</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-lg filter-col">
-                                        <div class="boot-chart-date">
-                                            <div class="btn-group mr-1">
-                                                <!-- 여기 active 유무로 백그라운드색 변경 -->
-                                                <button class="btn btn-light ">1주</button>
-                                                <button class="btn btn-light active">2주</button>
-                                                <button class="btn btn-light ">1개월</button>
-
-                                            </div>
-                                            <div class="bootpay-date-range-input-container" id="bootpay-date-input-96fe09c9-3af2-4359-9c25-c4bd8907ffe9">
-                                                <div class="form-group date ml-2 undefined ">
-                                                    <div class="row p-0 m-0 h-100 align-items-center"> 
-                                                        <div class="input-col">
-                                                            <input class="date-input "size="10"placeholder="yyyy-mm-dd">
-
-                                                        </div>
-                                                        <div class="icon-col p-0 m-0">
-                                                            <span class="comp-icon icon"id="icons/ico-calendar.svg">
-                                                                <svg class="icon-img" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="icon-color fill" d="M10.625 1.875h2.5a.625.625 0 0 1 .625.625v10a.624.624 0 0 1-.625.625H1.875a.625.625 0 0 1-.625-.625v-10a.625.625 0 0 1 .625-.625h2.5V.625h1.25v1.25h3.75V.625h1.25v1.25zm-1.25 1.25h-3.75v1.25h-1.25v-1.25H2.5v2.5h10v-2.5h-1.875v1.25h-1.25v-1.25zm3.125 3.75h-10v5h10v-5z" fill="#AFB7BA"></path></svg>
-                                                            </span>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="form-group date ml-2 undefined">
-                                                    <div class="row p-0 m-0 h-100 align-items-center">
-                                                        <div class="input-col">
-                                                            <input class="date-input "size="10"placeholder="yyyy-mm-dd">
-                                                            
-                                                        </div>
-                                                        <div class="icon-col p-0 m-0">
-                                                            <span class="comp-icon icon " id="icons/ico-calendar.svg">
-                                                                <svg class="icon-img" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="icon-color fill" d="M10.625 1.875h2.5a.625.625 0 0 1 .625.625v10a.624.624 0 0 1-.625.625H1.875a.625.625 0 0 1-.625-.625v-10a.625.625 0 0 1 .625-.625h2.5V.625h1.25v1.25h3.75V.625h1.25v1.25zm-1.25 1.25h-3.75v1.25h-1.25v-1.25H2.5v2.5h10v-2.5h-1.875v1.25h-1.25v-1.25zm3.125 3.75h-10v5h10v-5z" fill="#AFB7BA"></path></svg>
-                                                            </span>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                            <button class="btn btn-primary btn-search-sm">
-                                                <i class="mdi mdi-magnify mr-1"></i>
-                                                검색
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="tab-body">
-                                <div class="tab-wrapper good-tab">
-                                    <div class="chart-row row">
-                                        <div class="col-12">
-                                            <div class="chart-box best-item-box">
-                                                <div class="chart-wrapper">
-                                                    <div class="echarts-for-react boot-chart " _echarts_instance_="ec_1753497454541" size-sensor-id="1" style="height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 1612px; height: 600px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="1612" height="600" style="position: absolute; left: 0px; top: 0px; width: 1612px; height: 600px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(352px, 343px, 0px); border-color: rgb(255, 255, 255); pointer-events: none; visibility: hidden; opacity: 0;">스트라이프 숏셔츠<br><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:rgba(212,191,115,1);"></span> 판매금액: <span style="font-weight: bold">16,576,000원</span></div></div>
-                                                        
-
-                                                        </div> 
-                                                        
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
+                                     </i>    
 
                                     </div>
+                                </a>
+                                <a class="boot-link mr-3" href="">
+                                    <div class="header-menu-btn " data-for="8598bfd3-1b35-4de3-a48f-9d6654dc0268" data-toggle="tooltip" data-custom-class title="공지사항">
+                                        <i class="mdi mdi-bullhorn-variant-outline">
+
+                                        </i>
+
+                                    </div>
+                                </a>
+                                <div>
 
                                 </div>
 
                             </div>
 
-
                         </div>
+
                     </div>
+
                 </div>
+
+                
             </div>
         </div>
     </body>
