@@ -88,6 +88,7 @@ button {
 
 /* 메인 로그인 헤더 */
 
+
 .main {
     position: relative;
 }
@@ -172,8 +173,115 @@ button {
     cursor: pointer;
 }
 
+
+/* 헤더 검색바 */
+
+.header-top {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 63px;
+}
+
+.logo-img {
+    flex: 0 0 82px;
+    width: 82px;
+}
+
+.main-button {
+    flex-shrink: 0;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: rgb(181, 181, 181);
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.main-button.active, .main-button:hover {
+    font-weight: 500;
+    color: rgb(50, 116, 63);
+    
+}
+
+.main-button:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 14px;
+    margin-top: 5px;
+    margin-left: 11px;
+    background-color: rgb(226, 226, 226);
+}
+
+.search-big {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    margin-left: -100px;
+    width: 400px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left: 325px;
+    top: -55px;
+    width: 400px;
+    height: 48px;
+    padding-left: 14px;
+    border: 1px solid rgb(50, 116, 63);
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
+}
+
+.search-input {
+    width: 300px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: -0.33px;
+}
+
+.search-button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    bottom: 3px;
+}
+
+.header-icon {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+
+}
+
 .icon-container {
     position: relative;
+}
+
+.alarm-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("https://pm.pstatic.net/resources/asset/sp_main.6bbd194f.png");
+    background-size: 468px 456px;
+    background-position: -311px -217px;
+    cursor: pointer;
 }
 
 .alarm-icon-wrap {
@@ -193,7 +301,7 @@ button {
 
 .alarm-icon-in {
     border-radius: 10px;
-    overflow: hidden;
+    overflow-y: auto;
     height: 600px;
     width: 350px;
     background-color: #f7f7f7;
@@ -322,6 +430,10 @@ button {
     border-radius: inherit;
 }
 
+.span-title {
+    align-content: center;
+}
+
 .comp_notice .group_source .info_box {
     display: flex;
     min-width: 0;
@@ -374,111 +486,9 @@ button {
     line-height: 20px;
 }
 
-
-/* 헤더 검색바 */
-
-.header-top {
-    height: 64px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    height: 63px;
-}
-
-.logo-img {
-    flex: 0 0 82px;
-    width: 82px;
-}
-
-.main-button {
-    flex-shrink: 0;
-    margin-left: 20px;
-    font-size: 18px;
-    font-weight: normal;
-    line-height: 1.33;
-    letter-spacing: normal;
-    color: rgb(181, 181, 181);
-    cursor: pointer;
-    background-color: transparent;
-}
-
-.main-button.active, .main-button:hover {
-    font-weight: 500;
-    color: rgb(50, 116, 63);
-    
-}
-
-.main-button:not(:last-of-type)::after {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 14px;
-    margin-top: 5px;
-    margin-left: 11px;
-    background-color: rgb(226, 226, 226);
-}
-
-.search-big {
-    display: flex;
-    flex-direction: column;
-    margin-top: 8px;
-    margin-left: -100px;
-    width: 400px;
-}
-
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    left: 325px;
-    top: -55px;
-    width: 400px;
-    height: 48px;
-    padding-left: 14px;
-    border: 1px solid rgb(50, 116, 63);
-    border-radius: 6px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
-}
-
-.search-input {
-    width: 300px;
-    background-color: inherit;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    letter-spacing: -0.33px;
-}
-
-.search-button {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-    bottom: 3px;
-}
-
-.header-icon {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-
-}
-
-.alarm-icon {
-    width: 36px;
-    height: 36px;
-    margin-right: 20px;
-    background-repeat: no-repeat;
-    background-image: url("https://pm.pstatic.net/resources/asset/sp_main.6bbd194f.png");
-    background-size: 468px 456px;
-    background-position: -311px -217px;
-    cursor: pointer;
+.empty-message {
+    text-align: center;
+    margin: 35px;
 }
 
 .good-icon {
