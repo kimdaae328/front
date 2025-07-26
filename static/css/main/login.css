@@ -60,6 +60,32 @@ ol, ul {
     list-style: none;
 }
 
+svg:not(:root) {
+    overflow: hidden;
+}
+
+button {
+    border-radius: 0;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button {
+    overflow: visible;
+    background-color: transparent;
+    border: none;
+}
+
+.blind::before {
+    display: block;
+    width: 0;
+    height: 0;
+    content: '\00a0';
+    font-size: 0;
+}
+
 /* 메인 로그인 헤더 */
 
 .main {
@@ -671,6 +697,7 @@ ol, ul {
     background: #fff;
     z-index: 999;
 }
+
 
 /* 로그인 */
 
