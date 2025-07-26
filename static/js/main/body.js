@@ -377,7 +377,6 @@ quantityBoxes.forEach((box) => {
         minusBtn.disabled = count == 0;
     });
 });
-
 // 팝업
 const openButtons = document.querySelectorAll(".popup-trigger");
 const closeButtons = document.querySelectorAll(".popup-close");

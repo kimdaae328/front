@@ -86,6 +86,35 @@ button {
     font-size: 0;
 }
 
+input[type=radio]{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    line-height: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+button{
+    border-radius: 0;
+    text-transform: none;
+    overflow: visible;
+    background-color: transparent;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
 /* 메인 로그인 헤더 */
 
 .main {
@@ -211,7 +240,7 @@ button {
     
 }
 
-.main-button-a:not(:last-of-type)::after {
+.main-button:not(:last-of-type)::after {
     content: "";
     position: absolute;
     width: 1px;
@@ -705,4 +734,498 @@ button {
     width: 100%;
     background: #fff;
     z-index: 999;
+}
+
+/* 회원가입 */
+
+
+div.signuppage{
+    min-width: 1050px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    background-color: #fff;
+}
+div.signuptext{
+    margin-bottom: 50px;
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #333;
+}
+div.signupinput{
+    width: 640px;
+    margin: 0px auto;
+}
+div.inputheader{
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(51, 51, 51);
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+    line-height: 17px;
+    text-align: right;
+}
+div.inputmain{
+    padding: 0px;
+}
+div.inputspace{
+    padding: 10px 0px;
+    border-bottom: 1px solid rgb(51, 51, 51);
+}
+div.inputdongui{
+    padding: 0px;
+}
+div.inputcomplete{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-top: 1px solid rgb(247, 247, 247);
+    padding: 40px 0px;
+}
+span.star{
+    color: rgb(238, 106, 123);
+}
+div.inputlist{
+    display: inline-flex;
+    width: 100%;
+    padding: 10px 20px;
+}
+div.idtext{
+    width: 139px;
+    padding-top: 12px;
+}
+label.idtextstar{
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    line-height: 20px;
+}
+div.idinputcontainer{
+    flex: 1 1 0%;
+}
+div.idinput{
+    padding-bottom: 0px;
+}
+div.idinputlan{
+    position: relative;
+    height: 48px;
+}
+.idinputbox{
+    width: 100%;
+    height: 46px;
+    padding: 0px 11px 1px 15px;
+    border-radius: 4px;
+    border: 1px solid rgb(221, 221, 221);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(51, 51, 51);
+    outline: none;
+    box-sizing: border-box;
+}
+div.idspace{
+    width: 120px;
+    margin-left: 8px;
+}
+div.emailinput{
+    padding-bottom: 0px;
+}
+div.emailinputcontainer{
+    flex: 1 1 0%;
+}
+div.emaillist{
+    position: relative;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid rgb(221, 221, 221);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.emailinputtext{
+    width: 100%;
+    flex: 1 1 0%;
+    height: 46px;
+    padding: 0px 0px 1px 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(51, 51, 51);
+    outline: none;
+    box-sizing: border-box;
+    border: 0px;
+}
+div.emailat{
+    padding: 0px 4px;
+}
+div.emailchoose{
+    width: 143px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.btn-text{
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(51, 51, 51);
+    flex: 1 1 auto;
+}
+.empty{
+    color: rgb(153, 153, 153);
+}
+.btn-select{
+    width: 48px;
+}
+div.phoneinput{
+    position: relative;
+    height: 48px;
+}
+
+.phonebutton{
+    display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 52px;
+    border-radius: 3px;
+    color: rgb(50, 116, 63);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(50, 116, 63);
+}
+
+.idspace>button{
+    height: 44px;
+    border-radius: 3px;
+}
+
+.phonebutton{
+    border-color: rgb(221, 221, 221);
+    color: rgb(221, 221, 221);
+}
+
+.idspace>button>span{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.phonenumber{
+    display: inline-block;
+}
+
+.addressstar{
+    color: rgb(238, 106, 123);
+}
+
+.addresssearch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+    width: 100%;
+    height: 44px;
+    border-radius: 4px;
+    color: rgb(50, 116, 63);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(50, 116, 63);
+    font-size: 12px;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.addresssearch>span{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.addressinfo{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.addresssearch .addressinfo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.deliveryinfo{
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgb(102, 102, 102);
+}
+
+.gendercontainer{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.genderchoose{
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px 0px 9px;
+}
+.genderbutton{
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0px, 0px, 0px, 0px);
+}
+.gendercontainer>label>span{
+    font-size: 14px;
+}
+.genderoo{
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid rgb(221, 221, 221);
+}
+.gendero{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.gendernonetext{
+    position: relative;
+    font-size: 16px;
+    margin-left: 12px;
+}
+.gendernoneoo{
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    background-color: rgb(50, 116, 63);
+}
+.gendernoneo{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: white;
+}
+.gendertext{
+    position: relative;
+    font-size: 16px;
+    margin-left: 12px;
+}
+.birthcontainer{
+    height: 44px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 3px;
+    padding: 0px 15px;
+}
+.birthlan{
+    padding-bottom: 0px;
+}
+.birthline{
+    height: 100%;
+}
+.birthinputcontainer{
+    position: relative;
+    height: 40px;
+}
+.birthlan input{
+    text-align: center;
+    font-size: 14px;
+    border: none;
+}
+.birthinput{
+    width: 100%;
+    height: 40px;
+    padding: 0px 11px 1px 15px;
+    border-radius: 4px;
+    border: 1px solid rgb(221, 221, 221);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
+    color: rgb(51, 51, 51);
+    outline: none;
+    box-sizing: border-box;
+}
+.birthline::after{
+    content: "/";
+    font-size: 14px;
+    color: rgb(204, 204, 204);
+    text-align: center;
+    line-height: 40px;
+}
+.invitefriend{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.invitefriends>label>span{
+    font-size: 14px;
+}
+.inputdongui{
+    padding: 0px;
+}
+.donuicontainer{
+    display: inline-flex;
+    width: 100%;
+    padding: 10px 0px 10px 20px;
+}
+.donguilist{
+    display: flex;
+    padding: 8px 0px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.donguilist:first-of-type{
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 12px;
+}
+.donguibutton{
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: top;
+    line-height: normal;
+    color: rgb(51, 51, 51);
+    padding: 0px;
+    font-weight: 500;
+    font-size: 18px;
+}
+.littletext{
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+    padding-top: 4px;
+    padding-left: 36px;
+}
+.checkbox{
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0px, 0px, 0px, 0px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+}
+input[type=checkbox]{
+    box-sizing: border-box;
+    padding: 0;
+}
+.donguibox{
+    margin-right: 12px;
+}
+.donguibox svg{
+    vertical-align: middle;
+}
+.donguicontainer{
+    display: inline-flex;
+    width: 100%;
+    padding: 10px 0px 10px 20px;
+}
+.donguiwrap{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.donguilabel{
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: top;
+    line-height: normal;
+    color: rgb(51, 51, 51);
+    padding: 0px;
+    font-size: 14px;
+}
+.donguipilsoo{
+    padding-left: 5px;
+    color: rgb(153, 153, 153);
+    word-break: keep-all;
+}
+.donguiterms{
+    padding-right: 22px;
+    color: rgb(50, 116, 63);
+    letter-spacing: 0px;
+}
+.more-arrows{
+    content: "";
+    display: inline-block;
+    margin-left: 4px;
+    width: 6px;
+    height: 9px;
+}
+.donguiwrap2{
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-left: 24px;
+}
+.donguiemail{
+    padding: 14px 60px 9px 0px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: top;
+    line-height: normal;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+}
+.donguiemail{
+    padding: 14px 60px 9px 0px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: top;
+    line-height: normal;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+}
+.donguilist2{
+    display: flex;
+    padding: 8px 0px;
+    flex-direction: column;
+}
+.singnupbutton{
+    display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 240px;
+    height: 56px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(50, 116, 63);
+    border: 0px none;
 }
