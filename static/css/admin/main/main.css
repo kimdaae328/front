@@ -712,3 +712,91 @@ button.btn {
     flex: 1 1;
     overflow-y: auto;
 }
+.chart-wrapper .no-data {
+    background-color: hsla(0, 0%, 4%, .7);
+    bottom: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 10px;
+    vertical-align: middle;
+    z-index: 99;
+}
+.chart-box {
+    background-color: #fff;
+    border: 1px solid #ededed;
+    border-radius: 8px;
+    box-shadow: 0 0 10px hsla(196, 7%, 71%, .1);
+    margin-bottom: 20px;
+}
+.chart-wrapper .no-data .no-data-message {
+    left: 50%;
+    position: absolute;
+    text-shadow: .5px .5px 1px #000;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate(-50%, -50%);
+}
+.mdi-apps:before {
+    content: "\F003B";
+}
+.mdi-18px.mdi-set, .mdi-18px.mdi:before {
+    font-size: 18px;
+}
+.mdi-account-box-outline:before {
+    content: "\F0007";
+}
+.mdi-set, .mdi:before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font: normal normal normal 24px / 1 Material Design Icons;
+    font-size: inherit;
+    line-height: inherit;
+    text-rendering: auto;
+}
+#sublist1 {
+    display: none;  
+}
+#sublist1.show {
+    display: block; 
+}
+.mdi-chevron-down:before {
+    content: "\F0140";
+}
+
+#usermenubtn {
+        cursor: pointer;  /* 클릭할 수 있는 요소임을 나타냄 */
+        
+   
+    }
+    .dropdown-menu.show {
+        display: block;
+    }
+#usermenu{
+    position: absolute; transform: translate3d(651px, 62px, 0px); top: 0px; left: 0px; will-change: transform;
+}
+.user-menu .user-menu-content ul.menu-body li:hover a {
+    color: #507cf3 !important;
+}
+.mdi-18px.mdi-set, .mdi-18px.mdi:before {
+    font-size: 18px;
+}
+.mdi-bell-outline:before {
+    content: "\F009C";
+}
+#bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li>ul.menu-sub-list>li>a.active {
+    color: #507cf3;
+    font-weight: bolder;
+}
+.bootpay-date-range-input-container>.date.invalid {
+    border: 2px solid #fe657e;
+}
+.bootpay-date-range-input-container>.date.invalid .input-col input.date-input::placeholder {
+    color: #fe657e !important;   /* placeholder 텍스트 색상 */
+    font-weight: 600 !important;  /* placeholder 텍스트 두께 */
+}
