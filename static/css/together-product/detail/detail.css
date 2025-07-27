@@ -74,6 +74,10 @@ img {
     border: 0px none;
 }
 
+button[type="button"]:disabled {
+    background-color: rgb(221, 221, 221);
+}
+
 /* layout */
 .layout-wrapper {
     position: relative;
@@ -495,9 +499,16 @@ img {
     border: 1px solid rgb(221, 221, 221);
 }
 
-.btn-alarm:disabled {
+.btn-alarm[type="button"]:disabled,
+.btn-wish[type="button"]:disabled {
     border-color: rgb(221, 221, 221);
     color: rgb(221, 221, 221);
+    background-color: #fff;
+}
+
+.btn-alarm[type="button"]:disabled svg g,
+.btn-wish[type="button"]:disabled svg path {
+    stroke: rgb(221, 221, 221);
 }
 
 .btn-cart {
@@ -513,7 +524,7 @@ img {
 /* product-description */
 .product-description-section {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 /* product-tab-menu */
