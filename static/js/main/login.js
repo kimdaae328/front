@@ -109,3 +109,25 @@ closeButtons.forEach((btn) => {
         }
     });
 });
+
+// 구매 로그인 누를때
+const buyerButton = document.querySelector(".login-buyer");
+const sellerButton = document.querySelector(".login-seller");
+const buyerForm = document.querySelector(".buyer-login");
+const sellerForm = document.querySelector(".seller-login");
+
+buyerButton.addEventListener("click", () => {
+    buyerButton.classList.add("login-choice-active");
+    sellerButton.classList.remove("login-choice-active");
+    buyerForm.style.display = "block";
+    sellerForm.style.display = "none";
+});
+
+// 판매 로그인 누를 때
+
+sellerButton.addEventListener("click", () => {
+    sellerButton.classList.add("login-choice-active");
+    buyerButton.classList.remove("login-choice-active");
+    sellerForm.style.display = "block";
+    buyerForm.style.display = "none";
+});
