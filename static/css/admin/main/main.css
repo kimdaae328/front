@@ -39,6 +39,9 @@ html {
     font-family: sans-serif;
     line-height: 1.15;
 }
+body, html {
+    height: 100%;
+}
 
 
 body {
@@ -823,3 +826,72 @@ button.btn {
     left: 0px;
     will-change: transform;
 } */
+.ana-access-index .info-box {
+    padding: 40px 12px;
+}
+@media (min-width: 1700px) {
+    .col-xl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+.ana-access-index .info-box .inner-row.main-row {
+    margin-bottom: 70px;
+}
+.ana-access-index .info-box .col-divider {
+    border-right: 1px solid #e9eaf0;
+}
+
+@media (min-width: 800px) {
+    .col-sm-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+}
+@media (min-width: 992px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}.ana-access-index .info-box .info-card {
+    margin-bottom: -20px;
+    margin-top: -20px;
+}
+.ana-access-index .info-box .info-card .info-title {
+    color: #afb7ba;
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 12px;
+    padding-left: 30px;
+    padding-top: 18px;
+}
+.ana-access-index .info-box .info-card .info-body {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.ana-access-index .info-box .info-card .info-body .value {
+    font-size: 32px;
+}
+
+@media (min-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 33.33333333%;
+        max-width: 33.33333333%;
+    }
+}
+.ana-access-index .info-box .inner-row.sub-row .info-body .value {
+    font-size: 28px;
+}
+.ana-access-index .info-box .info-card .info-body .ratio.increase {
+    color: #fe657e;
+}
+.mdi-menu-up:before {
+    content: "\F0360";
+}
+@media (min-width: 1700px) {
+    .col-xl-4 {
+        flex: 0 0 33.33333333%;
+        max-width: 33.33333333%;
+    }
+}
