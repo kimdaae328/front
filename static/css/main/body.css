@@ -494,6 +494,7 @@ button {
 .good-icon {
     width: 36px;
     height: 36px;
+    cursor: pointer;
     background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yOC45MjcgOC44OTNhNi40NiA2LjQ2IDAgMCAwLTkuMTM5IDBsLTEuODI5IDEuODI4LTEuODI3LTEuODI4YTYuNDYyIDYuNDYyIDAgMSAwLTkuMTQgOS4xMzhMOC44MiAxOS44Nmw4LjQzMiA4LjQzNGExIDEgMCAwIDAgMS40MTQgMGw4LjQzMy04LjQzNGgwbDEuODI4LTEuODI4YTYuNDYgNi40NiAwIDAgMCAwLTkuMTM4eiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNyIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==") 50% 50% no-repeat;
 }
 
@@ -1932,17 +1933,17 @@ button {
 
 /* footer */
 
-.css-17cdx60, .footer-big {
+.footer-big {
     padding-top: 30px;
     border-top: 1px solid #f7f7f7;
 }
 
-.css-1i60c0e, .footer-top {
+.footer-top {
     width: 1050px;
     margin: 0 auto;
 }
 
-.css-j6zuv6, .footer-top-top {
+.footer-top-top {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
@@ -1953,14 +1954,13 @@ button {
     display: flex;
     align-items: center;
 }
-
-.css-4iyald, .team-name {
+.team-name {
     font-weight: 500;
     font-size: 20px;
     line-height: 29px;
 }
 
-.css-9jqcug, .team-name-members {
+.team-name-members {
     position: relative;
     display: block;
     font-size: 16px;
@@ -1968,30 +1968,30 @@ button {
     margin-left: 30px;
 }
 
-.css-1p6dp6j, .footer-top-floor {
+.footer-top-floor {
     display: flex;
     justify-content: space-evenly;
     padding: 26px 0 33px;
     border-top: 1px solid #eee;
 }
 
-.css-1uz1ro8, .center-time {
+.center-time {
     margin-left: 8px;
     font-weight: normal;
 }
 
-.css-1fttcpj, .informations {
+.informations {
     display: flex;
     flex-direction: column;
 }
 
-.css-ho1qnd, .information {
+.information {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.css-hupzfj, .information-button {
+.information-button {
     display: block;
     width: 140px;
     height: 40px;
@@ -2000,6 +2000,7 @@ button {
     line-height: 39px;
     text-align: center;
     margin-right: 16px;
+    cursor: pointer;
 }
 
 .information-text {
@@ -2016,12 +2017,12 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-.css-1fttcpj, .footer-top-top-left {
+.footer-top-top-left {
     display: flex;
     flex-direction: column;
 }
 
-.css-17hse91, .left-top {
+.left-top {
     display: flex;
     width: 100%;
     padding-bottom: 29px;

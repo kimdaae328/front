@@ -33,17 +33,17 @@ ol, ul {
 
 /* footer */
 
-.css-17cdx60, .footer-big {
+.footer-big {
     padding-top: 30px;
     border-top: 1px solid #f7f7f7;
 }
 
-.css-1i60c0e, .footer-top {
+.footer-top {
     width: 1050px;
     margin: 0 auto;
 }
 
-.css-j6zuv6, .footer-top-top {
+.footer-top-top {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
@@ -55,13 +55,13 @@ ol, ul {
     align-items: center;
 }
 
-.css-4iyald, .team-name {
+.team-name {
     font-weight: 500;
     font-size: 20px;
     line-height: 29px;
 }
 
-.css-9jqcug, .team-name-members {
+.team-name-members {
     position: relative;
     display: block;
     font-size: 16px;
@@ -69,30 +69,30 @@ ol, ul {
     margin-left: 30px;
 }
 
-.css-1p6dp6j, .footer-top-floor {
+.footer-top-floor {
     display: flex;
     justify-content: space-evenly;
     padding: 26px 0 33px;
     border-top: 1px solid #eee;
 }
 
-.css-1uz1ro8, .center-time {
+.center-time {
     margin-left: 8px;
     font-weight: normal;
 }
 
-.css-1fttcpj, .informations {
+.informations {
     display: flex;
     flex-direction: column;
 }
 
-.css-ho1qnd, .information {
+.information {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.css-hupzfj, .information-button {
+.information-button {
     display: block;
     width: 140px;
     height: 40px;
@@ -101,15 +101,16 @@ ol, ul {
     line-height: 39px;
     text-align: center;
     margin-right: 16px;
+    cursor: pointer;
 }
 
-.css-1lxmeik, .information-text {
+.information-text {
     color: #999;
     letter-spacing: -0.5px;
     line-height: 16.8px;
 }
 
-.css-w0fx7a, .footer-bar {
+.footer-bar {
     margin: 0 6px;
 }
 
@@ -117,12 +118,12 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-.css-1fttcpj, .footer-top-top-left {
+.footer-top-top-left {
     display: flex;
     flex-direction: column;
 }
 
-.css-17hse91, .left-top {
+.left-top {
     display: flex;
     width: 100%;
     padding-bottom: 29px;
