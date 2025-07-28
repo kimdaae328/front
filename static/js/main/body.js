@@ -269,7 +269,7 @@ const restTime = (datetime) => {
     const timer = setInterval(update, 1000);
 };
 
-restTime("2025-07-28T00:00:00");
+restTime("2026-07-29T00:00:00");
 
 // restTime("2025-07-18");
 
