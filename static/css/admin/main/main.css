@@ -778,7 +778,7 @@ button.btn {
         display: block;
     }
 #usermenu{
-    position: absolute; transform: translate3d(651px, 62px, 0px); top: 0px; left: 0px; will-change: transform;
+    position: absolute;  top: 40px; left: 20px; will-change: transform;
 }
 .user-menu .user-menu-content ul.menu-body li:hover a {
     color: #507cf3 !important;
@@ -800,3 +800,26 @@ button.btn {
     color: #fe657e !important;   /* placeholder 텍스트 색상 */
     font-weight: 600 !important;  /* placeholder 텍스트 두께 */
 }
+#bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li>a.active {
+    background: linear-gradient(90deg, #507cf3, rgba(139, 170, 255, .5));
+    color: #fff;
+}
+
+.dropdown-menu{
+ bottom: auto;
+    right: auto;   
+}
+.tab-name:hover{
+ cursor: pointer;
+ 
+}
+.user-menu{
+    position: relative;
+}
+/* #usermenu {
+    position: absolute;
+    transform: translate3d(651px, 62px, 0px);
+    top: 50px;
+    left: 0px;
+    will-change: transform;
+} */
