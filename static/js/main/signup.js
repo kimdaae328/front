@@ -81,6 +81,12 @@ createAlarm("배송 알림", removeAlarm, alarmNull);
 const mails = document.querySelectorAll(".dropdown__item");
 let mailValue = document.querySelector(".btn-text");
 
+// 이메일 선택 박스
+
+const chooseButton = document.querySelector(".emailchoose");
+const mailForm = document.querySelector(".e-mail-form");
+const chooseDomain = document.querySelector(".domainchoose");
+
 mails.forEach((mail) => {
     mail.addEventListener("click", (e) => {
         const selectedText = e.target.innerText;
@@ -99,24 +105,16 @@ mails.forEach((mail) => {
                 mailValue.value = selectedText;
             }
         }
+        // 각 항목 누르면 닫기
+        mailForm.classList.remove("active-domain");
     });
 });
-
-// 이메일 선택 박스
-
-const chooseButton = document.querySelector(".emailchoose");
-const mailForm = document.querySelector(".e-mail-form-wrap");
 
 // 열기
 chooseButton.addEventListener("click", (e) => {
-    mailForm.style.display = "block";
-});
-
-// 각 항목 누르면 닫기
-mails.forEach((mail) => {
-    mail.addEventListener("click", (e) => {
-        mailForm.style.display = "none";
-    });
+    if (!e.target.classList.contains("dropdown__item")) {
+        mailForm.classList.toggle("active-domain");
+    }
 });
 
 // 이메일 형식 오류 메세지

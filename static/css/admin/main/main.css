@@ -39,6 +39,9 @@ html {
     font-family: sans-serif;
     line-height: 1.15;
 }
+body, html {
+    height: 100%;
+}
 
 
 body {
@@ -778,7 +781,7 @@ button.btn {
         display: block;
     }
 #usermenu{
-    position: absolute; transform: translate3d(651px, 62px, 0px); top: 0px; left: 0px; will-change: transform;
+    position: absolute;  top: 40px; left: 20px; will-change: transform;
 }
 .user-menu .user-menu-content ul.menu-body li:hover a {
     color: #507cf3 !important;
@@ -799,4 +802,96 @@ button.btn {
 .bootpay-date-range-input-container>.date.invalid .input-col input.date-input::placeholder {
     color: #fe657e !important;   /* placeholder 텍스트 색상 */
     font-weight: 600 !important;  /* placeholder 텍스트 두께 */
+}
+#bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li>a.active {
+    background: linear-gradient(90deg, #507cf3, rgba(139, 170, 255, .5));
+    color: #fff;
+}
+
+.dropdown-menu{
+ bottom: auto;
+    right: auto;   
+}
+.tab-name:hover{
+ cursor: pointer;
+ 
+}
+.user-menu{
+    position: relative;
+}
+/* #usermenu {
+    position: absolute;
+    transform: translate3d(651px, 62px, 0px);
+    top: 50px;
+    left: 0px;
+    will-change: transform;
+} */
+.ana-access-index .info-box {
+    padding: 40px 12px;
+}
+@media (min-width: 1700px) {
+    .col-xl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+.ana-access-index .info-box .inner-row.main-row {
+    margin-bottom: 70px;
+}
+.ana-access-index .info-box .col-divider {
+    border-right: 1px solid #e9eaf0;
+}
+
+@media (min-width: 800px) {
+    .col-sm-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+}
+@media (min-width: 992px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}.ana-access-index .info-box .info-card {
+    margin-bottom: -20px;
+    margin-top: -20px;
+}
+.ana-access-index .info-box .info-card .info-title {
+    color: #afb7ba;
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 12px;
+    padding-left: 30px;
+    padding-top: 18px;
+}
+.ana-access-index .info-box .info-card .info-body {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.ana-access-index .info-box .info-card .info-body .value {
+    font-size: 32px;
+}
+
+@media (min-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 33.33333333%;
+        max-width: 33.33333333%;
+    }
+}
+.ana-access-index .info-box .inner-row.sub-row .info-body .value {
+    font-size: 28px;
+}
+.ana-access-index .info-box .info-card .info-body .ratio.increase {
+    color: #fe657e;
+}
+.mdi-menu-up:before {
+    content: "\F0360";
+}
+@media (min-width: 1700px) {
+    .col-xl-4 {
+        flex: 0 0 33.33333333%;
+        max-width: 33.33333333%;
+    }
 }
