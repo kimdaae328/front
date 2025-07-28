@@ -269,7 +269,7 @@ const restTime = (datetime) => {
     const timer = setInterval(update, 1000);
 };
 
-restTime("2026-07-29T00:00:00");
+restTime("2026-07-28T00:00:00");
 
 // restTime("2025-07-18");
 
@@ -320,6 +320,90 @@ rankingBackButton.addEventListener("click", (e) => {
     }
     if (rankingProductCount < rankingCount - 1) {
         rankingNextButton.style.display = "block";
+    }
+});
+
+// 타임 세일 인기랭킹 카드
+
+// 남은 시간
+
+const timeShow2 = document.querySelector(".show-timer2");
+
+const restTime2 = (datetime) => {
+    const date = new Date(datetime);
+
+    const update2 = () => {
+        const now = new Date();
+        let gap = Math.floor((date.getTime() - now.getTime()) / 1000);
+
+        if (gap <= 0) {
+            timeShow2.innerHTML = "다음에 또 만나요🥲";
+            clearInterval(timer2);
+            return;
+        }
+
+        const hours = String(Math.floor(gap / 3600)).padStart(2, "0");
+        const minutes = String(Math.floor((gap % 3600) / 60)).padStart(2, "0");
+        const seconds = String(gap % 60).padStart(2, "0");
+
+        timeShow2.innerHTML = `<span>${hours}</span><span>${minutes}</span><span>${seconds}</span>`;
+    };
+
+    update2();
+    const timer2 = setInterval(update2, 1000);
+};
+
+restTime2("2026-07-28T00:00:00");
+
+const rankingList2 = document.querySelectorAll("div.ranking-swiper-slide2");
+const rankingCount2 = Math.ceil(rankingList2.length / 5);
+const rankingBackButton2 = document.querySelector(
+    "button.ranking-button-left2"
+);
+const rankingNextButton2 = document.querySelector(
+    "button.ranking-button-right2"
+);
+const rankingShowProduct2 = document.querySelector(".ranking-swiper-wrapper2");
+
+let rankingProductCount2 = 0;
+const rankingSlideWidth2 = 1075;
+
+// 다음 슬라이드로 이동
+rankingNextButton2.addEventListener("click", (e) => {
+    if (rankingProductCount2 < rankingCount2 - 1) {
+        rankingProductCount2++;
+
+        const move = rankingSlideWidth2 * rankingProductCount2;
+        rankingShowProduct2.style.transform = `translateX(-${move}px)`;
+        rankingShowProduct2.style.transition = "transform 0.5s";
+
+        rankingBackButton2.style.display =
+            rankingProductCount2 > 0 ? "block" : "none";
+        rankingNextButton2.style.display =
+            rankingProductCount2 >= rankingCount2 ? "none" : "block";
+    } else if (rankingProductCount2 === rankingCount2 - 1) {
+        const move =
+            rankingSlideWidth2 * rankingProductCount2 -
+            (rankingProductCount2 - 200);
+        rankingShowProduct2.style.transform = `translate(-${move}px)`;
+        rankingNextButton2.style.display = "none";
+    }
+});
+
+// 이전 슬라이드로 이동
+rankingBackButton2.addEventListener("click", (e) => {
+    if (rankingProductCount2 > 0) {
+        rankingProductCount2--;
+        rankingShowProduct2.style.transform = `translate(-${
+            rankingSlideWidth2 * rankingProductCount2
+        }px)`;
+        rankingShowProduct2.style.transition = `transform 0.5s`;
+    }
+    if (rankingProductCount2 <= 0) {
+        rankingBackButton2.style.display = "none";
+    }
+    if (rankingProductCount2 < rankingCount2 - 1) {
+        rankingNextButton2.style.display = "block";
     }
 });
 
