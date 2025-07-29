@@ -4,16 +4,12 @@ NodeList.prototype.filter = Array.prototype.filter;
 const filterSelect = document.querySelectorAll(
     ".filter-sidebar input[type=checkbox], .filter-sidebar input[type=radio]"
 );
-const resetButton = document.querySelector(".btn-reset");
+const resetButtons = document.querySelectorAll(".btn-reset");
 
 filterSelect.forEach((input) => {
     input.addEventListener("change", (e) => {
-        // 초기화 버튼 on/off
-        const isFilterSelected =
-            document.querySelectorAll(".filter-sidebar input:checked").length >
-            0;
-        resetButton.classList.toggle("on", isFilterSelected);
-        resetButton.disabled = !isFilterSelected;
+        // 리셋버튼 초기화
+        resetButtonsState();
 
         // 라디오 값 중복확인
         const isRadio = input.type === "radio";
@@ -137,6 +133,20 @@ filterSelect.forEach((input) => {
     });
 });
 
+// 리셋 버튼초기화
+function resetButtonsState() {
+    const isChecked =
+        document.querySelectorAll(".filter-sidebar input:checked").length > 0;
+
+    resetButtons.forEach((btn) => {
+        if (btn.closest(".filter-sidebar")) {
+            btn.classList.toggle("on", isChecked);
+        }
+        btn.disabled = !isChecked;
+    });
+}
+resetButtonsState();
+
 // 태그 삭제
 function removeTag(title) {
     const tag = document.querySelectorAll(".active-filter-tag");
@@ -184,73 +194,91 @@ radios.forEach((radio) => {
 });
 
 // 리셋 클릭시 전체 필터 초기화
-resetButton.addEventListener("click", () => {
-    filterSelect.forEach((input) => {
-        input.checked = false;
+resetButtons.forEach((resetButton) => {
+    resetButton.addEventListener("click", () => {
+        filterSelect.forEach((input) => {
+            input.checked = false;
 
-        const title = input
-            .closest("label")
-            .querySelector(".title").textContent;
+            const title = input
+                .closest("label")
+                .querySelector(".title").textContent;
 
-        removeTag(title);
-        noTag();
+            removeTag(title);
+            noTag();
+        });
+
+        resetButtons.forEach((btn) => {
+            if (btn.closest(".filter-sidebar")) {
+                btn.classList.remove("on");
+            }
+            btn.disabled = true;
+        });
     });
 });
+
+// 버튼 공통
+function toggleButton(buttons) {
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            buttons.forEach((btn) => btn.classList.remove("on"));
+            button.classList.add("on");
+        });
+    });
+}
+
+// 사이드 필터 버튼 on/off
+const sortButtons = document.querySelectorAll(
+    ".category-sort-options .category-sort-btn"
+);
+// 사이드 필터 버튼 전체 on/off
+const initialButtons = document.querySelectorAll(
+    ".initial-filter .initial-button"
+);
+// 페이지네이션 버튼 on/off
+const pagenationButtons = document.querySelectorAll(
+    ".pagenation-number .pagenation-btn"
+);
+
+toggleButton(sortButtons);
+toggleButton(initialButtons);
+toggleButton(pagenationButtons);
+
+// 초기화 포함 버튼 공통
+function toggleResetButtons(buttons, defaultText) {
+    buttons.forEach((button) => {
+        if (button.textContent.includes(defaultText)) {
+            button.classList.add("on");
+        }
+
+        button.addEventListener("click", () => {
+            buttons.forEach((btn) => btn.classList.remove("on"));
+            button.classList.add("on");
+        });
+    });
+}
 
 // 상단 메뉴 버튼 on/off
 const menuButtons = document.querySelectorAll(".menu-item .menu-btn");
-document.querySelector(".menu-list .menu-item").classList.add("on");
-
-menuButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        document
-            .querySelectorAll(".menu-item")
-            .forEach((item) => item.classList.remove("on"));
-        e.target.closest(".menu-item").classList.add("on");
-    });
-});
-
 // 제품 상단 필터 버튼 on/off
-const productFilterButtons = document.querySelectorAll(
+const sortOptionButtons = document.querySelectorAll(
     ".product-sort-options .sort-button"
 );
-document
-    .querySelector(".product-sort-options .product-sort-item")
-    .classList.add("on");
 
-productFilterButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        document
-            .querySelectorAll(".product-sort-item")
-            .forEach((item) => item.classList.remove("on"));
-        e.target.closest(".product-sort-item").classList.add("on");
-    });
-});
-
-// 사이드 필터 버튼 on/off
-const categorySortButtons = document.querySelectorAll(
-    ".category-sort-options .category-sort-btn"
-);
-
-categorySortButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        document
-            .querySelectorAll(".category-sort-item")
-            .forEach((item) => item.classList.remove("on"));
-
-        button.closest(".category-sort-item").classList.add("on");
-    });
-});
+toggleResetButtons(menuButtons, "전체보기");
+toggleResetButtons(sortOptionButtons, "추천순");
 
 // 사이드 필터 드롭다운
-const filterDropdownButtons = document.querySelectorAll(
+const filterButtons = document.querySelectorAll(
     ".filter-category-list .dropdown-btn"
 );
-filterDropdownButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        e.target.closest(".filter-category-list").classList.toggle("up");
+
+filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        button.classList.toggle("up");
     });
 });
+
+// 상단으로 이동
 const scrollTopButton = document.querySelector(".scroll-top-btn");
 scrollTopButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

@@ -150,6 +150,14 @@ button {
     display: block;
 }
 
+.customer-service .member-menu {
+    display: none;
+}
+
+.customer-service:hover .member-menu {
+    display: block;
+}
+
 .customer-service .menu {
     display: none;
 }
@@ -706,4 +714,90 @@ button {
     width: 100%;
     background: #fff;
     z-index: 999;
+}
+
+/* 마이 페이지 시작 */
+.mypage {
+    position: relative;
+    min-width: 1050px;
+    background-color: rgb(242, 245, 248);
+}
+
+.mypage-order {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    justify-content: center;
+    padding: 50px 0px 80px;
+    margin: 0px auto;
+}
+
+.mypage-list {
+    overflow: hidden;
+    width: 375px;
+    border-radius: 16px;
+}
+
+.mypage-list-inner {
+    padding-bottom: 0px;
+    background-color: rgb(242, 245, 248);
+}
+
+.mypage-list-inner .top-info-section {
+    margin-bottom: 8px;
+    padding: 24px 20px 20px;
+}
+
+.mypage-list-inner > div {
+    background-color: rgb(255, 255, 255);
+}
+
+.welcom-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grade-name {
+    display: flex;
+    align-items: center;
+    min-width: calc(100% - 100px);
+}
+
+.hello-text {
+    font-size: 20px;
+    font-weight: 600;
+    color:  rgb(50, 116, 63);
+    line-height: 16px
+}
+
+.user-name {
+    font-weight: 500;
+    font-size: 20px;
+    overflow: hidden;
+    padding-left: 5px;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.often {
+    margin: 0px;
+    padding: 20px 25px;
+}
+
+.often-text {
+    width: 100%;
+    padding: 12px 0px 6px;
+    font-weight: 400;
+    line-height: 20px;
+    color: rgb(181, 181, 181);
+}
+
+.menu-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
 }
