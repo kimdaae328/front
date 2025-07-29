@@ -1,11 +1,10 @@
-//
+// 개월 드롭다운
 const dropdown = document.querySelector(".custom-dropdown");
 const toggle = dropdown.querySelector(".dropdown-toggle");
 const menu = dropdown.querySelector(".dropdown-menu");
 const items = menu.querySelectorAll("li");
 
 toggle.addEventListener("click", (e) => {
-    // menu.classList.toggle("show");
     toggle.classList.toggle("active");
 });
 
