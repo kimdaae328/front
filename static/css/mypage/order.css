@@ -474,6 +474,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 18px;
 }
 
 .order-product-wrap.fold {
@@ -588,6 +589,8 @@ button {
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-word;
+    font-size: 13px;
+    font-weight: 400;
 }
 
 .add-cart {

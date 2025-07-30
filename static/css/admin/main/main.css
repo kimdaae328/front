@@ -895,10 +895,3 @@ button.btn {
         max-width: 33.33333333%;
     }
 }
-.receipt-index .amount-section {
-    background-color: #fff;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    position: relative;
-    width: 100%;
-}
