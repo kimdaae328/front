@@ -1,77 +1,75 @@
-// 알림 버튼
+// 개월 드롭다운
+const dropdown = document.querySelector(".custom-dropdown");
+const toggle = dropdown.querySelector(".dropdown-toggle");
+const menu = dropdown.querySelector(".dropdown-menu");
+const items = menu.querySelectorAll("li");
 
-const icon = document.querySelector("div.alarm-icon");
-const alarmTap = document.querySelector(".alarm-icon-wrap");
+toggle.addEventListener("click", (e) => {
+    toggle.classList.toggle("active");
+});
 
-icon.addEventListener("click", (e) => {
-    if (alarmTap.classList.contains("showIcon")) {
-        alarmTap.classList.remove("showIcon");
-    } else {
-        alarmTap.classList.add("showIcon");
+items.forEach((item) => {
+    item.addEventListener("click", (e) => {
+        toggle.firstElementChild.innerHTML = `<span>${item.textContent}</span>`;
+        toggle.classList.remove("active");
+    });
+});
+
+// 외부 클릭 시 개월 드롭다운 닫기
+document.addEventListener("click", (e) => {
+    if (!dropdown.contains(e.target)) {
+        toggle.classList.remove("active");
     }
 });
 
-// 알림 목록 만들기
-const alarmWindow = document.querySelector("div.section_notice_preview");
+// 검색 취소 버튼
+const cancelButton = document.querySelector(".order-search-cancel");
+const searchInput = document.querySelector(".search-box-input");
 
-const createAlarm = (text, callback1, callback2) => {
-    alarmWindow.innerHTML += `<div class="comp_card comp_notice">
-                                <a href="" class="link_notice">
-                                    <div class="group_source">
-                                        <div class="source_box">
-                                            <div class="thumb">
-                                                <img width="26" height="26" src="../../static/images/main/logo.png">
-                                            </div>
-                                            <span class="span-title">너도먹고나도먹고</span>
-                                        </div>
-                                        <div class="info_box">
-                                            <span class="info-text">7월 25일</span>
-                                        </div>
-                                        <div class="alarm-remove">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                <path d="M5.55566 5.55566L14.4446 14.4446" stroke="#ccc"></path>
-                                                <path d="M14.4443 5.55566L5.55545 14.4446" stroke="#ccc"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="group_info">
-                                        <strong class="info-title">${text}</strong>
-                                        <div class="info_area">
-                                            <div class="info_box">
-                                                <p class="desc"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>`;
-    if (callback1 && callback2) {
-        return callback1(alarmWindow), callback2(alarmWindow);
-    }
-};
+cancelButton.addEventListener("click", (e) => {
+    searchInput.value = "";
+});
 
-// 알림 삭제 버튼
-const removeAlarm = (alarmWindow) => {
-    const removeButtons = alarmWindow.querySelectorAll(".alarm-remove");
-    removeButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-            const card = button.closest(".comp_card");
-            if (card) {
-                card.remove();
-                alarmNull();
-            }
-        });
+// 장바구니 추가 버튼
+
+const cartIcons = document.querySelectorAll(".add-cart");
+const addMessage = document.querySelector(".add-cart-tap-wrap");
+
+cartIcons.forEach((cartIcon) => {
+    cartIcon.addEventListener("click", () => {
+        addMessage.style.display = "block";
+        void addMessage.offsetWidth;
+
+        addMessage.classList.add("show");
+
+        setTimeout(() => {
+            addMessage.classList.remove("show");
+
+            setTimeout(() => {
+                addMessage.style.display = "none";
+            }, 300);
+        }, 1500);
     });
-};
+});
 
-// 알림 없을때
+// 주문 펼쳐보기 버튼 누를 때
 
-const alarmNull = () => {
-    const alarms = alarmWindow.querySelectorAll(".comp_card");
+const overview = document.querySelector(".view-more.over");
+const foldview = document.querySelector(".view-more.fold");
+const products = document.querySelectorAll(".order-product-wrap.fold");
 
-    if (!alarms.length) {
-        alarmWindow.innerHTML = ` <p class="empty-message">알림이 없습니다.</p>`;
-    }
-};
+overview.addEventListener("click", (e) => {
+    products.forEach((product) => {
+        product.classList.toggle("fold");
+    });
+    overview.style.display = "none";
+    foldview.style.display = "flex";
+});
 
-createAlarm("배송 알림", removeAlarm, alarmNull);
+foldview.addEventListener("click", (e) => {
+    products.forEach((product) => {
+        product.classList.toggle("fold");
+    });
+    foldview.style.display = "none";
+    overview.style.display = "flex";
+});
