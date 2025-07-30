@@ -982,3 +982,34 @@ button.btn {
     margin-left: 3px;
     vertical-align: middle;
 }
+
+.receipt-index .amount-section .amount-box span.magnify-btn {
+    color: #afb7ba;
+    font-size: 16px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.mdi-close:before {
+    content: "\F0156";
+}
+.receipt-index .amount-section .amount-box span.badge-label {
+    color: #56626a;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: -.5px;
+    padding: 0;
+    vertical-align: middle;
+}
+.badge-label.text-danger {
+    background-color: rgba(254, 101, 126, .07);
+    background-image: radial-gradient(rgba(255, 243, 245, .349), rgba(254, 101, 126, .07));
+}
+.text-danger {
+    color: #fe657e !important;
+}
+.receipt-index .amount-section .extra-info .amount-box.extra-box {
+    padding-left: 40px;
+}
+.receipt-index .amount-section .extra-info .amount-box {
+    padding-top: 4px;
+}
