@@ -231,6 +231,18 @@ img {
     line-height: 20px;
 }
 
+.notice-board .btn-wrap {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+.notice-board .btn-wrap button {
+    width: 120px;
+    height: 44px;
+    line-height: 44px;
+}
+
 /* table-container */
 .table-wrap {
     width: 100%;
@@ -278,7 +290,7 @@ img {
     text-align: center;
 }
 
-.table-wrap tbody td:nth-child(3) {
+.table-wrap .question-item td:nth-child(1) {
     text-align: left;
     padding-left: 20px;
 }
