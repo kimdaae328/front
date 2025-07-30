@@ -1,3 +1,26 @@
+// 상단으로 이동
+const scrollTopButton = document.querySelector(".scroll-top-btn");
+scrollTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// 최근본 상품
+const recentlyButtons = document.querySelectorAll(
+    ".recently-viewed-section button"
+);
+const container = document.querySelector(".recently-viewed-scroll");
+
+recentlyButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (btn.classList.contains("prev")) {
+            container.scrollBy({ top: -150, behavior: "smooth" });
+        } else if (btn.classList.contains("next")) {
+            container.scrollBy({ top: 150, behavior: "smooth" });
+        }
+    });
+});
+
 // 수량 카운트
 const quantityBoxes = document.querySelectorAll(".product-quantity-box");
 
@@ -27,7 +50,9 @@ const openButtons = document.querySelectorAll(".popup-trigger");
 const closeButtons = document.querySelectorAll(".popup-close");
 
 openButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
         const targetSelector = btn.dataset.target;
         const targetModal = document.querySelector(targetSelector);
         const htmlScroll = document.querySelector("html");
@@ -61,8 +86,10 @@ floatingButton.addEventListener("click", (e) => {
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
     const productTop = productSection.offsetTop;
+    const pageBottom = window.innerHeight + scrollY;
+    const pageHeight = document.body.offsetHeight;
 
-    if (scrollY >= productTop) {
+    if (scrollY >= productTop && pageBottom < pageHeight) {
         floatingBar.classList.remove("hidden");
     } else {
         floatingBar.classList.add("hidden");

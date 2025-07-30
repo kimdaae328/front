@@ -902,3 +902,83 @@ button.btn {
     position: relative;
     width: 100%;
 }
+
+.receipt-index .amount-section .amount-box {
+    border-right: 1px solid #ededed;
+    display: inline-block;
+    height: 100%;
+    padding: 26px 35px;
+    vertical-align: top;
+    width: 50%;
+}
+.receipt-index .amount-section .amount-box .title-col {
+    min-width: 150px;
+}
+.receipt-index .amount-section .amount-box .col, .receipt-index .amount-section .amount-box .col-auto {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.col-auto {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: auto;
+}
+.receipt-index .amount-section .amount-box span.badge-label {
+    color: #56626a;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: -.5px;
+    padding: 0;
+    vertical-align: middle;
+}
+.receipt-index .amount-section .amount-box span.icon-label {
+    height: 38px;
+    line-height: 18px;
+    margin-right: 14px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 38px;
+}
+.badge-label.text-primary {
+    background-color: rgba(80, 124, 243, .07);
+    background-image: radial-gradient(rgba(241, 245, 254, .349), rgba(80, 124, 243, .07));
+}
+.badge-label {
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 11px;
+    padding: 5px 10px 3px;
+    text-align: center;
+}
+.text-primary {
+    color: #507cf3 !important;
+}
+.receipt-index .amount-section .amount-box span.icon-label i.mdi {
+    font-size: 20px;
+    line-height: 38px;
+}
+.mdi-check:before {
+    content: "\F012C";
+}
+.receipt-index .amount-section .amount-box:nth-child(2n) {
+    border-right: 0;
+}
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.receipt-index .amount-section .amount-box span.span-amount {
+    color: #292929;
+    font-size: 24px;
+    font-weight: 700;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.receipt-index .amount-section .amount-box span.amount-unit {
+    font-size: 19px;
+    font-weight: 700;
+    margin-left: 3px;
+    vertical-align: middle;
+}
