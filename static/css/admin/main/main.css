@@ -895,3 +895,6 @@ button.btn {
         max-width: 33.33333333%;
     }
 }
+#bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li a.current {
+    background-color: #dce5fd;
+}
