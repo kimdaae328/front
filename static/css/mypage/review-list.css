@@ -492,6 +492,11 @@ button {
     position: fixed;
     z-index: 1300;
     inset: 0px;
+    display: none;
+}
+
+.review-window-wrap.active {
+    display: block;
 }
 
 .review-window-background {
@@ -502,6 +507,7 @@ button {
     inset: 0px;
     background-color: rgba(0, 0, 0, 0.5);
     transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
 }
 
 .review-window {
@@ -519,6 +525,7 @@ button {
     max-width: none;
     max-height: 740px;
     border-radius: 12px;
+    background-color: #fff;
 }
 
 .review-window-header {
@@ -548,4 +555,451 @@ button {
     display: inline-block;
     width: 32px;
     height: 32px;
+    cursor: pointer;
+}
+
+.review-body {
+    overflow: hidden scroll;
+    scrollbar-width: none;
+    flex: 1 1 auto;
+    position: relative;
+    padding: 0px 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgb(153, 153, 153);
+}
+
+.window-product-img {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+.window-product-img>span {
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    max-width: 100%;
+    display: block;
+}
+
+.window-product-img>span>img {
+    /* position: absolute; */
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 96px;
+    height: 96px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+    object-fit: cover
+}
+
+.img-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.img-title-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: rgb(51, 51, 51);
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.review-form {
+    position: relative;
+    min-height: 275px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.review-content {
+    display: flex;
+    gap: 30px;
+    padding-top: 10px;
+}
+
+.label {
+    position: relative;
+    flex-shrink: 0;
+    width: 70px;
+    padding-top: 12px;
+    line-height: 19px;
+    color: rgb(51, 51, 51);
+}
+
+.label>sup {
+    color: rgb(250, 98, 47);
+}
+
+.text-box-wrap {
+    width: 100%;
+}
+
+.text-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 205px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+}
+
+.textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15px 16px;
+    word-break: break-all;
+    z-index: 1;
+    background: none;
+    border-radius: 4px;
+    color: rgb(51, 51, 51);
+    outline: none;
+    resize: none;
+    border: none;
+    font-size: 16px
+}
+
+.textarea::placeholder {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    color: rgb(204, 204, 204);
+    cursor: pointer
+
+}
+
+.text-box-footer {
+    padding: 0px 16px 16px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.text-enter {
+    color: rgb(153, 153, 153);
+}
+
+.max-enter {
+    color: rgb(153, 153, 153);
+}
+
+.add-photo-wrap {
+    display: flex;
+    gap: 30px;
+    padding-top: 16px;
+}
+
+.add-photo {
+    position: relative;
+    flex-shrink: 0;
+    width: 70px;
+    padding-top: 12px;
+    line-height: 19px;
+    color: rgb(51, 51, 51);
+}
+
+.add-button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    width: 100%;
+}
+
+/* 첨부 이미지 */
+.new-img {
+    position: relative;
+    border-radius: 6px;
+    outline: none;
+    overflow: hidden;
+    display: flex;
+}
+
+.new-img-inner {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: rgb(244, 244, 244);
+    width: 72px;
+    padding-bottom: 72px;
+}
+
+.new-img-inner:not(:first-child) {
+    margin-left: 8px;
+}
+
+.new-img-inner>span {
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    inset: 0px
+}
+
+.new-img-inner>span>img {
+    position: absolute;
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+.cancel-add {
+        position: absolute;
+    top: 8%;
+    right: 8%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuNSIgY3g9IjkiIGN5PSI5IiByPSI5Ii8+CiAgICAgICAgPGcgc3Ryb2tlPSIjRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij4KICAgICAgICAgICAgPHBhdGggZD0iTTEyLjI1OSAxMi4xMzUgNS43NjggNS42NDRNNS43NjIgMTIuMTMzbDYuNDk3LTYuNDk3Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K) 0px 0px no-repeat;
+}
+
+/* 사진 추가 버튼 */
+.add-button-inner {
+   position: relative;
+    height: 100%;
+    width: 72px;
+    padding-bottom: 72px;  
+}
+
+.photo-button {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(221, 221, 221);
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.photo-button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.input-photo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0px;
+    border: 0px;
+    margin: -1px;
+    clip: rect(0px, 0px, 0px, 0px);
+    white-space: nowrap;
+    overflow-wrap: normal;
+}
+
+.add-photo-list {
+    display: flex;
+    gap: 30px;
+    padding-top: 16px;
+}
+
+.photo-list-label {
+    position: relative;
+    flex-shrink: 0;
+    width: 70px;
+    padding-top: 12px;
+    line-height: 19px;
+    color: rgb(51, 51, 51);
+}
+
+.list-ul {
+    padding-left: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgb(153, 153, 153);
+}
+
+.list-li {
+    line-height: 22px;
+    list-style-type: "·";
+    list-style-position: outside;
+    padding-inline-start: 3px;
+}
+
+.register {
+    position: sticky;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 106px;
+    margin-top: 20px;
+    border-top: 1px solid rgb(244, 244, 244);
+    background-color: rgb(255, 255, 255);
+}
+
+.cancel-button {
+    width: 160px;
+    height: 56px;
+    padding: 0px 10px;
+    text-align: center;
+    letter-spacing: 0px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-top: 14px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: white;
+    color: rgb(0, 0, 0);
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.register-button {
+    width: 160px;
+    height: 56px;
+    padding: 0px 10px;
+    text-align: center;
+    letter-spacing: 0px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-top: 14px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.register-button.active {
+    background-color: rgb(50, 116, 63);
+}
+
+/* 리뷰저장 팝업 */
+
+.popup-wrapper {
+    display: none;
+}
+
+.popup-wrapper .dim {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+
+    opacity: 1;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-inner {
+    position: fixed;
+    z-index: 1300;
+    inset: 0px;
+}
+
+.popup-container {
+    height: 100%;
+    outline: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    height: auto;
+    width: 360px;
+    border-radius: 12px;
+    box-shadow: none;
+    background: #fff;
+}
+
+.popup-container.popup-product {
+    padding: 0;
+}
+
+.popup-container.popup-product .popup-content {
+    padding: 30px;
+    width: 440px;
+}
+
+.popup-container.popup-product .popup-footer {
+    border: none;
+}
+
+.popup-message {
+    padding: 40px 30px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    line-height: 21px;
+    margin-top: 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+.popup-footer {
+    height: 56px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: flex;
+    border-top: 1px solid rgb(238, 238, 238);
+    justify-content: flex-start;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.btn-default {
+    display: block;
+    width: 100%;
+    height: 56px;
+    padding: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(50, 116, 63);
 }
