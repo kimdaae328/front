@@ -28,7 +28,10 @@ const checkboxactive1=document.getElementById("checkboxactive1")
 const checkboxactive2=document.getElementById("checkboxactive2")
 const checkboxactive3=document.getElementById("checkboxactive3")
 const checkboxactive4=document.getElementById("checkboxactive4")
-console.log(allchecked1);
+const body=document.getElementById("body")
+const modal=document.getElementById("modal")
+const modalclose=document.getElementById("modalclose")
+const modalopen=document.getElementById("modalbtn")
 menubtn1.addEventListener("click", (e) => {
     sublist1.classList.toggle("show");
     event.preventDefault()
@@ -134,4 +137,14 @@ allflasechecked2.addEventListener('click',(e)=>{
     checkboxactive2.classList.remove("active");
     
     
+});
+modalclose.addEventListener('click',(e)=>{
+    body.classList.remove("modal-open");
+    modal.classList.remove("show");
+    modal.style.display="none";
+});
+modalopen.addEventListener('click',(e)=>{
+    body.classList.add("modal-open");
+    modal.classList.add("show");
+    modal.style.display="block";
 });

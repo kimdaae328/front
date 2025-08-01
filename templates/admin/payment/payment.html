@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../../static/css/admin/payment/payment.css" />
     <title>Document</title>
 </head>
-<body>  
+<body id="body" style="cursor: auto;">  
     <div id="bootpay">
         <div id="boot-notify-container"></div>
         <div class="popup-manager" style="width: 0px;"></div>
@@ -423,7 +423,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="text-center" colspan="5">조회된 결제가 없습니다.
-                                                    <td class="td-action text-center"><div class="action-btn"><i class="mdi mdi-chevron-right"></i></div></td>
+                                                    <td class="td-action text-center"><div class="action-btn"><i id="modalbtn"class="mdi mdi-chevron-right"></i></div></td>
                                                 </td>
                                             </tr>
                                             
@@ -438,10 +438,128 @@
                         </div>
 
                     </div>
+                    <div id="modal"class="modal fade receipt-modal show" style="display: none;" aria-modal="true" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-title">
+                                        (
+                                        35,000
+                                        원) 결제내역
+                                        <span class="badge-label text-success font-weight-bold ml-2">결제완료</span>
+                                    </div>
+                                    <button id="modalclose"class="close">
+                                        <i class="mdi mdi-close"></i>
+
+                                    </button>
+
+                                </div>
+                                <div class="modal-body">
+                                    <div class="divider"></div>
+                                    <div class="tab-view">
+                                        <div class="tab-view-header">
+                                            <div class="tab-switch-row">
+                                                <div class="tab-switch active">상세정보</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-view-body">
+                                            <div style="display: block;">
+                                                <div class="tab-inner tab-detail">
+    
+                                                    <div class="info-layout detail-info">
+                                                        <div class="info-title justify-content-between">
+                                                            <div class="flex-left d-flex">
+                                                                <div class="title">승인정보</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-table w-100">
+                                                            <div class="d-table-cell">
+                                                                <table class="info-table">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th>주문번호</th>
+                                                                            <td>-</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>총 결제금액 ①</th>
+                                                                            <td>35,000</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th>취소금액</th>
+                                                                            <td>0</td>
+
+                                                                        </tr>
+                                                                    </tbody>
+
+                                                                </table>
+
+                                                            </div>
+                                                            <div class="d-table-cell"><table class="info-table"><tbody><tr><th>승인시각</th><td>2025-08-01 13:52:10</td></tr><tr><th>판매자</th><td>판매자</td></tr><tr><th>결제방식</th><td>카드<span class="text-primary fs-1 ml-1 font-weight-bold"></span></td></tr></tbody></table></div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="info-layout user-info">
+                                                        <div class="info-title justify-content-between">
+                                                            <div class="flex-left d-flex">
+                                                                <div class="title">사용자정보</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="info-body">
+                                                            <div class="table-info row">
+                                                                <div class="col-6">
+                                                                    <div class="row inner-table">
+                                                                        <div class="col-auto w-120px">사용자명</div>
+                                                                        <div class="col">-</div>
+                                                                    </div>
+                                                                    <div class="row inner-table">
+                                                                        <div class="col-auto w-120px">주소</div>
+                                                                        <div class="col">-</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="row inner-table">
+                                                                        <div class="col-auto w-120px">이메일</div>
+                                                                        <div class="col">-</div>
+                                                                    </div>
+                                                                    <div class="row inner-table">
+                                                                        <div class="col-auto w-120px">전화번호</div>
+                                                                        <div class="col">-</div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+
+                            </div>
+                            
+                            
+
+                            
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
+            
 
 
 
