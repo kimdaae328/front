@@ -1,35 +1,22 @@
-// 후기 작성 버튼
-const reviewButton = document.querySelector(".review-button");
+// 작성 가능한 후기 버튼
+const possibleReviews = document.querySelector(".possible-reviews");
+const reviewListBody = document.querySelector(".review-list-body");
+const writtenReviewWrap = document.querySelector(".written-review-wrap");
+const announcement = document.querySelector(".announcement");
 
-// 사이드 필터 드롭다운
-const filterDropdownButtons = document.querySelectorAll(
-    ".filter-category-list .dropdown-btn"
-);
-filterDropdownButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        e.target.closest(".filter-category-list").classList.toggle("up");
-    });
-});
-const scrollTopButton = document.querySelector(".scroll-top-btn");
-scrollTopButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+possibleReviews.addEventListener("click", (e) => {
+    reviewListBody.style.display = "flex";
+    writtenReviewWrap.style.display = "none";
+    announcement.style.display = "flex";
 });
 
-// 최근본 상품
-const recentlyButtons = document.querySelectorAll(
-    ".recently-viewed-section button"
-);
-const container = document.querySelector(".recently-viewed-scroll");
+// 작성한 후기 버튼
+const writtenReview = document.querySelector(".written-review-button");
 
-recentlyButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        const btn = e.target.closest("button");
-        if (btn.classList.contains("prev")) {
-            container.scrollBy({ top: -150, behavior: "smooth" });
-        } else if (btn.classList.contains("next")) {
-            container.scrollBy({ top: 150, behavior: "smooth" });
-        }
-    });
+writtenReview.addEventListener("click", (e) => {
+    reviewListBody.style.display = "none";
+    writtenReviewWrap.style.display = "flex";
+    announcement.style.display = "none";
 });
 
 // 후기 작성 버튼
@@ -37,6 +24,13 @@ const reviewAddwButton = document.querySelector(".review-button");
 const reviewWindow = document.querySelector(".review-window-wrap");
 
 reviewAddwButton.addEventListener("click", (e) => {
+    reviewWindow.classList.add("active");
+});
+
+// 후기 작성 버튼
+const modifyButton = document.querySelector(".modify-button");
+
+modifyButton.addEventListener("click", (e) => {
     reviewWindow.classList.add("active");
 });
 
@@ -110,7 +104,7 @@ input.addEventListener("change", (e) => {
             thumbnail.innerHTML = `
         <span>
           <img src="${imageSrc}" alt="">
-        </span>
+          </span>
         <button class="cancel-add" type="button"></button>
       `;
 
@@ -153,6 +147,37 @@ closeButtons.forEach((btn) => {
         if (targetModal) {
             targetModal.style.display = "none";
             htmlScroll.style.overflow = "";
+        }
+    });
+});
+
+// 사이드 필터 드롭다운
+const filterDropdownButtons = document.querySelectorAll(
+    ".filter-category-list .dropdown-btn"
+);
+filterDropdownButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        e.target.closest(".filter-category-list").classList.toggle("up");
+    });
+});
+const scrollTopButton = document.querySelector(".scroll-top-btn");
+scrollTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// 최근본 상품
+const recentlyButtons = document.querySelectorAll(
+    ".recently-viewed-section button"
+);
+const container = document.querySelector(".recently-viewed-scroll");
+
+recentlyButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (btn.classList.contains("prev")) {
+            container.scrollBy({ top: -150, behavior: "smooth" });
+        } else if (btn.classList.contains("next")) {
+            container.scrollBy({ top: 150, behavior: "smooth" });
         }
     });
 });

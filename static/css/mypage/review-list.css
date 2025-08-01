@@ -244,10 +244,7 @@ button {
 /* 선택한 목록 */
 .possible-reviews {
     flex: 1 1 0%;
-    border-width: 1px 1px 0px;
-    border-style: solid;
-    border-color: rgb(244, 244, 244);
-    border-image: initial;
+    border: 1px solid rgb(244, 244, 244);
     font-weight: 500;
     font-size: 16px;
     line-height: 21px;
@@ -257,7 +254,7 @@ button {
 }
 
 /* 선택 안한 목록 */
-.written-review {
+.written-review-button {
     flex: 1 1 0%;
     border: 1px solid rgb(244, 244, 244);
     font-weight: 500;
@@ -387,6 +384,125 @@ button {
     padding: 12px 0px 20px;
     line-height: 21px;
     background-color: rgb(242, 245, 248);
+}
+
+/* 작성한 후기 */
+.written-review-wrap {
+    display: none;
+    flex: 1 1 0%;
+    flex-direction: column;
+    background-color: rgb(242, 245, 248);
+}
+
+.written-review {
+    display: flex;
+    flex-direction: column;
+}
+
+.written-review-inner {
+    position: relative;
+    height: 100%;
+    padding: 16px 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 16px 16px;
+}
+
+.total-weitten {
+    padding-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.written-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.written-product {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0px 9px;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+.product-name-wrap {
+    justify-content: start;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 7px;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgb(153, 153, 153);
+}
+
+.product-name {
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgb(51, 51, 51);
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.written-date {
+    display: flex;
+}
+
+
+.written-date-text {
+    position: relative;
+}
+
+.written-date span:not(:last-child):after  {
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: -6px;
+    height: 12px;
+    border-right: 1px solid rgb(221, 221, 221);
+    margin: auto;
+}
+
+.content-review {
+    height: auto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: rgb(51, 51, 51);
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+.written-modify {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 11px;
+}
+
+.blank {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+
+.modify-button {
+    width: 74px;
+    height: 32px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+    object-fit: cover;
+    font-weight: 600;
+    font-size: 12px;
 }
 
 
