@@ -102,10 +102,10 @@ input.addEventListener("change", (e) => {
         reader.readAsDataURL(file);
 
         reader.onload = (event) => {
+            const thumbnail = document.createElement("div");
             const imageSrc = event.target.result;
 
             // 썸네일 요소 생성
-            const thumbnail = document.createElement("div");
             thumbnail.className = "new-img-inner";
             thumbnail.innerHTML = `
         <span>
@@ -142,6 +142,8 @@ openButtons.forEach((btn) => {
             targetModal.style.display = "block";
             htmlScroll.style.overflow = "hidden";
             reviewWindow.classList.remove("active");
+            textarea.value = "";
+            thumbnailContainer.innerHTML = "";
         }
     });
 });
