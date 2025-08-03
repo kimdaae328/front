@@ -34,7 +34,7 @@ tableTrButton.forEach((tr) => {
 });
 
 // 샐랙트 박스 드롭다운
-const dropdown = document.querySelector(".notice-dropdown");
+const dropdown = document.querySelector(".dropdown-wrap");
 const toggle = dropdown.querySelector(".dropdown-toggle");
 const menu = dropdown.querySelector(".dropdown-menu");
 const items = menu.querySelectorAll(".dropdown-menu li");

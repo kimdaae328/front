@@ -208,6 +208,11 @@ img {
     width: 820px;
 }
 
+.notice-board-title-wrap {
+    display: flex;
+    align-items: center;
+}
+
 .notice-board-title {
     display: flex;
     width: 100%;
@@ -386,8 +391,8 @@ img {
     cursor: default;
 }
 
-/* notice-dropdown */
-.notice-dropdown {
+/* dropdown-wrap */
+.dropdown-wrap {
   position: relative;
   font-family: sans-serif;
   user-select: none;
@@ -405,7 +410,7 @@ img {
   height: 44px;
 }
 
-.notice-dropdown:has(.active) .dropdown-toggle svg {
+.dropdown-wrap:has(.active) .dropdown-toggle svg {
     transform: translateY(-50%) rotate(180deg);
 }
 
@@ -424,7 +429,7 @@ img {
     font-size: 1.5rem;
 }
 
-.notice-dropdown:has(.active) .dropdown-menu {
+.dropdown-wrap:has(.active) .dropdown-menu {
     display: block;
 }
 
