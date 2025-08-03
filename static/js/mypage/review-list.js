@@ -1,8 +1,36 @@
+// 작성 가능한 후기 버튼
+const possibleReviews = document.querySelector(".possible-reviews");
+const reviewListBody = document.querySelector(".review-list-body");
+const writtenReviewWrap = document.querySelector(".written-review-wrap");
+const announcement = document.querySelector(".announcement");
+
+possibleReviews.addEventListener("click", (e) => {
+    reviewListBody.style.display = "flex";
+    writtenReviewWrap.style.display = "none";
+    announcement.style.display = "flex";
+});
+
+// 작성한 후기 버튼
+const writtenReview = document.querySelector(".written-review-button");
+
+writtenReview.addEventListener("click", (e) => {
+    reviewListBody.style.display = "none";
+    writtenReviewWrap.style.display = "flex";
+    announcement.style.display = "none";
+});
+
 // 후기 작성 버튼
 const reviewAddwButton = document.querySelector(".review-button");
 const reviewWindow = document.querySelector(".review-window-wrap");
 
 reviewAddwButton.addEventListener("click", (e) => {
+    reviewWindow.classList.add("active");
+});
+
+// 후기 작성 버튼
+const modifyButton = document.querySelector(".modify-button");
+
+modifyButton.addEventListener("click", (e) => {
     reviewWindow.classList.add("active");
 });
 
@@ -76,7 +104,7 @@ input.addEventListener("change", (e) => {
             thumbnail.innerHTML = `
             <span>
           <img src="${imageSrc}" alt="">
-        </span>
+          </span>
         <button class="cancel-add" type="button"></button>
       `;
             thumbnailContainer.appendChild(thumbnail);
