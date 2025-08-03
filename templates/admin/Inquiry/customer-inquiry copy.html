@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../static/css/admin/Inquiry/inquiry.css">
+    <link rel="stylesheet" href="../../../static/css/admin/Inquiry/customer-inquiry.css">
     <title>Document</title>
 </head>
-<body>
+<body id="body">
     <div id="bootpay">
         <div class="popup-manager" style="width: 0px;"></div>
         <aside id="bootpay-side">
@@ -412,7 +412,7 @@
                             <tbody>
                                 <tr>
                                 <td class="text-center font-weight-bold" colspan="5" >문의 내역이 없습니다</td>
-                                <td class="td-action text-center"><div class="action-btn"><i id="modalbtn" class="mdi mdi-chevron-right"></i></div></td>
+                                <td class="td-action text-center"><div id="modal-open"class="action-btn"><i id="modalbtn" class="mdi mdi-chevron-right"></i></div></td>
                                     
                                 </tr>
                             </tbody>
@@ -423,7 +423,7 @@
                 </div>
 
             </div>
-            <div class="modal fade receipt-modal show"aria-modal="true" role="dialog "style="display: block;">
+            <div id ="modal"class="modal fade receipt-modal show"aria-modal="true" role="dialog ">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -433,7 +433,7 @@
                                 
 
                             </div>
-                            <button class="close"><i class="mdi mdi-close">
+                            <button id="close"class="close"><i class="mdi mdi-close">
 
                             </i> </button>
 
@@ -572,5 +572,5 @@
     </div>
     
 </body>
-<script src="../../../static/js/admin/inquiry/inquiry.js"></script>
+<script src="../../../static/js/admin/inquiry/customer-inquiry.js"></script>
 </html>
