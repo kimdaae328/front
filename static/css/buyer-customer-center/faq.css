@@ -213,6 +213,7 @@ img {
     width: 100%;
     padding-bottom: 25px;
     align-items: baseline;
+    justify-content: space-between;
 }
 
 .notice-board-title .notice-title {
@@ -281,18 +282,14 @@ img {
     border-bottom: 1px solid rgb(244, 244, 244);
 }
 
-.table-wrap tbody .answer-item td {
+.table-wrap tbody td:nth-child(3) {
     text-align: left;
+    padding-left: 30px;
 }
 
 .table-wrap tbody td {
     vertical-align: middle;
     text-align: center;
-}
-
-.table-wrap .question-item td:nth-child(1) {
-    text-align: left;
-    padding-left: 20px;
 }
 
 .table-wrap .no-data {
@@ -331,6 +328,7 @@ img {
     line-height: 19px;
     letter-spacing: -0.5px;
     white-space: pre-line;
+    text-align-last: left;
 }
 
 .answer-wrap .date {
@@ -386,4 +384,76 @@ img {
 .pagenation .next:disabled {
     background-image: url(https://res.kurly.com/kurly/ico/2021/paging-next-disabled.svg);
     cursor: default;
+}
+
+/* notice-dropdown */
+.notice-dropdown {
+  position: relative;
+  font-family: sans-serif;
+  user-select: none;
+}
+
+.dropdown-toggle {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid #ddd;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  width: 170px;
+  height: 44px;
+}
+
+.notice-dropdown:has(.active) .dropdown-toggle svg {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-toggle svg {
+    transition: transform 0.3s;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentColor;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+}
+
+.notice-dropdown:has(.active) .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: none;
+    z-index: 10;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+
+.dropdown-menu li {
+    padding: 11.5px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    height: 44px;
+}
+
+.dropdown-menu li:hover {
+    background-color: rgb(250, 250, 250);
+}
+
+.dropdown-menu li.on {
+    color: rgb(50, 116, 63);
+    font-weight: 600;
 }
