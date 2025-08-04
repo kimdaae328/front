@@ -440,6 +440,25 @@ address, dl, ol, ul {
 .mdi-logout-variant:before {
     content: "\F05FD";
 }
+#usermenu {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    will-change: transform;
+}
+.dropdown-menu {
+    bottom: auto;
+    right: auto;
+}
+.dropdown-menu.show {
+    display: block;
+}
+.user-menu {
+    position: relative;
+}
+
+/* 주석 여기까지가 사이드바
+ */
 .page.wide-page {
     max-width: 1800px;
 }.page {
@@ -899,10 +918,7 @@ table {
     background: linear-gradient(90deg, #507cf3, rgba(139, 170, 255, .5));
     color: #fff;
 }
-.dropdown-menu.show {
-    display: block;
-    position: absolute; transform: translate3d(1094px, 62px, 0px); top: 0px; left: 0px; will-change: transform;
-}
+
 .dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=top] {
     bottom: auto;
     right: auto;
@@ -1358,4 +1374,45 @@ table.info-table td, table.info-table th {
         margin: 1.75rem auto;
         max-width: 500px;
     }}
-    
+
+
+    .modal>.modal-dialog>.modal-content>.modal-footer {
+        border-top: 0;
+        padding: 30px;
+    }
+    .modal.receipt-modal .modal-footer {
+        background-color: #fff;
+        padding-top: 10px !important;
+    }
+    .modal.receipt-modal .modal-footer {
+        background-color: #fff;
+        padding-top: 10px !important;
+    }
+    .modal>.modal-dialog>.modal-content>.modal-footer>button.btn {
+        margin-left: 10px;
+    }
+    .modal.receipt-modal .modal-footer button.btn-close {
+        color: #56626a;
+        padding: 9px 20px;
+    }
+    .modal>.modal-dialog>.modal-content>.modal-footer>* {
+        margin: 0;
+    }
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+    button.btn {
+        font-size: 14px;
+        vertical-align: middle;
+    }
+    .modal-footer {
+        align-items: center;
+        border-bottom-left-radius: calc(.3rem - 1px);
+        border-bottom-right-radius: calc(.3rem - 1px);
+        border-top: 1px solid #dee2e6;
+        display: flex
+    ;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        padding: .75rem;
+    }

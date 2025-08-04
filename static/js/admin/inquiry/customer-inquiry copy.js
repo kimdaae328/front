@@ -17,6 +17,10 @@ const checkboxactive2=document.getElementById("checkboxactive2")
 const bootpopbtn1=document.getElementById("btn-filter-pm")
 const popmenubt1= document.getElementById("pop-menu-bt1")
 const popmenubt2= document.getElementById("pop-menu-bt2")
+const modalclose=document.getElementById("close")
+const body=document.getElementById("body")
+const modal=document.getElementById("modal")
+const modalopen=document.getElementById("modal-open")
 menubtn1.addEventListener("click", (e) => {
     sublist1.classList.toggle("show");
     event.preventDefault()
@@ -51,7 +55,7 @@ submenus.forEach(submenu=>{
 submenus.forEach(submenu=>{
     submenu.addEventListener('click',(e)=>{
         e.preventDefault();
-        console.log("이벤트들어옴")
+       
         submenus.forEach(active=>active.classList.remove('active'));
         submenu.classList.add('active');
         
@@ -69,7 +73,7 @@ allchecked1.addEventListener('click',(e)=>{
    
     checkboxactive1.classList.add("active");
     checkboxactive2.classList.add("active");
-    console.log("이벤트발생")
+
 });
 allflasechecked1.addEventListener('click',(e)=>{
    
@@ -82,5 +86,16 @@ btnfilterstatus.addEventListener(('click'),(e)=>{
 
    
     popmenubt2.classList.toggle("show");
-    console.log("이벤트")
+
+});
+modalclose.addEventListener("click",(e)=>{
+    body.classList.remove("modal-open");
+    modal.classList.remove("show");
+    modal.style.display = "none";
+});
+modalopen.addEventListener("click",(e)=>{
+    modal.classList.add("show");
+    modal.style.display = "block";
+    body.classList.add("modal-open");
+    
 });
