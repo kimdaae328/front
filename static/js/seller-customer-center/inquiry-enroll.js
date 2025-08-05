@@ -173,7 +173,7 @@ items.forEach((item) => {
 const searchBoxInput = document.querySelector(".search-box-input");
 const cancelBtn = document.querySelector(".order-search-cancel");
 
-// 1. input 입력 시 cancel 버튼 보이기
+// input 입력 시 cancel 버튼 보이기
 searchBoxInput.addEventListener("input", () => {
     if (searchBoxInput.value.trim() !== "") {
         cancelBtn.style.display = "block";
@@ -182,11 +182,11 @@ searchBoxInput.addEventListener("input", () => {
     }
 });
 
-// 2. cancel 버튼 클릭 시 input 값 제거 + 버튼 숨기기
+// cancel 버튼 클릭 시 input 값 제거 + 버튼 숨기기
 cancelBtn.addEventListener("click", () => {
     searchBoxInput.value = "";
     cancelBtn.style.display = "none";
-    searchBoxInput.focus(); // UX상 포커스 유지
+    searchBoxInput.focus();
 });
 
 // 팝업
