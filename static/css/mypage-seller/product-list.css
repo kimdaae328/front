@@ -11,7 +11,7 @@
 
 html, body, span, div, button, input, label, 
 select, option, textarea {
-    font-family: "Noto Sans KR", "malgun gothic", AppleGothic, dotum, sans-serif;
+    /* font-family: "Noto Sans KR", "malgun gothic", AppleGothic, dotum, sans-serif; */
 }
 
 a, abbr, acronym, address, applet, article,
