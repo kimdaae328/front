@@ -860,3 +860,53 @@ img.seller-icon{
     height: 28px;
     margin: 0px 8px 0px 0px;
 }
+
+
+/* pagenation */
+/* pagenation */
+.pagenation {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.pagenation button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.pagenation .prev {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-prev-activated.svg);
+}
+
+.pagenation .prev:disabled {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-prev-disabled.svg);
+    cursor: default;
+}
+
+.pagenation .prev:hover {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-prev-hover.svg);
+}
+
+.pagenation .next:hover {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-next-hover.svg);
+}
+
+.pagenation .next {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-next-activated.svg);
+}
+
+.pagenation .next:disabled {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-next-disabled.svg);
+    cursor: default;
+}
+/* /pagenation */
