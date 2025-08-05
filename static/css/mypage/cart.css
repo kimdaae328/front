@@ -333,10 +333,14 @@ input[type=checkbox], input[type=radio] {
     font-size: 16px;
 }
 
-.refrigeration-product {
+.refrigeration-product-wrap {
     position: relative;
     background-color: #fff;
     border-radius: 0px 0px 16px 16px
+}
+
+.refrigeration-product {
+    position: relative;
 }
 
 .product-header {
@@ -401,13 +405,6 @@ input[type=checkbox], input[type=radio] {
     background-image: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%3e%3cpath%20d='M15.707%207.7071L8.68405%2014.7309L4.29272%2010.3389L5.70704%208.92483L8.68407%2011.9023L14.2927%206.29297L15.707%207.7071Z'%20fill='%23F2F5F8'/%3e%3c/svg%3e");
     border-width: 2px;
     border-style: solid;
-    width: 20px;
-    height: 20px;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    border-radius: 4px;
     border-color: #222;
     background-color: #222;
 }
@@ -480,13 +477,14 @@ input[type=checkbox], input[type=radio] {
     justify-content: center;
     width: 50%;
     height: 100%;
+    cursor: pointer;
 }
 
-.conut {
+.count {
     z-index: 1;
     line-height: 26px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .p-button {
@@ -552,6 +550,10 @@ input[type=checkbox], input[type=radio] {
     padding-left: 8px;
     color: #a7b2bc;
 
+}
+
+.no-all-remove:hover{
+    background-color: #eceff3;
 }
 
 .no-all-remove>p {
