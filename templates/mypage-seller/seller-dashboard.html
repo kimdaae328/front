@@ -6,7 +6,7 @@
         <title>너도먹고나도먹고</title>
         <link rel="shortcut icon" href="" type="image/x-icon">
         <link rel="stylesheet" href="../../static/fonts/pretendard/font.css">
-        <link rel="stylesheet" href="../../static/css/mypage-seller/product-list.css">
+        <link rel="stylesheet" href="../../static/css/mypage-seller/seller-dashboard.css">
         <link rel="shortcut icon" href="../../static/images/main/favicon.png" type="image/x-icon">
 
     </head>
@@ -113,126 +113,186 @@
                                         <div class="seller-list-cards">
                                             <div class="seller-list-card">
                                                 <div class="seller-product-wrap">
-                                                    <!-- 테이블 부분 -->
-                                                    <table>
-                                                        <colgroup>
-                                                            <col class="img">
-                                                            <col class="product-name">
-                                                            <col class="product-price">
-                                                            <col class="product-stock">
-                                                            <col class="product-btn">
-                                                        </colgroup>
-                                                        <thead>
-                                                            <tr>
-                                                                <th class="">상품 이미지</th>
-                                                                <th class="">상품명</th>
-                                                                <th class="">가격</th>
-                                                                <th class="">재고량</th>
-                                                            </tr>
-                                                        </thead>
-                                                        
-                                                        <tbody>
-                                                            <!-- 반복 부분 -->
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="">
-                                                                        <div class="seller-product-img-wrap">
-                                                                            <img src="https://product-image.kurly.com/hdims/resize/%5E%3E120x%3E156/cropcenter/120x156/quality/85/src/product/image/e00a3ec3-a6d2-4858-bcf1-52d29e6cefd0.jpg" class="seller-product-img">
+                                                    <!-- 상단 대시보드 -->
+                                                    <div class="dashboard-title-container">
+                                                        <h3>판매자 통계/정산 내역</h3>
+                                                    </div>
+                                                    <div class="dashboard-statistics-container">
+                                                        <ul class="dashboard-statistics-list">
+                                                            <li>
+                                                                <div class="dashboard-statistics-item product-count">
+                                                                    <h3 class="item-title">상품 수</h3>
+                                                                    <span class="item-count">21개</span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="dashboard-statistics-item ">
+                                                                    <h3 class="item-title">주문 수</h3>
+                                                                    <span class="item-count">15개</span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="dashboard-statistics-item">
+                                                                    <h3 class="item-title">판매량</h3>
+                                                                    <span class="item-count">152개</span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="dashboard-statistics-item">
+                                                                    <h3 class="item-title">총 판매금액</h3>
+                                                                    <span class="item-count">752,610원</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- /상단 대시보드 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 두 번째 부분 -->
+                                <div class="seller-list-card-wrap-section">
+                                <!-- 중간 왼쪽 부분 -->
+                                    <div class="seller-list-card-wrap center">
+                                        <div class="seller-list-cards-warp">
+                                            <div class="seller-list-cards">
+                                                <div class="seller-list-card seller-list-card-wrap">
+                                                    <!-- cl-상세부분 -->
+                                                    <div class="seller-product-wrap center-left">
+                                                        <div class="dashboard-title-container">
+                                                            <h3>정산 가능 금액</h3>
+                                                        </div>
+                                                        <div class="dashboard-statistics-container">
+                                                            <h1>752,610원</h1>
+                                                        </div>
+                                                        <div class="request-payout-btn-wrap">
+                                                            <button class="request-payout-btn">
+                                                                <h3>정산하기</h3>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /cl-상세부분 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- /중간 왼쪽 부분-->
+
+                                <!-- 중간 오른쪽 부분 -->
+                                <div class="seller-list-card-wrap center">
+                                    <div class="seller-list-cards-warp">
+                                        <div class="seller-list-cards">
+                                            <div class="seller-list-card seller-list-card-wrap">
+                                                <!-- cr-상세부분 -->
+                                                <div class="seller-product-wrap center-right">
+                                                    <div class="dashboard-title-container">
+                                                        <h3>오늘 매출</h3>
+                                                    </div>
+                                                    <div class="dashboard-statistics-container">
+                                                        <h1>0원</h1>
+                                                    </div>
+                                                </div>
+                                                <!-- /cr-상세부분 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /중간 오른쪽 부분-->
+                                </div>
+                                <!-- /두 번째 부분 -->
+                                <!-- 세 번째 부분 -->
+                                <div class="seller-list-card-wrap">
+                                    <div class="seller-list-cards-warp">
+                                        <div class="seller-list-cards">
+                                            <div class="seller-list-card">
+                                                <div class="seller-product-wrap">
+                                                    <!-- 상단 대시보드 -->
+                                                    <div class="dashboard-title-container">
+                                                        <h3>주간 매출</h3>
+                                                    </div>
+                                                    <div class="dashboard-statistics-container">
+                                                        <!-- 그래프 부분 -->
+                                                        <!-- /그래프 부분 -->
+                                                    </div>
+                                                    <!-- /상단 대시보드 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- /세 번째 부분 -->
+                                <!-- 네 번째 부분 -->
+                                <div class="seller-list-card-wrap">
+                                    <div class="seller-list-cards-warp">
+                                        <div class="seller-list-cards">
+                                            <div class="seller-list-card">
+                                                <div class="seller-product-wrap">
+                                                    <div class="dashboard-title-container payout">
+                                                        <h3>정산 내역</h3>
+                                                    </div>
+                                                    <div class="payout-date-wrap">
+                                                        <h3>2025.07.22</h3>
+                                                    </div>
+                                                    <div class="payout-date-wrap payout-count-wrap">
+                                                        <h3>정산 완료 <span class="payout-count">35</span> 건</h3>
+                                                    </div>
+                                                    <div class="payout-list-container">
+                                                        <ul class="payout-list-wrap">
+                                                            <li>
+                                                                <div class="payout-item-content-container">
+                                                                    <div class="payout-item-date">
+                                                                        <h3>2025.07.22</h3>
+                                                                    </div>
+                                                                    <div class="payout-item-info-wrap">
+                                                                        <div class="payout-item-info">
+                                                                            <div class="text-wrap"><h3>정산완료 35건</h3></div>
+                                                                            <div class="text-wrap"><h3>(프로모션 판매 서비스)???</h3></div>
+                                                                            <div class="text-wrap"><h3>(결제수단 판매 서비스)</h3></div>
                                                                         </div>
-                                                                    </a>
-                                                                </td>
-                                                                <td>
-                                                                    <a href="">
-                                                                        <div>
-                                                                            <p class="product-info-title">
-                                                                                <span>[아리울떡공방] 굳지않는 쑥개떡 350g </span>
-                                                                            </p>
+                                                                        <div class="payout-item-price">
+                                                                            <div class="text-wrap"><h3>228,950 원</h3></div>
                                                                         </div>
-                                                                    </a>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="seller-product-price">
-                                                                        <p class="buy-product-price">4,950원</p>
                                                                     </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="seller-product-price">
-                                                                        <p class="quantity">1개</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="payout-list-container">
+                                                        <ul class="payout-list-wrap">
+                                                            <li>
+                                                                <div class="payout-item-content-container">
+                                                                    <div class="payout-item-date">
+                                                                        <h3>2025.07.22</h3>
                                                                     </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="toggle-btn-container on">
-                                                                        <div class="toggle-btn on"></div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <!-- /반복 부분 -->
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="">
-                                                                        <div class="seller-product-img-wrap">
-                                                                            <img src="https://product-image.kurly.com/hdims/resize/%5E%3E120x%3E156/cropcenter/120x156/quality/85/src/product/image/e00a3ec3-a6d2-4858-bcf1-52d29e6cefd0.jpg" class="seller-product-img">
+                                                                    <div class="payout-item-info-wrap">
+                                                                        <div class="payout-item-info">
+                                                                            <div class="text-wrap"><h3>정산완료 35건</h3></div>
+                                                                            <div class="text-wrap"><h3>(프로모션 판매 서비스)???</h3></div>
+                                                                            <div class="text-wrap"><h3>(결제수단 판매 서비스)</h3></div>
                                                                         </div>
-                                                                    </a>
-                                                                </td>
-                                                                <td>
-                                                                    <a href="">
-                                                                        <div>
-                                                                            <p class="product-info-title">
-                                                                                <span>[아리울떡공방] 굳지않는 쑥개떡 350g </span>
-                                                                            </p>
+                                                                        <div class="payout-item-price">
+                                                                            <div class="text-wrap"><h3>228,950 원</h3></div>
                                                                         </div>
-                                                                    </a>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="seller-product-price">
-                                                                        <p class="buy-product-price">4,950원</p>
                                                                     </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="seller-product-price">
-                                                                        <p class="quantity">1개</p>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="toggle-btn-container on">
-                                                                        <div class="toggle-btn on"></div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4">
-                                                                    <div class="no-search-text-container">
-                                                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_368_6766)"><path d="M22.0732 43.1463C33.7116 43.1463 43.1463 33.7116 43.1463 22.0732C43.1463 10.4348 33.7116 1 22.0732 1C10.4348 1 1 10.4348 1 22.0732C1 33.7116 10.4348 43.1463 22.0732 43.1463Z" stroke="#e2e2e2" stroke-width="2" stroke-linecap="round"></path><path d="M47.8293 47.8291L37.2927 37.2925" stroke="#e2e2e2" stroke-width="2" stroke-linecap="round"></path></g><defs><clipPath id="clip0_368_6766"><rect width="48" height="48" fill="#fff"></rect></clipPath></defs></svg>
-                                                                        <span class="no-search-text">
-                                                                            검색된 상품이 없습니다.
-                                                                            <br>
-                                                                            다른 검색어를 입력해 주세요.
-                                                                        </span>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <!-- /테이블 부분 -->
-                                                    <!-- 검색 결과 없음 부분 -->
-                                                    
-                                                    <!-- /검색 결과 없음 부분 -->
-                                                    <div class="pagenation">
-                                                        <button type="button" class="prev" disabled></button>
-                                                        <button type="button" class="next"></button>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- /네 번째 부분 -->
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="add-cart-tap-wrap" style="z-index: 1;">
+                <div class="add-cart-tap-wrap" style="z-index: 1; display: none;">
                     <div class="add-cart-tap">
                         <p class="add-cart-tap-p">테스트입니다.</p><br><!--이미 담은 상품의 수량을 추가했어요     *이미 장바구니에 있는 상품*--></p>
                     </div>

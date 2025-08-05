@@ -56,6 +56,7 @@ toggleBtns.forEach((toggleBtn) => {
         }
         setTimeout(() => {
             toggleModal.classList.remove("show");
+            modalMessage.textContent = "";
             setTimeout(() => {
                 toggleCheckTime = false;
             }, 500);
