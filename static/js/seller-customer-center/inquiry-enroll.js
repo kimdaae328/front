@@ -102,11 +102,10 @@ function closeAllDropdowns() {
 
 // 왼쪽 선택했을 때 오른쪽에 보여줄 내용
 const rightOptions = {
-    회원: ["회원정보/등급", "회원가입/탈퇴"],
-    "주문/결제": ["정보변경(주소/출입방법)", "주문내역", "주문/결제 방법"],
+    정산: ["정산 금액", "입금 지연", "수수료", "세금계산서"],
+    상품: ["등록", "수정"],
+    "주문/결제/배송": ["주문", "결제", "송장 오류", "배송 지연"],
     "취소/교환/환불": ["취소", "반품", "교환"],
-    배송: ["다른 상품 수령", "배송일정/정보"],
-    상품: ["상품 품질", "상품 정보"],
     "서비스/오류/기타": [
         "시스템 오류/장애",
         "기타(직접 입력)",
@@ -137,20 +136,6 @@ leftItems.forEach((item) => {
                 document
                     .querySelector(".rightDropdown .dropdown-toggle")
                     .classList.remove("active");
-
-                const enableList = [
-                    "취소",
-                    "반품",
-                    "교환",
-                    "상품 품질",
-                    "상품 정보",
-                    "주문내역",
-                    "다른 상품 수령",
-                    "배송일정/정보",
-                ];
-                formProduct.style.display = enableList.includes(txt)
-                    ? "flex"
-                    : "none";
             });
 
             rightMenu.appendChild(li);
