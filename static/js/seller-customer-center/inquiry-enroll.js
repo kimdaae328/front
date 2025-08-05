@@ -59,7 +59,7 @@ textarea.addEventListener("keyup", (e) => {
     textEnter.innerText = `${result}`;
 });
 
-// 샐랙트 박스 드롭다운
+// 유형 셀랙트 박스 드롭다운
 const dropdowns = document.querySelectorAll(".dropdown-wrap");
 
 dropdowns.forEach((dropdown) => {
@@ -114,8 +114,8 @@ const rightOptions = {
     ],
 };
 
-const leftItems = document.querySelectorAll("#leftDropdown .dropdown-menu li");
-const rightMenu = document.querySelector("#rightDropdown .dropdown-menu");
+const leftItems = document.querySelectorAll(".leftDropdown .dropdown-menu li");
+const rightMenu = document.querySelector(".rightDropdown .dropdown-menu");
 const formProduct = document.querySelector(".form-product");
 
 leftItems.forEach((item) => {
@@ -131,11 +131,11 @@ leftItems.forEach((item) => {
 
             li.addEventListener("click", () => {
                 document.querySelector(
-                    "#rightDropdown .dropdown-toggle span"
+                    ".rightDropdown .dropdown-toggle span"
                 ).textContent = txt;
 
                 document
-                    .querySelector("#rightDropdown .dropdown-toggle")
+                    .querySelector(".rightDropdown .dropdown-toggle")
                     .classList.remove("active");
 
                 const enableList = [
@@ -157,11 +157,79 @@ leftItems.forEach((item) => {
         });
 
         document.querySelector(
-            "#rightDropdown .dropdown-toggle"
+            ".rightDropdown .dropdown-toggle"
         ).disabled = false;
 
         document.querySelector(
-            "#rightDropdown .dropdown-toggle span"
+            ".rightDropdown .dropdown-toggle span"
         ).textContent = "상세유형을 선택해주세요";
+    });
+});
+
+// 팝업 주문번호 셀랙트 박스 드롭다운
+const toggle = document.querySelector(".custom-dropdown .dropdown-toggle");
+const menu = document.querySelector(".custom-dropdown .dropdown-menu");
+const items = menu.querySelectorAll(".custom-dropdown .dropdown-menu li");
+
+toggle.addEventListener("click", (e) => {
+    toggle.classList.toggle("active");
+});
+
+items.forEach((item) => {
+    item.addEventListener("click", (e) => {
+        items.forEach((el) => el.classList.remove("on"));
+        item.classList.add("on");
+
+        toggle.firstElementChild.innerHTML = `<span>${item.textContent}</span>`;
+        toggle.classList.remove("active");
+    });
+});
+
+const searchBoxInput = document.querySelector(".search-box-input");
+const cancelBtn = document.querySelector(".order-search-cancel");
+
+// 1. input 입력 시 cancel 버튼 보이기
+searchBoxInput.addEventListener("input", () => {
+    if (searchBoxInput.value.trim() !== "") {
+        cancelBtn.style.display = "block";
+    } else {
+        cancelBtn.style.display = "none";
+    }
+});
+
+// 2. cancel 버튼 클릭 시 input 값 제거 + 버튼 숨기기
+cancelBtn.addEventListener("click", () => {
+    searchBoxInput.value = "";
+    cancelBtn.style.display = "none";
+    searchBoxInput.focus(); // UX상 포커스 유지
+});
+
+// 팝업
+const openButtons = document.querySelectorAll(".popup-trigger");
+const closeButtons = document.querySelectorAll(".popup-close");
+const htmlScroll = document.querySelector("html");
+let currentButton = null;
+
+openButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const targetModal = document.querySelector(btn.dataset.target);
+        if (targetModal) {
+            targetModal.style.display = "block";
+            htmlScroll.style.overflow = "hidden";
+
+            currentButton = btn;
+        }
+    });
+});
+
+closeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const targetModal = btn.closest(".popup-wrapper");
+        if (targetModal) {
+            targetModal.style.display = "none";
+            htmlScroll.style.overflow = "";
+        }
     });
 });
