@@ -23,25 +23,62 @@ recentlyButtons.forEach((button) => {
 
 // 수량 카운트
 const quantityBoxes = document.querySelectorAll(".product-quantity-box");
+const totalAmount = document.querySelectorAll(".total-amount");
 
+// 모든 상품 정보 수집
+const productItems = Array.from(
+    document.querySelectorAll(".product-option-item")
+).map((item) => ({
+    countEl: item.querySelector(".count"),
+    finalPriceEl: item.querySelector(".final-price"),
+    unitPrice: Number(
+        item.querySelector(".final-price").textContent.replace(/[^0-9]/g, "")
+    ),
+}));
+
+// 모든 상품 수량 동기화
+const updateAllCounts = (newCount) => {
+    productItems.forEach((item) => {
+        item.countEl.textContent = newCount;
+    });
+};
+
+// 모든 total-amount 업데이트
+const updateTotal = (count) => {
+    let total = 0;
+    productItems.forEach((item) => {
+        total += item.unitPrice * count;
+    });
+    totalAmount.forEach((el) => {
+        el.textContent = total.toLocaleString();
+    });
+};
+
+// 버튼 클릭 이벤트 연결
 quantityBoxes.forEach((box) => {
     const plusBtn = box.querySelector(".quantity-btn.plus");
     const minusBtn = box.querySelector(".quantity-btn.minus");
-    const countEl = box.querySelector(".count");
-    minusBtn.disabled = true;
 
     plusBtn.addEventListener("click", () => {
-        let count = Number(countEl.textContent);
-        count++;
-        countEl.textContent = count;
-        minusBtn.disabled = count <= 0;
+        let current = Number(box.querySelector(".count").textContent);
+        current++;
+        updateAllCounts(current);
+        quantityBoxes.forEach(
+            (b) =>
+                (b.querySelector(".quantity-btn.minus").disabled = current <= 0)
+        );
+        updateTotal(current);
     });
 
     minusBtn.addEventListener("click", () => {
-        let count = Number(countEl.textContent);
-        if (count > 0) count--;
-        countEl.textContent = count;
-        minusBtn.disabled = count == 0;
+        let current = Number(box.querySelector(".count").textContent);
+        if (current > 0) current--;
+        updateAllCounts(current);
+        quantityBoxes.forEach(
+            (b) =>
+                (b.querySelector(".quantity-btn.minus").disabled = current <= 0)
+        );
+        updateTotal(current);
     });
 });
 
@@ -80,7 +117,7 @@ const floatingButton = document.querySelector(".floating-btn");
 const productSection = document.querySelector(".product-tab-content");
 
 floatingButton.addEventListener("click", (e) => {
-    e.target.classList.toggle("on");
+    e.target.classList.toggle("active");
 });
 
 window.addEventListener("scroll", () => {
@@ -166,3 +203,53 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+// textarea 글자수 카운트
+const textarea = document.querySelector("textarea");
+const textEnter = document.querySelector(".text-enter");
+const max = document.querySelector(".maxLength");
+const maxLength = max.innerText;
+
+textarea.addEventListener("keyup", (e) => {
+    if (textarea.value.length > maxLength) {
+        textarea.value = textarea.value.slice(0, maxLength);
+    }
+    const result = textarea.value.length;
+    textEnter.innerText = `${result}`;
+});
+
+// 팝업 등록 버튼 disabled
+const btnInputActive = document.querySelector(".btn-input-active");
+const titleInput = btnInputActive.querySelector(".title");
+const contentTextarea = btnInputActive.querySelector(".content");
+const submitBtn = btnInputActive.querySelector(".popup-footer .btn-primary");
+
+function toggleSubmitButton() {
+    const isTitleFilled = titleInput.value.trim().length > 0;
+    const isContentFilled = contentTextarea.value.trim().length > 0;
+    submitBtn.disabled = !(isTitleFilled && isContentFilled);
+}
+
+titleInput.addEventListener("input", toggleSubmitButton);
+contentTextarea.addEventListener("input", toggleSubmitButton);
+
+toggleSubmitButton();
+
+// btn-wish 버튼
+const wishButtons = document.querySelectorAll(".btn-wish");
+
+wishButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const isActive = button.classList.contains("active");
+
+        wishButtons.forEach((btn) => {
+            if (isActive) {
+                btn.classList.remove("active");
+            } else {
+                btn.classList.add("active");
+            }
+        });
+    });
+});
+
+// 도움되요 해야함
