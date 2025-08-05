@@ -59,7 +59,7 @@ textarea.addEventListener("keyup", (e) => {
     textEnter.innerText = `${result}`;
 });
 
-// 샐랙트 박스 드롭다운
+// 유형 셀랙트 박스 드롭다운
 const dropdowns = document.querySelectorAll(".dropdown-wrap");
 
 dropdowns.forEach((dropdown) => {
@@ -67,7 +67,6 @@ dropdowns.forEach((dropdown) => {
     const menu = dropdown.querySelector(".dropdown-menu");
     const items = menu.querySelectorAll("li");
 
-    // 드롭다운 열기/닫기
     toggle.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -75,7 +74,6 @@ dropdowns.forEach((dropdown) => {
         toggle.classList.toggle("active");
     });
 
-    // 메뉴 항목 클릭
     items.forEach((item) => {
         item.addEventListener("click", (e) => {
             items.forEach((el) => el.classList.remove("on"));
@@ -87,12 +85,10 @@ dropdowns.forEach((dropdown) => {
     });
 });
 
-// 외부 클릭 시 모든 드롭다운 닫기
 document.addEventListener("click", () => {
     closeAllDropdowns();
 });
 
-// 모든 드롭다운 닫기 함수
 function closeAllDropdowns() {
     dropdowns.forEach((dropdown) => {
         const toggle = dropdown.querySelector(".dropdown-toggle");
@@ -100,7 +96,6 @@ function closeAllDropdowns() {
     });
 }
 
-// 왼쪽 선택했을 때 오른쪽에 보여줄 내용
 const rightOptions = {
     회원: ["회원정보/등급", "회원가입/탈퇴"],
     "주문/결제": ["정보변경(주소/출입방법)", "주문내역", "주문/결제 방법"],
@@ -114,8 +109,8 @@ const rightOptions = {
     ],
 };
 
-const leftItems = document.querySelectorAll("#leftDropdown .dropdown-menu li");
-const rightMenu = document.querySelector("#rightDropdown .dropdown-menu");
+const leftItems = document.querySelectorAll(".leftDropdown .dropdown-menu li");
+const rightMenu = document.querySelector(".rightDropdown .dropdown-menu");
 const formProduct = document.querySelector(".form-product");
 
 leftItems.forEach((item) => {
@@ -131,11 +126,11 @@ leftItems.forEach((item) => {
 
             li.addEventListener("click", () => {
                 document.querySelector(
-                    "#rightDropdown .dropdown-toggle span"
+                    ".rightDropdown .dropdown-toggle span"
                 ).textContent = txt;
 
                 document
-                    .querySelector("#rightDropdown .dropdown-toggle")
+                    .querySelector(".rightDropdown .dropdown-toggle")
                     .classList.remove("active");
 
                 const enableList = [
@@ -157,11 +152,77 @@ leftItems.forEach((item) => {
         });
 
         document.querySelector(
-            "#rightDropdown .dropdown-toggle"
+            ".rightDropdown .dropdown-toggle"
         ).disabled = false;
 
         document.querySelector(
-            "#rightDropdown .dropdown-toggle span"
+            ".rightDropdown .dropdown-toggle span"
         ).textContent = "상세유형을 선택해주세요";
+    });
+});
+
+// 팝업 주문번호 셀랙트 박스 드롭다운
+const toggle = document.querySelector(".custom-dropdown .dropdown-toggle");
+const menu = document.querySelector(".custom-dropdown .dropdown-menu");
+const items = menu.querySelectorAll(".custom-dropdown .dropdown-menu li");
+
+toggle.addEventListener("click", (e) => {
+    toggle.classList.toggle("active");
+});
+
+items.forEach((item) => {
+    item.addEventListener("click", (e) => {
+        items.forEach((el) => el.classList.remove("on"));
+        item.classList.add("on");
+
+        toggle.firstElementChild.innerHTML = `<span>${item.textContent}</span>`;
+        toggle.classList.remove("active");
+    });
+});
+
+const searchBoxInput = document.querySelector(".search-box-input");
+const cancelBtn = document.querySelector(".order-search-cancel");
+
+searchBoxInput.addEventListener("input", () => {
+    if (searchBoxInput.value.trim() !== "") {
+        cancelBtn.style.display = "block";
+    } else {
+        cancelBtn.style.display = "none";
+    }
+});
+
+cancelBtn.addEventListener("click", () => {
+    searchBoxInput.value = "";
+    cancelBtn.style.display = "none";
+    searchBoxInput.focus();
+});
+
+// 팝업
+const openButtons = document.querySelectorAll(".popup-trigger");
+const closeButtons = document.querySelectorAll(".popup-close");
+const htmlScroll = document.querySelector("html");
+let currentButton = null;
+
+openButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const targetModal = document.querySelector(btn.dataset.target);
+        if (targetModal) {
+            targetModal.style.display = "block";
+            htmlScroll.style.overflow = "hidden";
+
+            currentButton = btn;
+        }
+    });
+});
+
+closeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const targetModal = btn.closest(".popup-wrapper");
+        if (targetModal) {
+            targetModal.style.display = "none";
+            htmlScroll.style.overflow = "";
+        }
     });
 });

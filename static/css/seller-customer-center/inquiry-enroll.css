@@ -144,6 +144,23 @@ img {
     width: calc(100% - 140px);
 }
 
+.form-group .form-content .product-box {
+    padding: 15px 0;
+}
+
+.form-group .form-content:has(.form-product-item) .btn-outline {
+    margin-top: 10px;
+}
+
+.form-product-list {
+    max-height: 294px;
+    overflow-y: auto;
+}
+
+.form-product-item .product-box-title > p {
+    max-width: 362px;
+}
+
 .form-product {
     display: none;
 }
@@ -987,7 +1004,8 @@ img {
     padding: 12px 0px;
 }
 
-.btn-check-box .title-wrap {
+.btn-check-box .title-wrap,
+.form-content .title-wrap {
     display: flex;
     align-items: center;
     width: 100%;
@@ -995,13 +1013,15 @@ img {
     line-height: 20px;
 }
 
-.btn-check-box .title-wrap .date {
+.btn-check-box .title-wrap .date,
+.form-content .title-wrap .date {
     font-weight: bold;
     color: rgb(51, 51, 51);
     margin-right: 6px;
 }
 
-.btn-check-box .title-wrap .num-label {
+.btn-check-box .title-wrap .num-label,
+.form-content .title-wrap .num-label {
     font-size: 12px;
     color: rgb(153, 153, 153);
     letter-spacing: -0.025em;
@@ -1172,6 +1192,13 @@ img {
     top: 2px;
 }
 
+.btn-delete {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-left: 16px;
+}
+
 /* pagenation */
 .pagenation {
     text-align: center;
@@ -1180,9 +1207,6 @@ img {
 .pagenation button {
     height: 32px;
     width: 32px;
-}
-
-.pagenation .prev {
 }
 
 .pagenation .prev:disabled rect {
