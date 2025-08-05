@@ -25,7 +25,14 @@ recentlyButtons.forEach((button) => {
 const quantityBoxes = document.querySelectorAll(".product-quantity-box");
 const totalAmount = document.querySelectorAll(".total-amount");
 
-// 모든 상품 정보 수집
+// 수량 카운트 - 마이너스 버튼 disabled 초기화
+quantityBoxes.forEach((box) => {
+    const count = Number(box.querySelector(".count").textContent);
+    const minusBtn = box.querySelector(".quantity-btn.minus");
+    minusBtn.disabled = count <= 0;
+});
+
+// 수량 카운트 - 모든 상품 정보 수집
 const productItems = Array.from(
     document.querySelectorAll(".product-option-item")
 ).map((item) => ({
@@ -36,14 +43,14 @@ const productItems = Array.from(
     ),
 }));
 
-// 모든 상품 수량 동기화
+// 수량 카운트 - 모든 상품 수량 동기화
 const updateAllCounts = (newCount) => {
     productItems.forEach((item) => {
         item.countEl.textContent = newCount;
     });
 };
 
-// 모든 total-amount 업데이트
+// 수량 카운트 - 모든 total-amount 업데이트
 const updateTotal = (count) => {
     let total = 0;
     productItems.forEach((item) => {
@@ -54,7 +61,7 @@ const updateTotal = (count) => {
     });
 };
 
-// 버튼 클릭 이벤트 연결
+// 수량 카운트 - 버튼 클릭 이벤트 연결
 quantityBoxes.forEach((box) => {
     const plusBtn = box.querySelector(".quantity-btn.plus");
     const minusBtn = box.querySelector(".quantity-btn.minus");
@@ -144,25 +151,21 @@ tabButtons.forEach((button) => {
 });
 
 // 자세히보기 드롭다운
-const moreBtns = document.querySelectorAll(".more-btn");
+const moreBtns = document.querySelectorAll(".btn-more");
 
 moreBtns.forEach((button) => {
     button.addEventListener("click", (e) => {
-        const guideItem = button.closest(".guide-item");
-        const guideBottoms = guideItem.querySelectorAll(".guide-bottom");
-
         button.classList.toggle("on");
-        guideBottoms.forEach((button) => {
-            button.classList.toggle("hidden");
-        });
     });
 });
 
 // 상품문의 드롭다운
-const inquiryButtons = document.querySelectorAll(".title-btn");
+const inquiryButtons = document.querySelectorAll(".btn-title");
 
 inquiryButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        if (button.classList.contains("secret")) return;
+
         const tr = button.closest("tr");
         const answerTr = tr.nextElementSibling;
 
@@ -240,16 +243,35 @@ const wishButtons = document.querySelectorAll(".btn-wish");
 
 wishButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        const isActive = button.classList.contains("active");
+        const isActive = button.classList.contains("on");
 
         wishButtons.forEach((btn) => {
             if (isActive) {
-                btn.classList.remove("active");
+                btn.classList.remove("on");
             } else {
-                btn.classList.add("active");
+                btn.classList.add("on");
             }
         });
     });
 });
 
-// 도움되요 해야함
+// btn-helpful 버튼
+const helpfulButtons = document.querySelectorAll(".btn-helpful");
+
+helpfulButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        button.classList.toggle("on");
+    });
+});
+
+// 사진후기 미리보기 이미지
+const reviewImgButtons = document.querySelectorAll(
+    ".pop-preview-item .btn-img"
+);
+
+reviewImgButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        reviewImgButtons.forEach((btn) => btn.classList.remove("on"));
+        button.classList.add("on");
+    });
+});

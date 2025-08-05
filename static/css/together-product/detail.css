@@ -190,12 +190,8 @@ img {
     border: none;
 }
 
-
 /* checkbox */
 /* radio */
-.btn-radio-list {
-}
-
 .btn-radio-item .input-label{
     font-size: 14px;
     padding: 15px 0 12px;
@@ -279,6 +275,10 @@ img {
     font-size: 12px;
     line-height: 16px;
     color: rgb(204, 204, 204);
+}
+
+.hidden {
+    display: none;
 }
 
 /* layout */
@@ -694,7 +694,7 @@ img {
     border: 1px solid rgb(221, 221, 221);
 }
 
-.btn-wish.active path {
+.btn-wish.on path {
     stroke: #FF5A5A;
     fill: #FF5A5A;
 }
@@ -1081,7 +1081,7 @@ img {
     color: rgb(50, 116, 63);
 }
 
-.guide-item .more-btn {
+.guide-item .btn-more {
     position: absolute;
     right: 25px;
     top: 50%;
@@ -1095,19 +1095,18 @@ img {
     letter-spacing: -0.4px;
 }
 
-.guide-item .more-btn::before {
-    content: "";
-    position: absolute;
-    right: 0px;
-    top: 8px;
-    width: 14px;
-    height: 8px;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAQCAYAAAFyyC95AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAHKADAAQAAAABAAAAEAAAAAChTRmjAAABQklEQVQ4EaVTAVLCQAzMweuUR1jRZ+hQRp6BwCfU12np9rppclwhameYXJLdzSUXpJMuyfjp+UHaTh1mnQViCOjBaJQxQcAFG3m7d3qjM8Qbad/xswCw9UYW4BJkAFAmErQ7+f7o2z2cpH0iuGZRqpHtD3I6Hqj2Ta9rApZwks0iSZrmygpW4CibZ1YggbhZW+vLgXOPl5UdyDjEJ75O5CpTG8vVAgQIohd9IFOBx4mE6b9+DlOtTY0EWE/KT6bPMUeukSCmRDgl+VG2+7m3dcSSDL8H3Nwo4IYPlTFtXJOx0uquIgF1bAtWqgT+xccF2G7WX656ZR/Mif8Vvq45Xv06KNZxRKP6iHYMkY4jhca+/LoxCBsRiWCsJs4XHZaAOVHgsPvERxfuZkEK1gojFy1EnXBBEnLh3R38o7x8/fYvdAbtFvI3sJI0yAAAAABJRU5ErkJggg==) 100% 50% / 14px 8px no-repeat;
-    transform: rotate(0deg);
+.guide-item .btn-more svg{
+    position: relative;
+    top: 5px;
+    transform: rotate(-90deg);
 }
 
-.guide-item .more-btn.on::before {
-    transform: rotate(-180deg);
+.guide-item .btn-more.on svg {
+    transform: rotate(90deg);
+}
+
+.guide-item:has(.on) .guide-bottom {
+    display: none;
 }
 
 .guide-item:last-of-type {
@@ -1459,7 +1458,7 @@ img {
     color: rgb(153, 153, 153);
 }
 
-.helpful-btn {
+.btn-helpful {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1473,18 +1472,18 @@ img {
     color: rgb(153, 153, 153);
 }
 
-.helpful-btn:hover,
-.helpful-btn.active {
+.btn-helpful:hover,
+.btn-helpful.on {
     color: rgb(50, 116, 63);
     border: 1px solid rgb(50, 116, 63);
 }
 
-.helpful-btn:hover svg path,
-.helpful-btn.active svg path{
+.btn-helpful:hover svg path,
+.btn-helpful.on svg path{
     stroke: rgb(50, 116, 63);
 }
 
-.helpful-btn svg{
+.btn-helpful svg{
     width: 15px;
     height: 15px;
     margin-right: 4px;
