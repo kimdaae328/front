@@ -19,7 +19,7 @@ const popmenubt1= document.getElementById("pop-menu-bt1")
 const popmenubt2= document.getElementById("pop-menu-bt2")
 const modalclose=document.getElementById("close")
 const body=document.getElementById("body")
-const approvalbtn=document.getElementById("approvalbtn")
+const modal=document.getElementById("modal")
 const modalopen=document.getElementById("modal-open")
 menubtn1.addEventListener("click", (e) => {
     sublist1.classList.toggle("show");
@@ -52,28 +52,5 @@ submenus.forEach(submenu=>{
     })
 })
 
-submenus.forEach(submenu=>{
-    submenu.addEventListener('click',(e)=>{
-        e.preventDefault();
-       
-        submenus.forEach(active=>active.classList.remove('active'));
-        submenu.classList.add('active');
-        
-    })
-    
-})
 
 
-
-
-
-
-modalclose.addEventListener("click",(e)=>{
-    body.classList.remove("modal-open");
-    modal.classList.remove("show");
-    modal.style.display = "none";
-});
-modalopen.addEventListener("click",(e)=>{
-    approvalbtn.classList.toggle("show")
-    
-});
