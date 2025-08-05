@@ -554,6 +554,8 @@ button {
 
 .sales-product-wrap {
     display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
 }
 
 .sales-product-wrap.fold {
@@ -788,17 +790,34 @@ img.sales-icon {
     height: 28px;
     margin: 0 8px 0 0;
 }
+
+/* 판매 목록 카드 */
 div.info-wrap{
     font-weight: 500;
     font-size: 17px;
 }
 div.info-key-wrap{
-    
+    margin-right: 10px;
+    border-right: 1px solid black;
+    padding-right: 10px;
 }
 div.info-val-wrap{
-
+    margin-right: 42px;
 }
 div.sales-product-info-container div.sales-details{
     display: flex;
-
+    
 }
+div.sales-details.content{
+    margin-top: 19px;
+}
+div.sales-product-content-wrap{
+    display: flex;
+    border-bottom: 1px solid;
+    padding-bottom: 12px;
+}
+
+div.sales-summary{
+    margin: 7px 0px;
+}
+/* /판매 목록 카드 */
