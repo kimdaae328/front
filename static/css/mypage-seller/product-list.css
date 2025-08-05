@@ -776,9 +776,9 @@ col.img{
     width: 20%;
 }
 col.product-name{
-    width: 40%;
+    width: 35%;
 }
-col.prodcut-price{
+col.product-price{
     width: 9%
 }
 col.product-stock{
@@ -799,6 +799,8 @@ tbody tr td {
     background-color: rgb(242, 245, 248);
     transition: background-color 0.3s ease; 
     position: relative;
+    margin: auto;
+    width: 41px;
 }
 
 .toggle-btn-container.on {
@@ -839,12 +841,11 @@ thead tr th {
 /* /테이블 부분 */
 
 /* 아무것도 못 찾은 부분 */
-span.no-serch-text{
+span.no-search-text{
     text-align: center;
     font-size: 16px;
     color: rgb(181, 181, 181);
-    margin-top: 16px;
-    line-height: normal;
+    line-height: 1.2;
 }
 div.no-search-text-container{
     display: flex;
