@@ -801,7 +801,7 @@ div.dashboard-title-container {
 }
 div.dashboard-title-container h3 {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 16px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 48px;
@@ -832,12 +832,12 @@ div.dashboard-statistics-item {
 }
 h3.item-title {
     color: rgb(50, 116, 63);
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.5px;
 }
 span.item-count {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
 }
 /* /상단 대시보드 */
@@ -908,14 +908,14 @@ div.payout-count-wrap {
 div.payout-date-wrap h3,
 div.payout-item-date h3 {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 16px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 30px;
 }
 div.payout-count-wrap h3 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 15px;
     color: rgb(50, 116, 63);
 }
 div.payout-list-container {
@@ -932,7 +932,7 @@ div.payout-item-date {
     position: relative;
 }
 div.payout-item-date h3 {
-    font-size: 19px;
+    font-size: 14px;
 }
 
 div.payout-item-date::after {
@@ -959,10 +959,11 @@ div.payout-item-info-wrap {
 
 div.text-wrap h3 {
     font-weight: 500;
-    font-size: 17px;
+    font-size: 14px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 30px;
 }
 /* /네 번째 부분 */
+
 
