@@ -815,6 +815,7 @@ div.sales-details.title h2.sales-details-text{
     font-weight: 500;
     font-size: 20px;
     letter-spacing: -0.5px;
+    padding: 0px;
     line-height: 28px;
 }
 div.sales-details.content{
