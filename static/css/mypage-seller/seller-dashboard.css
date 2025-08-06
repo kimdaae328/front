@@ -309,9 +309,8 @@ button {
 }
 
 .seller-details-text {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
-    color: #333;
     letter-spacing: -0.5px;
     line-height: 28px;
 }
