@@ -829,11 +829,10 @@ div.sales-summary h2{
 /* /판매 목록 카드 */
 
 /* 검색결과없음 */
-span.no-serch-text{
+span.no-search-text{
     text-align: center;
     font-size: 16px;
     color: rgb(181, 181, 181);
-    margin-top: 16px;
     line-height: 20px;
 }
 div.no-search-text-container{
