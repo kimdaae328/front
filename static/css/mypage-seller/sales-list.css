@@ -181,6 +181,7 @@ button {
 }
 
 .mypage-sales {
+    height: 100vh;
     display: flex;
     align-items: flex-start;
     gap: 24px;
