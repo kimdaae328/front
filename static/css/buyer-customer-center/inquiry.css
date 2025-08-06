@@ -307,12 +307,42 @@ img {
     cursor: pointer;
 }
 
+.table-wrap .question-item span {
+    display: -webkit-box;
+    word-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .answer-item {
     display: none;
 }
 
 .answer-item.open {
     display: table-row;
+}
+
+.question-wrap {
+    display: flex;
+    padding: 22px 20px 30px;
+    align-items: flex-start;
+}
+
+.question-wrap .icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.question-wrap .text {
+    margin-left: 12px;
+    padding-top: 2px;
+    font-size: 14px;
+    word-break: break-all;
+    line-height: 19px;
+    letter-spacing: -0.5px;
 }
 
 .answer-wrap {
