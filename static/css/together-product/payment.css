@@ -338,6 +338,10 @@ img {
     box-sizing: border-box;
 }
 
+.input-wrap .input-result {
+    font-weight: 600;
+}
+
 .textarea-wrap {
     overflow: hidden;
     height: 95px;
@@ -534,7 +538,7 @@ img {
 }
 
 .order-content-text .count {
-    color: rgb(95, 0, 128);
+    color: rgb(50, 116, 63);
 }
 
 .order-product-section {
@@ -669,6 +673,7 @@ img {
 /* orderer-info */
 .orderer-content-item {
     display: flex;
+    align-items: baseline;
     padding: 20px 0px;
 }
 

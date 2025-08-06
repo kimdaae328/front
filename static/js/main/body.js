@@ -1,81 +1,3 @@
-// 알림 버튼
-
-const icon = document.querySelector("div.alarm-icon");
-const alarmTap = document.querySelector(".alarm-icon-wrap");
-
-icon.addEventListener("click", (e) => {
-    if (alarmTap.classList.contains("showIcon")) {
-        alarmTap.classList.remove("showIcon");
-    } else {
-        alarmTap.classList.add("showIcon");
-    }
-});
-
-// 알림 목록 만들기
-const alarmWindow = document.querySelector("div.section_notice_preview");
-
-const createAlarm = (text, callback1, callback2) => {
-    alarmWindow.innerHTML += `<div class="comp_card comp_notice">
-                                <a href="" class="link_notice">
-                                    <div class="group_source">
-                                        <div class="source_box">
-                                            <div class="thumb">
-                                                <img width="26" height="26" src="../../static/images/main/logo.png">
-                                            </div>
-                                            <span class="span-title">너도먹고나도먹고</span>
-                                        </div>
-                                        <div class="info_box">
-                                            <span class="info-text">7월 25일</span>
-                                        </div>
-                                        <div class="alarm-remove">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                <path d="M5.55566 5.55566L14.4446 14.4446" stroke="#ccc"></path>
-                                                <path d="M14.4443 5.55566L5.55545 14.4446" stroke="#ccc"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="group_info">
-                                        <strong class="info-title">${text}</strong>
-                                        <div class="info_area">
-                                            <div class="info_box">
-                                                <p class="desc"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>`;
-    if (callback1 && callback2) {
-        return callback1(alarmWindow), callback2(alarmWindow);
-    }
-};
-
-// 알림 삭제 버튼
-const removeAlarm = (alarmWindow) => {
-    const removeButtons = alarmWindow.querySelectorAll(".alarm-remove");
-    removeButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-            const card = button.closest(".comp_card");
-            if (card) {
-                card.remove();
-                alarmNull();
-            }
-        });
-    });
-};
-
-// 알림 없을때
-
-const alarmNull = () => {
-    const alarms = alarmWindow.querySelectorAll(".comp_card");
-
-    if (!alarms.length) {
-        alarmWindow.innerHTML = ` <p class="empty-message">알림이 없습니다.</p>`;
-    }
-};
-
-createAlarm("배송 알림", removeAlarm, alarmNull);
-
 // 배너
 
 // 배너 무한 슬라이드
@@ -354,29 +276,147 @@ recentlyButtons.forEach((button) => {
     });
 });
 
-// 팝업 수량 카운트
-const quantityBoxes = document.querySelectorAll(".product-quantity-box");
+// 타임 세일 인기랭킹 카드
 
-quantityBoxes.forEach((box) => {
-    const plusBtn = box.querySelector(".quantity-btn.plus");
-    const minusBtn = box.querySelector(".quantity-btn.minus");
-    const countEl = box.querySelector(".count");
-    minusBtn.disabled = true;
+// 남은 시간
 
-    plusBtn.addEventListener("click", () => {
-        let count = Number(countEl.textContent);
-        count++;
-        countEl.textContent = count;
-        minusBtn.disabled = count <= 0;
-    });
+const timeShow2 = document.querySelector(".show-timer2");
 
-    minusBtn.addEventListener("click", () => {
-        let count = Number(countEl.textContent);
-        if (count > 0) count--;
-        countEl.textContent = count;
-        minusBtn.disabled = count == 0;
-    });
+const restTime2 = (datetime) => {
+    const date = new Date(datetime);
+
+    const update2 = () => {
+        const now = new Date();
+        let gap = Math.floor((date.getTime() - now.getTime()) / 1000);
+
+        if (gap <= 0) {
+            timeShow2.innerHTML = "다음에 또 만나요🥲";
+            clearInterval(timer2);
+            return;
+        }
+
+        const hours = String(Math.floor(gap / 3600)).padStart(2, "0");
+        const minutes = String(Math.floor((gap % 3600) / 60)).padStart(2, "0");
+        const seconds = String(gap % 60).padStart(2, "0");
+
+        timeShow2.innerHTML = `<span>${hours}</span><span>${minutes}</span><span>${seconds}</span>`;
+    };
+
+    update2();
+    const timer2 = setInterval(update2, 1000);
+};
+
+restTime2("2026-07-28T00:00:00");
+
+const rankingList2 = document.querySelectorAll("div.ranking-swiper-slide2");
+const rankingCount2 = Math.ceil(rankingList2.length / 5);
+const rankingBackButton2 = document.querySelector(
+    "button.ranking-button-left2"
+);
+const rankingNextButton2 = document.querySelector(
+    "button.ranking-button-right2"
+);
+const rankingShowProduct2 = document.querySelector(".ranking-swiper-wrapper2");
+
+let rankingProductCount2 = 0;
+const rankingSlideWidth2 = 1075;
+
+// 다음 슬라이드로 이동
+rankingNextButton2.addEventListener("click", (e) => {
+    if (rankingProductCount2 < rankingCount2 - 1) {
+        rankingProductCount2++;
+
+        const move = rankingSlideWidth2 * rankingProductCount2;
+        rankingShowProduct2.style.transform = `translateX(-${move}px)`;
+        rankingShowProduct2.style.transition = "transform 0.5s";
+
+        rankingBackButton2.style.display =
+            rankingProductCount2 > 0 ? "block" : "none";
+        rankingNextButton2.style.display =
+            rankingProductCount2 >= rankingCount2 ? "none" : "block";
+    } else if (rankingProductCount2 === rankingCount2 - 1) {
+        const move =
+            rankingSlideWidth2 * rankingProductCount2 -
+            (rankingProductCount2 - 200);
+        rankingShowProduct2.style.transform = `translate(-${move}px)`;
+        rankingNextButton2.style.display = "none";
+    }
 });
+
+// 이전 슬라이드로 이동
+rankingBackButton2.addEventListener("click", (e) => {
+    if (rankingProductCount2 > 0) {
+        rankingProductCount2--;
+        rankingShowProduct2.style.transform = `translate(-${
+            rankingSlideWidth2 * rankingProductCount2
+        }px)`;
+        rankingShowProduct2.style.transition = `transform 0.5s`;
+    }
+    if (rankingProductCount2 <= 0) {
+        rankingBackButton2.style.display = "none";
+    }
+    if (rankingProductCount2 < rankingCount2 - 1) {
+        rankingNextButton2.style.display = "block";
+    }
+});
+
+// 팝업 합계
+const productItem = document.querySelectorAll(".popup-product-item");
+function calculateTotal(container) {
+    let total = 0;
+
+    productItem.forEach((item) => {
+        const priceText = item
+            .querySelector(".product-price")
+            .textContent.replace(/[^0-9]/g, "");
+        const count = parseInt(item.querySelector(".count").textContent, 10);
+        const price = parseInt(priceText, 10);
+        total += price * count;
+    });
+
+    // 총액 업데이트
+    const totalAmount = container.querySelector(".total-amount");
+    if (totalAmount) {
+        totalAmount.textContent = total.toLocaleString();
+    }
+}
+
+// 팝업 수량 카운트
+
+function quantityControls(container) {
+    const quantityBoxes = document.querySelectorAll(".product-quantity-box");
+
+    quantityBoxes.forEach((box) => {
+        const plusBtn = box.querySelector(".quantity-btn.plus");
+        const minusBtn = box.querySelector(".quantity-btn.minus");
+        const countEl = box.querySelector(".count");
+        minusBtn.disabled = true;
+
+        plusBtn.addEventListener("click", () => {
+            let count = Number(countEl.textContent);
+            count++;
+            countEl.textContent = count;
+            minusBtn.disabled = count <= 0;
+
+            calculateTotal(container);
+        });
+
+        minusBtn.addEventListener("click", () => {
+            let count = Number(countEl.textContent);
+            if (count > 0) count--;
+            countEl.textContent = count;
+            minusBtn.disabled = count == 0;
+
+            calculateTotal(container);
+        });
+    });
+
+    calculateTotal(container);
+}
+
+const popup = document.querySelector(".popup-content");
+quantityControls(popup);
+
 // 팝업
 const openButtons = document.querySelectorAll(".popup-trigger");
 const closeButtons = document.querySelectorAll(".popup-close");

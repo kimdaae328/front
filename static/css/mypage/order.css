@@ -677,6 +677,67 @@ button {
     margin-left: 6px;
 }
 
+/* 주문 목록 없을 때 */
+.order-null {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    height: 700px;
+    background-color: #fff;
+    margin-top: 16px;
+    border-radius: 16px;
+}
+
+.null-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 48px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.null-info>span {
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    width: 64px;
+    height: 64px;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    max-width: 100%;
+}
+
+.null-info>span>img {
+    display: block;
+    max-width: 100%;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.null-p {
+    margin-top: 16px;
+    color: #222;
+    line-height: 26px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
 /* 배송 준비중일 때 */
 .order-card-cancel {
     z-index: 1;

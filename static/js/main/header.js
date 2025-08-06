@@ -1,14 +1,20 @@
-// 알림 버튼
-
 const icon = document.querySelector("div.alarm-icon");
 const alarmTap = document.querySelector(".alarm-icon-wrap");
 
+// 아이콘 클릭 시 토글
 icon.addEventListener("click", (e) => {
-    if (alarmTap.classList.contains("showIcon")) {
-        alarmTap.classList.remove("showIcon");
-    } else {
-        alarmTap.classList.add("showIcon");
-    }
+    e.stopPropagation(); // 문서 클릭 이벤트 전파 방지
+    alarmTap.classList.toggle("showIcon");
+});
+
+// 알림창 내부 클릭 시 → 닫히지 않도록 이벤트 전파 막기
+alarmTap.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+// 문서 클릭 시 바깥 클릭 감지
+document.addEventListener("click", (e) => {
+    alarmTap.classList.remove("showIcon");
 });
 
 // 알림 목록 만들기
@@ -75,3 +81,30 @@ const alarmNull = () => {
 };
 
 createAlarm("배송 알림", removeAlarm, alarmNull);
+
+// 팝업
+const openButtons = document.querySelectorAll(".popup-trigger");
+const closeButtons = document.querySelectorAll(".popup-close");
+
+openButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const targetSelector = btn.dataset.target;
+        const targetModal = document.querySelector(targetSelector);
+        const htmlScroll = document.querySelector("html");
+        if (targetModal) {
+            targetModal.style.display = "block";
+            htmlScroll.style.overflow = "hidden";
+        }
+    });
+});
+
+closeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const targetModal = btn.closest(".popup-wrapper");
+        const htmlScroll = document.querySelector("html");
+        if (targetModal) {
+            targetModal.style.display = "none";
+            htmlScroll.style.overflow = "";
+        }
+    });
+});

@@ -23,71 +23,52 @@ recentlyButtons.forEach((button) => {
 
 // 수량 카운트
 const quantityBoxes = document.querySelectorAll(".product-quantity-box");
-const totalAmount = document.querySelectorAll(".total-amount");
+const quantityCounts = document.querySelectorAll(
+    ".product-quantity-box .count"
+);
+const finalPrice = document.querySelector(".option-price .final-price");
+const totalAmounts = document.querySelectorAll(".total-amount");
 
-// 수량 카운트 - 마이너스 버튼 disabled 초기화
-quantityBoxes.forEach((box) => {
-    const count = Number(box.querySelector(".count").textContent);
-    const minusBtn = box.querySelector(".quantity-btn.minus");
-    minusBtn.disabled = count <= 0;
-});
-
-// 수량 카운트 - 모든 상품 정보 수집
-const productItems = Array.from(
-    document.querySelectorAll(".product-option-item")
-).map((item) => ({
-    countEl: item.querySelector(".count"),
-    finalPriceEl: item.querySelector(".final-price"),
-    unitPrice: Number(
-        item.querySelector(".final-price").textContent.replace(/[^0-9]/g, "")
-    ),
-}));
-
-// 수량 카운트 - 모든 상품 수량 동기화
-const updateAllCounts = (newCount) => {
-    productItems.forEach((item) => {
-        item.countEl.textContent = newCount;
+// 수량 업데이트 함수
+const update = (newCount) => {
+    quantityCounts.forEach((el) => {
+        el.textContent = newCount;
     });
-};
 
-// 수량 카운트 - 모든 total-amount 업데이트
-const updateTotal = (count) => {
-    let total = 0;
-    productItems.forEach((item) => {
-        total += item.unitPrice * count;
+    // 마이너스 버튼 상태 동기화
+    quantityBoxes.forEach((box) => {
+        const minus = box.querySelector(".quantity-btn.minus");
+        minus.disabled = newCount <= 0;
     });
-    totalAmount.forEach((el) => {
+
+    // 총액 계산
+    const unitPrice = Number(finalPrice.textContent.replace(/[^0-9]/g, ""));
+    const total = unitPrice * newCount;
+
+    // 총액 출력 동기화
+    totalAmounts.forEach((el) => {
         el.textContent = total.toLocaleString();
     });
 };
 
-// 수량 카운트 - 버튼 클릭 이벤트 연결
+// 버튼 이벤트 연결
 quantityBoxes.forEach((box) => {
     const plusBtn = box.querySelector(".quantity-btn.plus");
     const minusBtn = box.querySelector(".quantity-btn.minus");
 
     plusBtn.addEventListener("click", () => {
-        let current = Number(box.querySelector(".count").textContent);
-        current++;
-        updateAllCounts(current);
-        quantityBoxes.forEach(
-            (b) =>
-                (b.querySelector(".quantity-btn.minus").disabled = current <= 0)
-        );
-        updateTotal(current);
+        const current = Number(quantityCounts[0].textContent);
+        update(current + 1);
     });
 
     minusBtn.addEventListener("click", () => {
-        let current = Number(box.querySelector(".count").textContent);
-        if (current > 0) current--;
-        updateAllCounts(current);
-        quantityBoxes.forEach(
-            (b) =>
-                (b.querySelector(".quantity-btn.minus").disabled = current <= 0)
-        );
-        updateTotal(current);
+        const current = Number(quantityCounts[0].textContent);
+        if (current > 0) update(current - 1);
     });
 });
+
+// 수량 카운트 - 초기화
+update(Number(quantityCounts[0].textContent));
 
 // 팝업
 const openButtons = document.querySelectorAll(".popup-trigger");
@@ -275,3 +256,11 @@ reviewImgButtons.forEach((button) => {
         button.classList.add("on");
     });
 });
+
+// 댓글 총개수
+const reviewItems = document.querySelectorAll(".review-list .review-item");
+const tabLinkSpan = document.querySelector(".tab-link .count");
+const totalSpan = document.querySelector(".review-top-bar .total");
+
+tabLinkSpan.textContent = reviewItems.length;
+totalSpan.textContent = reviewItems.length;

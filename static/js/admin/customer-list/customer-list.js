@@ -1,4 +1,5 @@
 const homeButton = document.getElementById("menu-home");
+const payoutButton = document.getElementById("menu-payout");
 const sideMenuButtons = document.querySelectorAll(".menu-btn");
 const sideSubLists = document.querySelectorAll(".menu-sub-list");
 const sideSubLinks = document.querySelectorAll(".rebound-link");
@@ -11,7 +12,11 @@ homeButton.addEventListener("click", (e) => {
     sideMenuButtons.forEach((homeByButton) => {
         homeByButton.classList.remove("current");
     });
-    homeButton.classList.add("current");
+    
+    payoutButton.classList.remove("current1");
+    homeButton.classList.add("current1");
+    
+    
 
     sideSubLists.forEach((homeByList) => {
         homeByList.classList.remove("show");
@@ -26,8 +31,29 @@ homeButton.addEventListener("click", (e) => {
         homeByIcon.classList.add("mdi-chevron-right");
     });
 });
+payoutButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    sideMenuButtons.forEach((payoutButton) => {
+        payoutButton.classList.remove("current");
+    });
+    homeButton.classList.remove("current1");
+    payoutButton.classList.add("current1");
+    
+    
 
+    sideSubLists.forEach((homeByList) => {
+        homeByList.classList.remove("show");
+    });
 
+    sideSubLinks.forEach((homeByLink) => {
+        homeByLink.classList.remove("active");
+    });
+
+    icons.forEach((homeByIcon) => {
+        homeByIcon.classList.remove("mdi-chevron-down");
+        homeByIcon.classList.add("mdi-chevron-right");
+    });
+});
 // 사이드 바 메인 메뉴 클릭 시 리스트 열고 닫기 + 아이콘
 // 사이드 바 서브 링크 클릭 시 이벤트 + 다른 리스트 닫기
 // 상단 tab바 이벤트
@@ -39,9 +65,9 @@ sideMenuButtons.forEach((sideMenuButton) => {
         const targetId = sideMenuButton.getAttribute("aria-controls");
         // aria-controls와 같은 속성 가져올 땐 getAttribute();
         const targetSubList = document.getElementById(targetId);
+        console.log(targetSubList);
         const targetIcon = sideMenuButton.querySelector(".icon-wrapper i");
-        
-        console.log(sideMenuButton);
+
         if (targetSubList.classList.contains("show")) {
             targetSubList.classList.remove("show");
             targetIcon.classList.remove("mdi-chevron-down");
@@ -51,6 +77,8 @@ sideMenuButtons.forEach((sideMenuButton) => {
             targetIcon.classList.remove("mdi-chevron-right");
             targetIcon.classList.add("mdi-chevron-down");
         }
+        payoutButton.classList.remove("current1");
+        homeButton.classList.remove("current1");
     });
 });
 

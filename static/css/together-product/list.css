@@ -616,12 +616,12 @@ input[type="checkbox"], input[type="radio"] {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
-    padding: 12px 10px 0px 0px;
+    margin-bottom: 10px;
     cursor: default;
 }
 
 .product-info .product-badge span {
-    padding: 2px 8px 4px;
+    padding: 4px 8px;
     border-radius: 4px;
     background-color: rgb(244, 244, 244);
     font-weight: 500;

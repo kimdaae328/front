@@ -8,13 +8,7 @@ const menubtn4 =document.getElementById("menubtn4")
 const usermenubtn=document.getElementById("usermenubtn")
 const usermenu=document.getElementById("usermenu")
 const submenus=document.querySelectorAll('.boot-link')
-submenus.forEach(submenu=>{
-    submenu.addEventListener('click',(e)=>{
-        e.preventDefault();
-        submenus.forEach(active=>active.classList.remove('active'));
-        submenu.classList.add('active');
-    })
-})
+
 usermenubtn.addEventListener("click",(e)=>{
     usermenu.classList.toggle("show")
 
@@ -64,4 +58,30 @@ bannerContainer.addEventListener('click',(e)=>{
         e.target.parentElement.parentElement.remove();
     }
 
+})
+submenus.forEach(submenu=>{
+    submenu.addEventListener('click',(e)=>{
+        e.preventDefault();
+        submenus.forEach(active=>active.classList.remove('active'));
+        submenu.classList.add('active');
+        menubtn1.classList.remove('current')
+        menubtn2.classList.remove('current')
+        menubtn3.classList.remove('current')
+        menubtn4.classList.remove('current')
+        sublist1.classList.remove('show')
+        sublist2.classList.remove('show')
+        sublist3.classList.remove('show')
+        sublist4.classList.remove('show')
+    
+        const closestMenuBtn = submenu.closest('.submenu');
+        const closeMenu = submenu.closest('.menu-sub-list');
+        if (closestMenuBtn) {
+                const menuBtn = closestMenuBtn.parentElement.previousElementSibling
+                
+                if (menuBtn) {
+                    closeMenu.classList.add('show')
+                    menuBtn.classList.add('current'); // 또는 toggle
+                }
+        }
+    });
 })

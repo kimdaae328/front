@@ -1087,7 +1087,7 @@ img {
 
 .guide-item .btn-more {
     position: absolute;
-    right: 25px;
+    right: 0;
     top: 50%;
     margin-top: -14px;
     padding-right: 20px;
@@ -1759,6 +1759,7 @@ img {
     background-color: rgb(50, 116, 63);
     border-radius: 3px;
     color: #fff;
+    padding-left: 10px;
 }
 
 .floating-btn.active:after {

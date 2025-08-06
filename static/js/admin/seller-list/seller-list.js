@@ -66,7 +66,7 @@ sideMenuButtons.forEach((sideMenuButton) => {
         const targetId = sideMenuButton.getAttribute("aria-controls");
         // aria-controls와 같은 속성 가져올 땐 getAttribute();
         const targetSubList = document.getElementById(targetId);
-        console.log(targetSubList);
+        
         const targetIcon = sideMenuButton.querySelector(".icon-wrapper i");
 
         if (targetSubList.classList.contains("show")) {
