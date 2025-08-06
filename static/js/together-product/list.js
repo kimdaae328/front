@@ -383,3 +383,9 @@ closeButtons.forEach((btn) => {
         }
     });
 });
+
+// 상품 총개수
+const productCards = document.querySelectorAll(".product-list .product-card");
+const countSpan = document.querySelector(".result-count .count");
+
+countSpan.textContent = productCards.length;
