@@ -13,7 +13,6 @@ th {
 }
 
 
-
 a,
 abbr,
 acronym,
@@ -304,7 +303,7 @@ button {
 
 .seller-detail {
     display: flex;
-    
+
     align-items: flex-end;
 }
 
@@ -801,7 +800,7 @@ div.dashboard-title-container {
 }
 div.dashboard-title-container h3 {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 22px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 48px;
@@ -832,12 +831,12 @@ div.dashboard-statistics-item {
 }
 h3.item-title {
     color: rgb(50, 116, 63);
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 500;
     letter-spacing: -0.5px;
 }
 span.item-count {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 600;
 }
 /* /상단 대시보드 */
@@ -868,6 +867,11 @@ div.request-payout-btn-wrap {
     border-radius: 8px;
     text-align: center;
     line-height: 50px;
+    cursor: pointer;
+}
+button.request-payout-btn,
+button.request-payout-btn h3 {
+    cursor: pointer;
 }
 
 /* /cl-상세부분 */
@@ -908,14 +912,14 @@ div.payout-count-wrap {
 div.payout-date-wrap h3,
 div.payout-item-date h3 {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 22px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 30px;
 }
 div.payout-count-wrap h3 {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 18px;
     color: rgb(50, 116, 63);
 }
 div.payout-list-container {
@@ -932,7 +936,7 @@ div.payout-item-date {
     position: relative;
 }
 div.payout-item-date h3 {
-    font-size: 14px;
+    font-size: 19px;
 }
 
 div.payout-item-date::after {
@@ -959,11 +963,46 @@ div.payout-item-info-wrap {
 
 div.text-wrap h3 {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 17px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 30px;
 }
 /* /네 번째 부분 */
 
+/* 정산하기 모달 부분 */
 
+
+@keyframes popUp {
+    from {scale: 0;}
+    to {scale: 1;}
+}
+
+@keyframes popDown {
+    from {scale: 1;}
+    to {scale: 0;}
+}
+
+
+div.modal-container {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    inset: 0px;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #8586898a;
+}
+
+div.warn-modal {
+    box-sizing: border-box;
+    position: unset;
+    width: 288px;
+    margin: 20vh 0px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(33 35 41 / 12%) 0px 2px 12px;
+    border-radius: 8px;
+}
+/* /정산하기 모달 부분 */
