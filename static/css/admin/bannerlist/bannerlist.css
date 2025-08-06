@@ -587,3 +587,10 @@ address, dl, ol, ul {
     color: #507cf3;
     font-weight: bolder;
 }
+#bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li a.current {
+    background-color: #dce5fd;
+}
+#bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li>a.active {
+    background: linear-gradient(90deg, #507cf3, rgba(139, 170, 255, .5));
+    color: #fff;
+}

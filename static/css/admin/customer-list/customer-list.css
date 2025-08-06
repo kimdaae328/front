@@ -1,6 +1,6 @@
 @font-face {
     font-family: Material Design Icons;
-    src: url(/static/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2);
+    src: url(../../../fonts/icons/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2);
 }
 
 :root {
@@ -506,6 +506,11 @@ body #rebound {
 
 #rebound>#rebound-side #side-wrapper>.menu-wrapper>ul.menu-list>li a.current {
     background-color: #dce5fd;
+}
+#rebound>#rebound-side #side-wrapper>.menu-wrapper>ul.menu-list>li a.current1 {
+        background: linear-gradient(90deg, #507cf3, rgba(139, 170, 255, .5));
+        color: #fff;
+    
 }
 
 #rebound>#rebound-side #side-wrapper>.menu-wrapper>ul.menu-list>li a:hover {
@@ -1512,3 +1517,6 @@ button.btn.btn-outline-filter {
 .info-detail:hover {
     color: #007bff;
 }
+  #bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li a.current {
+        background-color: #dce5fd;
+    }

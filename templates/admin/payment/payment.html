@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../static/css/admin/payment/payment.css" />
-    <title>Document</title>
+    <link rel="shorcut icon" href="../../../static/images/main/favicon.png" type="image/x-cion">
+    <title>너도먹고나도먹고</title>
 </head>
 <body id="body" style="cursor: auto;">  
     <div id="bootpay">
@@ -84,7 +85,7 @@
                                     </i>
                                 </div>
                             </a>
-                            <ul id="sublist2" class="menu-sub-list collapse " id="menu-60934381367997007c4c3d2d">
+                            <ul id="sublist2" class="menu-sub-list collapse show" id="menu-60934381367997007c4c3d2d">
                                 <li class="submenu menu-item ">
                                     <a class="boot-link "data-param="1"href="">
                                         -
@@ -93,9 +94,9 @@
 
                                 </li>
                                 <li class="submenu menu-item ">
-                                    <a class="boot-link "data-param="1"href="">
+                                    <a class="boot-link active"data-param="1"href="">
                                         -
-                                    구매 내역 목록
+                                    결제 내역 조회
                                     </a>
 
                                 </li>
@@ -127,7 +128,7 @@
                                     </i>
                                 </div>
                             </a>
-                            <ul id ="sublist3" class="menu-sub-list collapse show" id="menu-628c6e30d01c7e001ffdf398">
+                            <ul id ="sublist3" class="menu-sub-list collapse " id="menu-628c6e30d01c7e001ffdf398">
                                 <li class="submenu menu-item ">
                                     <a class="boot-link "data-param="3" href="#">
                                         -
@@ -164,7 +165,7 @@
 
                                 </div>
                             </a>
-                            <ul id="sublist4"class="menu-sub-list collapse  show" id="menu-6284cdfecf9f6d001b046f3a">
+                            <ul id="sublist4"class="menu-sub-list collapse" id="menu-6284cdfecf9f6d001b046f3a">
                                 <li  class="submenu menu-item ">
                                     <a class="boot-link "data-param="4"href="">
                                         -
@@ -190,7 +191,31 @@
                             <div class="header-menu-group d-flex">
                                <a class="boot-link mr-3" target="_blank" href="https://docs.bootpay.co.kr"><div class="header-menu-btn" data-for="e23e0591-a5f8-47ab-8f1b-931b7d225a83" data-toggle="tooltip" data-custom-class="" title="부트페이 개발메뉴얼"><i class="mdi mdi-text-box-outline"></i></div></a>
                                <a class="boot-link mr-3" href="/notice"><div class="header-menu-btn " data-for="669d2bb7-f133-49e5-96da-f53d9d84ad58" data-toggle="tooltip" data-custom-class="" title="" data-original-title="공지사항"><i class="mdi mdi-bullhorn-variant-outline"></i></div></a>
- <div class="user-menu"><div class="user-menu-wrapper d-flex align-items-center cursor-pointer" id="user-menu-handler" data-toggle="dropdown"><div class="user-avatar">C</div><div class="user-menu-email">cacalos-@naver.com</div></div><div id="usermenu"class="user-menu-content dropdown-menu dropdown-menu-right"><ul class="menu-body list-unstyled"><li><a class="boot-link d-block text-dark" href="/inform"><i class="mdi mdi-bell-outline mr-2 mdi-18px"></i>알림</a></li><li><a class="d-block text-dark" href=""><i class="mdi mdi-account-box-outline mr-2 mdi-18px"></i>회원정보</a></li><li><a class="d-block text-dark" href=""><i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>로그아웃</a></li></ul></div></div>
+                                <div class="user-menu">
+                                    <div class="user-menu-wrapper d-flex align-items-center cursor-pointer" id="user-menu-handler" data-toggle="dropdown">
+                                        <div class="user-avatar">C</div>
+                                        <div class="user-menu-email">cacalos-@naver.com</div>
+                                    </div>
+                                    <div id="usermenu"class="user-menu-content dropdown-menu dropdown-menu-right">
+                                        <ul class="menu-body list-unstyled">
+                                            <li>
+                                                <a class="boot-link d-block text-dark" href="/inform">
+                                                    <i class="mdi mdi-bell-outline mr-2 mdi-18px"></i>알림
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="d-block text-dark" href="">
+                                                    <i class="mdi mdi-account-box-outline mr-2 mdi-18px"></i>회원정보
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="d-block text-dark" href="">
+                                                    <i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>로그아웃
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
 
                             </div>
 
@@ -241,7 +266,47 @@
                                         </table>
 
                                     </div>
-    <div class="sub"><table class="sub-table"><tbody><tr><td class="td-icon"><span class="badge-label text-success icon-label"><i class="mdi mdi-bank-outline"></i></span></td><td class="td-title"><span class="badge-label">승인 과세금액</span></td><td class="td-operator">=</td><td class="td-amount"><span class="span-amount">0</span></td><td class="td-unit"><span class="amount-unit">원</span></td></tr><tr><td class="td-icon"><span class="badge-label text-success icon-label"><i class="mdi mdi-bank-off-outline"></i></span></td><td class="td-title"><span class="badge-label">승인 비과세금액</span></td><td class="td-operator">+</td><td class="td-amount"><span class="span-amount">0</span></td><td class="td-unit"><span class="amount-unit">원</span></td></tr></tbody></table></div>
+                                        <div class="sub">
+                                            <table class="sub-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="td-icon">
+                                                            <span class="badge-label text-success icon-label">
+                                                                <i class="mdi mdi-bank-outline"></i>
+                                                            </span>
+                                                        </td>
+                                                        <td class="td-title">
+                                                            <span class="badge-label">승인 과세금액
+                                                            </span>
+                                                        </td>
+                                                        <td class="td-operator">=
+
+                                                        </td>
+                                                        <td class="td-amount">
+                                                            <span class="span-amount">0
+
+                                                            </span>
+                                                        </td>
+                                                        <td class="td-unit">
+                                                            <span class="amount-unit">원
+
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td-icon">
+                                                            <span class="badge-label text-success icon-label">
+                                                                <i class="mdi mdi-bank-off-outline">
+
+                                                                </i>
+                                                            </span>
+                                                        </td>
+                                                        <td class="td-title">
+                                                            <span class="badge-label">승인 비과세금액
+
+                                                            </span>
+                                                        </td>
+                                                        <td class="td-operator">+</td><td class="td-amount"><span class="span-amount">0</span></td><td class="td-unit"><span class="amount-unit">원</span></td></tr></tbody></table></div>
 
                                 </div><div class="amount-box extra-box">
                                     <div class="sub cancel">
@@ -276,7 +341,7 @@
                                         <div class="col-auto">
                                             <div class="filter-wrapper filter-pm" id="filter-pm">
                                                 <div class="boot-pop-checkbox">
-                                             <button class="boot-pop-checkbox-filter-btn btn btn-outline-filter " id="btn-filter-pm">결제방식선택<i class="mdi mdi-menu-down"></i></button>
+                                                <button class="boot-pop-checkbox-filter-btn btn btn-outline-filter " id="btn-filter-pm">결제방식선택<i class="mdi mdi-menu-down"></i></button>
                                                     <div class="bt-pop-menu">
                                                         <!-- 아래 show class유무의따라 태그창이열림 -->
                                                         <div id ="pop-menu-bt1"class="bt-pop-menu-back "></div>
@@ -299,10 +364,10 @@
                                                                     </div>
                                                                 </li>
                                                                 <!-- 주석 체크박스클릭시 list item옆에 active도 생기면서  아래 체크박스 class checked생김 -->
-                                                 <li id ="checkboxactive1"class="list-item "><div class="row"><div class="col"><div class="boot-check d-flex align-items-center undefined checked"><div class="boot-check-box checked" tabindex="0" style="width: 20px; height: 20px;"><i class="mdi mdi-check" style="display: inline-block;"></i></div><div class="boot-check-content flex-grow-1">카드</div></div></div></div></li>
-                                                 <li id ="checkboxactive2"class="list-item "><div class="row"><div class="col"><div class="boot-check d-flex align-items-center undefined checked"><div class="boot-check-box checked" tabindex="0" style="width: 20px; height: 20px;"><i class="mdi mdi-check" style="display: inline-block;"></i></div><div class="boot-check-content flex-grow-1">계좌이체</div></div></div></div></li>
+                                                                <li id ="checkboxactive1"class="list-item "><div class="row"><div class="col"><div class="boot-check d-flex align-items-center undefined checked"><div class="boot-check-box checked" tabindex="0" style="width: 20px; height: 20px;"><i class="mdi mdi-check" style="display: inline-block;"></i></div><div class="boot-check-content flex-grow-1">카드</div></div></div></div></li>
+                                                                <li id ="checkboxactive2"class="list-item "><div class="row"><div class="col"><div class="boot-check d-flex align-items-center undefined checked"><div class="boot-check-box checked" tabindex="0" style="width: 20px; height: 20px;"><i class="mdi mdi-check" style="display: inline-block;"></i></div><div class="boot-check-content flex-grow-1">계좌이체</div></div></div></div></li>
 
-                                                 <li class="list-item mt-2"><button class="btn btn-outline-primary btn-sm">확인</button></li>
+                                                                <li class="list-item mt-2"><button class="btn btn-outline-primary btn-sm">확인</button></li>
                                                  
 
 
@@ -498,14 +563,14 @@
                                                     <div class="info-layout user-info">
                                                         <div class="info-title justify-content-between">
                                                             <div class="flex-left d-flex">
-                                                                <div class="title">사용자정보</div>
+                                                                <div class="title">구매자정보</div>
                                                             </div>
                                                         </div>
                                                         <div class="info-body">
                                                             <div class="table-info row">
                                                                 <div class="col-6">
                                                                     <div class="row inner-table">
-                                                                        <div class="col-auto w-120px">사용자명</div>
+                                                                        <div class="col-auto w-120px">구매자명</div>
                                                                         <div class="col">-</div>
                                                                     </div>
                                                                     <div class="row inner-table">
@@ -558,5 +623,6 @@
 
     </div> 
 </body>
+<form name="1234"></form>
 <script src="../../../static/js/admin/payment/payment.js"></script>
 </html>

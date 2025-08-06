@@ -1831,3 +1831,6 @@ table.info-table td, table.info-table th {
 .w-120px {
     width: 120px !important;
 }
+#bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li a.current {
+    background-color: #dce5fd;
+}
