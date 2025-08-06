@@ -379,12 +379,37 @@ button {
     cursor: pointer;
 }
 
+/* 작성한 후기 없을 때 */
+.review-null {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    padding: 17px 20px 10px;
+    border-radius: 16px;
+}
+
+.review-null>p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+}
+
 .announcement {
     color: rgb(153, 153, 153);
     padding: 12px 0px 20px;
     line-height: 21px;
     background-color: rgb(242, 245, 248);
 }
+
+
 
 /* 작성한 후기 */
 .written-review-wrap {

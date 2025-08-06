@@ -24,7 +24,6 @@ selectAllCheckbox.addEventListener("change", () => {
         checkbox.checked = selectAllCheckbox.checked;
     });
     selectTotal();
-    orderPriceGet();
 });
 
 // 2. 개별 체크박스 클릭 시 → 전부 체크되어 있으면 전체도 체크
@@ -148,15 +147,8 @@ const refrigerationProducts = document.querySelectorAll(
     ".refrigeration-product"
 );
 const orderPrice = document.querySelector(".order-price");
-const productPriceFin = document.querySelector(".product-price-fin");
 const charge = Number(
     document.querySelector(".charge").innerText.replace(/[^0-9]/g, "")
-);
-const coupon = Number(
-    document.querySelector(".coupon").innerText.replace(/[^0-9]/g, "")
-);
-const card = Number(
-    document.querySelector(".card").innerText.replace(/[^0-9]/g, "")
 );
 const final = document.querySelector(".final");
 const finalPrice = document.querySelector(".final-price");
@@ -185,10 +177,9 @@ const orderPriceGet = () => {
         }
     });
     orderPrice.innerText = totalPrice.toLocaleString();
-    productPriceFin.innerText = totalPrice.toLocaleString();
 
     // 최종 결제 금액
-    let price = totalPrice + charge - card - coupon;
+    let price = totalPrice + charge;
     final.innerText = price.toLocaleString();
     finalPrice.innerText = price.toLocaleString();
 };

@@ -160,12 +160,21 @@ input[type=checkbox], input[type=radio] {
     border: 2px solid #cbd1d7;
     background-color: #fff;
 }
+/* 장바구니에 아무것도 없을 때 */
+/* .checkbox-div {
+    background-color: #f2f5f8;
+} */
 
 .select-label>p {
     font-weight: 400;
     font-size: 16px;
     margin-left: 10px;
 }
+
+/* 장바구니에 아무것도 없을 때 */
+/* .select-label>p {
+    color: #a7b2bc;
+} */
 
 .all-seclet-button {
     border-width: 1px;
@@ -189,6 +198,11 @@ input[type=checkbox], input[type=radio] {
     font-size: 14px;
     line-height: 20px;
 }
+
+/* 장바구니에 아무것도 없을 때 */
+/* .all-seclet-button {
+    color: #bcc4cc;
+} */
 
 .a-button {
     background-color: #fff;
@@ -498,6 +512,24 @@ input[type=checkbox], input[type=radio] {
     cursor: pointer;
 }
 
+/* 장바구니에 아무것도 없을 때 */
+.cart-null {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none;
+    margin-top: 160px;
+}
+
+.null-text {
+    margin-top: 16px;
+    color: #222;
+    line-height: 26px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
 .delivery-no {
     margin-top: 16px;
     overflow: hidden;
@@ -636,6 +668,7 @@ input[type=checkbox], input[type=radio] {
     flex-shrink: 0;
 }
 
+
 /* 오른쪽 결제하기 */
 
 
@@ -683,6 +716,12 @@ input[type=checkbox], input[type=radio] {
     background-color: rgb(50, 116, 63);
     border: 0px none;
 }
+
+/* 장바구니에 아무것도 없을 때 */
+/* .btn-primary {
+    background-color: rgb(215, 236, 219);
+    color: rgb(84 156 98);
+} */
 
 .order-amount-wrap {
     width: 284px;

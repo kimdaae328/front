@@ -26,6 +26,7 @@
                                 </label>
                                 <button class="all-seclet-button">선택삭제</button>
                             </div>
+                            <!-- 장바구니에 아무것도 없으면 지우기 -->
                             <div class="a-button">
                                 <span style="height: 62px;">
                                     <div class="a-button-wrap">
@@ -38,6 +39,7 @@
                                     </div>
                                 </span>
                             </div>
+                            <!-- 여기 까지 -->
                         </div>
                         <div class="delivery-ok">
                             <div class="all-ok">
@@ -147,6 +149,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- 장바구니에 아무것도 없을 때 -->
+                            <div class="cart-null">
+                                <svg width="56" height="56" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11 21.5C16.799 21.5 21.5 16.799 21.5 11C21.5 5.20101 16.799 0.5 11 0.5C5.20101 0.5 0.5 5.20101 0.5 11C0.5 16.799 5.20101 21.5 11 21.5ZM11.9199 5.2002H9.91992V12.8002H11.9199V5.2002ZM11.9199 16.7998H9.91992V14.7998H11.9199V16.7998Z" fill="#cbd1d7"></path>
+                                </svg>
+                                <p class="null-text">장바구니에 담긴 상품이 없습니다</p>
+                            </div>
                         </div>
                         <div class="delivery-no">
                             <div class="delivery-no-header">
@@ -220,50 +229,12 @@
                                         <span class="unit">원</span>
                                     </div>
                                 </div>
-                                <div class="order-amount-item indent">
-                                    <div class="amount-label-wrap">
-                                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5H0V10V11H1H6V10H1V5Z" fill="#ddd"></path></svg>
-                                        <span class="amount-label">상품금액</span>
-                                    </div>
-                                    <div class="amount-text">
-                                        <span class="count product-price-fin">73,065</span>
-                                        <span class="unit">원</span>
-                                    </div>
-                                </div>
-                                <div class="order-amount-item indent">
-                                    <div class="amount-label-wrap">
-                                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5H0V10V11H1H6V10H1V5Z" fill="#ddd"></path></svg>
-                                        <span class="amount-label">상품할인금액</span>
-                                    </div>
-                                    <div class="amount-text">
-                                        <span class="count">-0</span>
-                                        <span class="unit">원</span>
-                                    </div>
-                                </div>
                                 <div class="order-amount-item">
                                     <div class="amount-label-wrap">
                                         <span class="amount-label">배송비</span>
                                     </div>
                                     <div class="amount-text">
                                         <span class="count charge">2500</span>
-                                        <span class="unit">원</span>
-                                    </div>
-                                </div>
-                                <div class="order-amount-item">
-                                    <div class="amount-label-wrap">
-                                        <span class="amount-label">쿠폰할인</span>
-                                    </div>
-                                    <div class="amount-text">
-                                        <span class="count coupon">-1,192</span>
-                                        <span class="unit">원</span>
-                                    </div>
-                                </div>
-                                <div class="order-amount-item">
-                                    <div class="amount-label-wrap">
-                                        <span class="amount-label">카드즉시할인</span>
-                                    </div>
-                                    <div class="amount-text">
-                                        <span class="count card">1000</span>
                                         <span class="unit">원</span>
                                     </div>
                                 </div>
@@ -278,15 +249,16 @@
                                 </div>
                             </div>
                             <button type="button" class="btn-primary btn-payment">
-                                <span class="count final-price">71,873</span>
+                                <span class="count final-price">0</span>
                                 <span class="unit">원 결제하기</span>
+                                <!-- 장바구니에 아무것도 없을 때 -->
+                                 <!-- <span>상품을 담아주세요</span> -->
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="pay"></div>
     </div>
 </body>
 <script src="../../static/js/mypage/cart.js"></script>
