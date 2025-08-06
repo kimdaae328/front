@@ -1416,3 +1416,6 @@ table.info-table td, table.info-table th {
         justify-content: flex-end;
         padding: .75rem;
     }
+    #bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li a.current {
+        background-color: #dce5fd;
+    }

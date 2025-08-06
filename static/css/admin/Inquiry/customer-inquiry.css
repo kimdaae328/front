@@ -1413,3 +1413,6 @@ table.info-table td, table.info-table th {
     .user-menu {
         position: relative;
     }
+    #bootpay>#bootpay-side #side-wrapper>.menu-wrapper>ul.menu-list>li a.current {
+        background-color: #dce5fd;
+    }
