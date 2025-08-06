@@ -119,7 +119,7 @@ html,body, #__next, div.mypage-container{
 
 .mypage-list {
     overflow: hidden;
-    width: 375px;
+    width: 255px;
     border-radius: 16px;
 }
 
@@ -217,7 +217,7 @@ html,body, #__next, div.mypage-container{
 /* 주문 목록 시작 */
 
 .seller-list-wrap {
-    width: 650px;
+    width: 730px;
     background-color: rgb(255, 255, 255);
     border-radius: 16px;
 }
