@@ -275,3 +275,11 @@ reviewImgButtons.forEach((button) => {
         button.classList.add("on");
     });
 });
+
+// 댓글 총개수
+const reviewItems = document.querySelectorAll(".review-list .review-item");
+const tabLinkSpan = document.querySelector(".tab-link .count");
+const totalSpan = document.querySelector(".review-top-bar .total");
+
+tabLinkSpan.textContent = reviewItems.length;
+totalSpan.textContent = reviewItems.length;
