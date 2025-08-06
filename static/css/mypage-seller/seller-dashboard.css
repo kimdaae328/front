@@ -13,6 +13,7 @@ th {
 }
 
 
+
 a,
 abbr,
 acronym,
@@ -303,7 +304,7 @@ button {
 
 .seller-detail {
     display: flex;
-
+    
     align-items: flex-end;
 }
 
@@ -800,7 +801,7 @@ div.dashboard-title-container {
 }
 div.dashboard-title-container h3 {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 16px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 48px;
@@ -831,12 +832,12 @@ div.dashboard-statistics-item {
 }
 h3.item-title {
     color: rgb(50, 116, 63);
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.5px;
 }
 span.item-count {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
 }
 /* /상단 대시보드 */
@@ -867,11 +868,6 @@ div.request-payout-btn-wrap {
     border-radius: 8px;
     text-align: center;
     line-height: 50px;
-    cursor: pointer;
-}
-button.request-payout-btn,
-button.request-payout-btn h3 {
-    cursor: pointer;
 }
 
 /* /cl-상세부분 */
@@ -912,14 +908,14 @@ div.payout-count-wrap {
 div.payout-date-wrap h3,
 div.payout-item-date h3 {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 16px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 30px;
 }
 div.payout-count-wrap h3 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 15px;
     color: rgb(50, 116, 63);
 }
 div.payout-list-container {
@@ -936,7 +932,7 @@ div.payout-item-date {
     position: relative;
 }
 div.payout-item-date h3 {
-    font-size: 19px;
+    font-size: 14px;
 }
 
 div.payout-item-date::after {
@@ -963,12 +959,14 @@ div.payout-item-info-wrap {
 
 div.text-wrap h3 {
     font-weight: 500;
-    font-size: 17px;
+    font-size: 14px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 30px;
 }
 /* /네 번째 부분 */
+
+
 
 /* 정산하기 모달 부분 */
 
@@ -1176,7 +1174,7 @@ div.text-wrap h3 {
 
 
 .popup-wrapper {
-    /* display: none; */
+    display: none;
 }
 
 .popup-wrapper .dim {
@@ -1259,12 +1257,12 @@ div.text-wrap h3 {
 
 div.payout-application-content{
     display: flex;
-    padding: 12px 0px;
+    /* padding: 12px 0px; */
     align-items: start;
 }
 
 label.payout-lable{
-    font-size: 14px;
+    font-size: 16px;
     padding: 12px 0 12px 10px;
     display: flex;
 }
@@ -1285,5 +1283,44 @@ label.payout-lable{
     color: rgb(255, 255, 255);
     background-color: rgb(50, 116, 63);
     border: 0px none;
+}
+
+div.popup-message{
+    padding: 40px 30px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    line-height: 21px;
+    margin-top: 0px;
+    display: inline-block;
+    width: 100%;
+}
+div.popup-footer{
+    height: 56px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: flex
+;
+    border-top: 1px solid rgb(238, 238, 238);
+    justify-content: flex-start;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+
+
+.popup-footer .btn-default:last-child {
+    border-left: 1px solid rgb(244, 244, 244);
+}
+.btn-default {
+    display: block;
+    width: 100%;
+    height: 56px;
+    padding: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(50, 116, 63);
 }
 /* /정산하기 모달 부분 */
