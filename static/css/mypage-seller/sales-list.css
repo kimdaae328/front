@@ -12,7 +12,10 @@ th {
     margin: 0;
 }
 
-
+html, body, span, div, button, input, label, 
+select, option, textarea {
+    font-family: "Pretendard","Pretendard Variable",-apple-system,BlinkMacSystemFont,system-ui,Roboto,"Helvetica Neue","Segoe UI","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
+}
 
 a,
 abbr,
