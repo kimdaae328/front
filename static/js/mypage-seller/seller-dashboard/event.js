@@ -30,32 +30,12 @@ cancelButton.addEventListener("click", (e) => {
     searchInput.value = "";
 });
 
-const payoutModal = document.querySelector(".add-cart-tap-wrap");
-const payoutModalBtn = document.querySelector("div.request-payout-btn-wrap");
-
-payoutModalBtn.addEventListener("click", (e) => {
-    console.log(123);
-    payoutModal.classList.add("show");
+const openPayoutBtn = document.querySelector("div.request-payout-btn-wrap");
+const closePayoutBtn = document.querySelector(".popup-close");
+const payoutModal = document.querySelector("div.popup-wrapper");
+openPayoutBtn.addEventListener("click", (e) => {
+    payoutModal.style.display = "block";
 });
-
-// 정산하기 모달부분
-let modalCheck;
-const showWarnModal = (modalMessage) => {
-    modalCheck = false;
-    // document.getElementById("content-wrap").innerHTML = modalMessage;
-    document.querySelector("div.warn-modal").style.animation = "popUp 0.5s";
-    document.querySelector("div.modal").style.display = "flex";
-    setTimeout(() => {
-        modalCheck = true;
-    }, 500);
-};
-
-document.querySelector("div.modal").addEventListener("click", (e) => {
-    if (modalCheck) {
-        document.querySelector("div.warn-modal").style.animation =
-            "popDown 0.5s";
-        setTimeout(() => {
-            document.querySelector("div.modal").style.display = "none";
-        }, 450);
-    }
+closePayoutBtn.addEventListener("click", (e) => {
+    payoutModal.style.display = "none";
 });
