@@ -301,39 +301,71 @@ recentlyButtons.forEach((button) => {
     });
 });
 
+// 팝업 합계
+const productItem = document.querySelectorAll(".popup-product-item");
+function calculateTotal(container) {
+    let total = 0;
+
+    productItem.forEach((item) => {
+        const priceText = item
+            .querySelector(".product-price")
+            .textContent.replace(/[^0-9]/g, "");
+        const count = parseInt(item.querySelector(".count").textContent, 10);
+        const price = parseInt(priceText, 10);
+        total += price * count;
+    });
+
+    // 총액 업데이트
+    const totalAmount = container.querySelector(".total-amount");
+    if (totalAmount) {
+        totalAmount.textContent = total.toLocaleString();
+    }
+}
+
 // 팝업 수량 카운트
-const quantityBoxes = document.querySelectorAll(".product-quantity-box");
+function quantityControls(container) {
+    const quantityBoxes = document.querySelectorAll(".product-quantity-box");
 
-quantityBoxes.forEach((box) => {
-    const plusBtn = box.querySelector(".quantity-btn.plus");
-    const minusBtn = box.querySelector(".quantity-btn.minus");
-    const countEl = box.querySelector(".count");
-    minusBtn.disabled = true;
+    quantityBoxes.forEach((box) => {
+        const plusBtn = box.querySelector(".quantity-btn.plus");
+        const minusBtn = box.querySelector(".quantity-btn.minus");
+        const countEl = box.querySelector(".count");
+        minusBtn.disabled = true;
 
-    plusBtn.addEventListener("click", () => {
-        let count = Number(countEl.textContent);
-        count++;
-        countEl.textContent = count;
-        minusBtn.disabled = count <= 0;
+        plusBtn.addEventListener("click", () => {
+            let count = Number(countEl.textContent);
+            count++;
+            countEl.textContent = count;
+            minusBtn.disabled = count <= 0;
+
+            calculateTotal(container);
+        });
+
+        minusBtn.addEventListener("click", () => {
+            let count = Number(countEl.textContent);
+            if (count > 0) count--;
+            countEl.textContent = count;
+            minusBtn.disabled = count == 0;
+
+            calculateTotal(container);
+        });
     });
 
-    minusBtn.addEventListener("click", () => {
-        let count = Number(countEl.textContent);
-        if (count > 0) count--;
-        countEl.textContent = count;
-        minusBtn.disabled = count == 0;
-    });
-});
+    calculateTotal(container);
+}
+
+const popup = document.querySelector(".popup-content");
+quantityControls(popup);
 
 // 팝업
 const openButtons = document.querySelectorAll(".popup-trigger");
 const closeButtons = document.querySelectorAll(".popup-close");
+const htmlScroll = document.querySelector("html");
 
 openButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         const targetSelector = btn.dataset.target;
         const targetModal = document.querySelector(targetSelector);
-        const htmlScroll = document.querySelector("html");
         if (targetModal) {
             targetModal.style.display = "block";
             htmlScroll.style.overflow = "hidden";
@@ -344,7 +376,7 @@ openButtons.forEach((btn) => {
 closeButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         const targetModal = btn.closest(".popup-wrapper");
-        const htmlScroll = document.querySelector("html");
+
         if (targetModal) {
             targetModal.style.display = "none";
             htmlScroll.style.overflow = "";

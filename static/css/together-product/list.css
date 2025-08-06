@@ -981,6 +981,7 @@ input[type="checkbox"], input[type="radio"] {
     text-decoration: line-through;
     line-height: 16px;
     letter-spacing: -0.5px;
+    padding-top: 0;
 }
 
 /* 수량 카운트 박스 */
@@ -1076,6 +1077,7 @@ input[type="checkbox"], input[type="radio"] {
     width: 50%;
     margin: 0px 4px;
     flex: 1;
+    font-size: 16px;
 }
 
 .popup-button-box .btn-outline {
