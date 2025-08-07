@@ -9,6 +9,7 @@
     <link rel="shorcut icon" href="../../../static/images/main/favicon.png" type="image/x-cion">
 </head>
 <body>
+    <!-- 리바운드 판매자페이지 퍼워서 아이디가 조금 차이남 -->
     <div id="rebound">
         <div id="rebound-notify-container"></div>
         <div class="popup-manager" style="width: 0px;"></div>
@@ -80,12 +81,6 @@
                                         상품 목록
                                     </a>
                                 </li>
-                                <li class="submenu menu-item">
-                                    <a href="" class="rebound-link" data-param="1">
-                                        -  
-                                        결제내역 조회
-                                    </a>
-                                </li>
     
                             </ul>
                         </li>
@@ -93,7 +88,7 @@
                             <!-- 홈 버튼 추가를 위해 id="menu-home" 작성 -->
                             <a href="" id="menu-payout"class="menu-btn d-flex w-100" data-toggle="collapse" aria-expanded="true" aria-controls="">
                                 <i class="mdi mdi mdi-credit-card-plus-outline"></i>
-                                <span class="menu-name">정산관리</span>
+                                <span class="menu-name">결제 내역</span>
                             </a>
                         </li>
                         <li class="menu menu-item d-flex flex-column">
@@ -120,7 +115,7 @@
                                 <li class="submenu menu-item">
                                     <a href="" class="rebound-link" data-param="2">
                                         -  
-                                        입점 승인 목록
+                                        매입 승인 목록
                                     </a>
                                 </li>
                             </ul>
@@ -287,6 +282,7 @@
                                     <thead>
                                         <tr>
                                             <th class="td-name">회원번호</th>
+                                            
                                             <th class="td-amount pr-4">이름</th>
                                             <th class="td-email">이메일</th>
                                             <th class="td-phone">핸드폰 번호</th>
@@ -305,7 +301,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -328,7 +324,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -350,7 +346,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -372,7 +368,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -394,7 +390,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -416,7 +412,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -438,7 +434,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -460,7 +456,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -482,7 +478,7 @@
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>
@@ -499,12 +495,12 @@
                                     <tbody class="">
                                         <tr>
                                             <td class="td-name">
-                                                <div class="member-name">Test01
+                                                <div class=" text-center member-name">Test01
                                                     <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
-                                                <div class="member-id">TestId01</div>
+                                                <div class="text-center member-id">TestId01</div>
                                             </td>
-                                            <td class="td-amount text-right pr-4 font-weight-bold">테스트01
+                                            <td class="td-amount text-center pr-4 font-weight-bold">테스트01
                                                 <span class="amount-unit"> 님</span>
                                             </td>
                                             <td class="td-email">test01@gmail.com</td>

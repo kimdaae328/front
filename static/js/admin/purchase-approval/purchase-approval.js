@@ -21,6 +21,8 @@ const modalclose=document.getElementById("close")
 const body=document.getElementById("body")
 const approvalbtn=document.getElementById("approvalbtn")
 const modalopen=document.getElementById("modal-open")
+const modalopen2=document.getElementById("modal-open2")
+const modal=document.getElementById("modal")
 menubtn1.addEventListener("click", (e) => {
     sublist1.classList.toggle("show");
     event.preventDefault()
@@ -86,9 +88,12 @@ submenus.forEach(submenu=>{
 modalclose.addEventListener("click",(e)=>{
     body.classList.remove("modal-open");
     modal.classList.remove("show");
-    modal.style.display = "none";
 });
 modalopen.addEventListener("click",(e)=>{
     approvalbtn.classList.toggle("show")
     
+});
+modalopen2.addEventListener("click",(e)=>{
+    body.classList.add("modal-open");
+    modal.classList.add("show")
 });
