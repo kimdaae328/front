@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../static/css/admin/store-approval/store-approval.css">
+    <link rel="stylesheet" href="../../../static/css/admin/purchase-approval/purchase-approval.css">
     <link rel="shorcut icon" href="../../../static/images/main/favicon.png" type="image/x-cion">
     <title>너도먹고나도먹고</title>
 </head>
@@ -107,7 +107,7 @@
                                 <i class="mdi mdi mdi-format-list-text">
 
                                 </i>
-                                <span class="menu-name">정산현황</span>
+                                <span class="menu-name">결제 내역</span>
 
                             </a>
                             <ul class="menu-sub-list collapse "id="menu-60934308367997007c4c3d2c">
@@ -145,7 +145,7 @@
                                 <li class="submenu menu-item ">
                                     <a class="boot-link active"data-param="3" href="">
                                         -
-                                        입점 승인 목록
+                                        매입 승인 목록
                                     </a>
 
                                 </li>
@@ -243,25 +243,25 @@
 
             </div>
             <div class="page wide-page receipt-index">
-            <div class="page-header"> 
+                <div class="page-header"> 
                 <div class="page-title">매입 승인 목록</div>
                 <div class="page-subtitle"></div>
-            </div>
-            <div class="page-body">
-                <div class="pill-row row">
-                    <div class="col col-md-6 col-lg-4 col-xl-3">
-                        <div class="pill-box">
-                            <div class="pill-title">
-                                <span class="badge-label text-primary">
-                                    <i class="mdi mdi-check-all"></i>
-                                </span>
-                                <span>승인완료</span>
+                </div>
+                <div class="page-body">
+                    <div class="pill-row row">
+                        <div class="col col-md-6 col-lg-4 col-xl-3">
+                            <div class="pill-box">
+                                <div class="pill-title">
+                                    <span class="badge-label text-primary">
+                                        <i class="mdi mdi-check-all"></i>
+                                    </span>
+                                    <span>승인완료</span>
 
-                            </div><div class="pill-value">
-                                <span class="span-amount">0</span>
-                                <span class="amount-unit">건</span>
+                                </div><div class="pill-value">
+                                        <span class="span-amount">0</span>
+                                        <span class="amount-unit">건</span>
 
-                            </div></div></div>
+                                    </div></div></div>
                     </div>
 
                 </div>
@@ -307,8 +307,8 @@
                                 <col style="width:15%">
                                 <col style="width:15%">
                                 <col style="width:17%">
-                                <col style="width:20%">
-                                <col style="width:20%">
+                                <col style="width:15%">
+                                <col style="width:15%">
                                 <col style="width:15%">
                             </colgroup>                           
                              <thead>
@@ -330,6 +330,7 @@
                                 <td class="text-center font-weight-bold" colspan="1" >-</td>
                                 <td class="text-center font-weight-bold" colspan="1" >-</td>
                                 <td class="text-center font-weight-bold" colspan="1" >-</td>
+                                <td class="td-action text-center" style="position:relative"><div id="modal-open2"class="action-btn"><i  class="mdi mdi-chevron-right"></i></div>
                                 <td class="td-action text-center" style="position:relative"><div id="modal-open"class="action-btn"><i id="modalbtn" class="mdi mdi-chevron-right"></i></div>
                                 <div id="approvalbtn"class="dropdown-menu dropdown-menu-right" style="position: absolute;transform: translate3d(-110px, 30px, 0px);top: 27%;left: 35%;will-change: transform;">
                                     <div class="dropdown-item">
@@ -354,13 +355,13 @@
                 </div>
 
             </div>
-            <div id ="modal"class="modal fade receipt-modal show"aria-modal="true" role="dialog ">
+            <div id ="modal"class="modal fade receipt-modal"aria-modal="true" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <div class="modal-title">
-                                문의내역
-                                <span class="badge-label text-danger font-weight-bold ml-2">미답변</span>
+                                상품상세
+                
                                 
 
                             </div>
@@ -384,7 +385,7 @@
                                             <div class="info-layout detail-info">
                                                 <div class="info-title justify-content-between">
                                                     <div class="flex-left d-flex">
-                                                        <div class="title">문의정보</div>
+                                                        <div class="title">상품정보</div>
 
                                                     </div>
                                                     <div class="flex-right"></div>
@@ -395,10 +396,13 @@
                                                         <table class="info-table">
                                                             <tbody>
                                                                 <tr>
-                                                                    <th>문의번호</th>
-                                                                    <td>??</td>
+                                                                    <th>판매자 아이디</th>
+                                                                    <td>-</td>
                                                                 </tr>
-                                                                <tr><th>문의시간</th><td>-</td></tr>
+                                                                <tr>
+                                                                    <th>판매자명</th>
+                                                                    <td>-</td>
+                                                                </tr>
                                                                 
                                                             </tbody>
 
@@ -407,8 +411,14 @@
                                                     </div><div class="d-table-cell">
                                                         <table class="info-table">
                                                             <tbody>
-                                                                <tr><th>문의 유형</th><td>-</td></tr>
-                                                                <tr><th>구매자 이름</th><td>-</td></tr>
+                                                                <tr>
+                                                                    <th>kg당 단가</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>매입 신청일</th>
+                                                                    <td>-</td>
+                                                                </tr>
                                                             </tbody>
 
                                                         </table>
@@ -421,58 +431,71 @@
                                             <div class="info-layout detail-info">
                                                 <div class="info-title justify-content-between">
                                                     <div class="flex-left d-flex">
-                                                        <div class="title">문의내용</div>
+                                                        <div class="title">상품 상세정보</div>
 
                                                     </div>
+                                                    <div class="flex-right"></div>
 
                                                 </div>
                                                 <div class="d-table w-100">
                                                     <div class="d-table-cell">
-                                                        <table class="info-table"style="height:100px ">
+                                                        <table class="info-table">
                                                             <tbody>
-                                                                <th>문의내용</th>
-                                                                <td>1234</td>
+                                                                <tr>
+                                                                    <th>상품명</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>중량</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>원산지</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>보관방법 또는 취급방법</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>카테고리</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                
                                                             </tbody>
 
-                                                        </table> 
+                                                        </table>
 
                                                     </div>
+                                                    <div class="d-table-cell">
+                                                        <table class="info-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>kg당 단가</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>생산자</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>제조연월일</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>소비자안전을 위한 주의사항</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>기타</th>
+                                                                    <td>-</td>
+                                                                </tr>
+                                                            </tbody>
 
-                                                </div>
-        
-
-                                            </div>
-                                            <div class="info-layout payment-info">
-                                                <div class="info-title justify-content-between">
-                                                    <div class="flex-left d-flex">
-                                                        <div class="title">답변하기</div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="info-body">
-                                                    <div class="table-info row">
-                                                        <div class="col-6">
-                                                            <div class="row inner-table">
-                                                                <div class="col-auto w-120px"style="
-                                                                height: 100px;
-                                                                display: flex;
-                                                                justify-content: center;
-                                                                align-items: center;">답변내용
-
-                                                                </div>
-                                                                <input type="text" class="col" id=""style="                                                                
-                                                                height: 100px;
-                                                                display: flex;
-                                                                align-items: center;
-                                                                border: none;
-                                                                outline: none">
-
-                                                            </div>
-
-                                                        </div>
+                                                        </table>
 
                                                     </div>
+                                                    
 
                                                 </div>
 
@@ -486,10 +509,7 @@
                             </div>
 
                         </div>
-                        <div class="modal-footer">
-                            <button class="btn-close btn btn-outline-filter">답변하기</button>
 
-                        </div>
 
                     </div>
 
@@ -503,5 +523,5 @@
     </div>
     
 </body>
-<script src="../../../static/js/admin/store-approval/store-approval.js"></script>
+<script src="../../../static/js/admin/purchase-approval/purchase-approval.js"></script>
 </html>

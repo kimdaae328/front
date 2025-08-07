@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../static/css/admin/product-list/product-list.css">
     <link rel="shorcut icon" href="../../../static/images/main/favicon.png" type="image/x-cion">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css?_cacheOverride=1754537430119">
     <title>너도먹고나도먹고</title>
 </head>
 <body id="body">
@@ -92,13 +93,6 @@
                                     </a>
 
                                 </li>
-                                <li class="submenu menu-item ">
-                                    <a class="boot-link "data-param="1"href="">
-                                        -
-                                        결제내역 조회
-                                    </a>
-
-                                </li>
 
                             </ul>
                         </li>
@@ -107,7 +101,7 @@
                                 <i class="mdi mdi mdi-format-list-text">
 
                                 </i>
-                                <span class="menu-name">정산현황</span>
+                                <span class="menu-name">결제 내역</span>
 
                             </a>
                             <ul class="menu-sub-list collapse "id="menu-60934308367997007c4c3d2c">
@@ -145,7 +139,7 @@
                                 <li class="submenu menu-item ">
                                     <a class="boot-link "data-param="3" href="">
                                         -
-                                        입점 승인 목록
+                                        매입 승인 목록
                                     </a>
 
                                 </li>
@@ -293,9 +287,9 @@
                                     <th class="td-name">상품명</th>
                                     <th>판매자</th>
                                     <th class="td-status">가격</th>
-                                    <th class="td-user">재고</th>
+                                    <th class="td-user">보유 중량(kg)</th>
                                     <th class="td-at">등록일자</th>
-                                    <th class="td-action">상세보기</th>                   
+                                    <th class="td-action">상세보기(판매등록)</th>                   
                                     </tr>
                             </thead>
                             <tbody>
@@ -371,7 +365,7 @@
                                                         <table class="info-table">
                                                             <tbody>
                                                                 <tr><th>가격</th><td>-</td></tr>
-                                                                <tr><th>재고</th><td>-</td></tr>
+                                                                <tr><th>보유중량(kg)</th><td>-</td></tr>
                                                                 <tr><th>수정일자</th><td>-</td></tr>
                                                             </tbody>
 
@@ -396,7 +390,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <th>상품번호</th>
-                                                                    <input value="ss" form="temp" id="ee"name="ee" hidden>
+                                                                    
                                                                     <td>-</td>
                                                                 </tr>
                                                                 <tr><th>카테고리</th><td>-</td></tr>
@@ -410,8 +404,8 @@
                                                         <table class="info-table">
                                                             <tbody>
                                                             <tr>
-                                                                <th>배송상태</th>
-                                                                <td><input type="checkbox" name="check" form="temp" id="check">
+                                                                <th>유통기한</th>
+                                                                <td>-
                                                                 </td>
 
                                                             </tr>
@@ -453,12 +447,112 @@
                                                             </tbody>
 
                                                         </table>
-                                                        <button style=" "type="submit" form="temp">sss</button>
+                                                        
                                                     </div>
 
                                                 </div>
 
                                             </div>
+                                            <div class="info-layout detail-info">
+                                                <div class="info-title justify-content-between">
+                                                    <div class="flex-left d-flex">
+                                                        <div class="title">판매 등록</div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="d-table w-100">
+                                                    <div class="d-table-cell">
+                                                        <table class="info-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>판매 상품명</th>
+                                                                    
+                                                                    <td><input type="text" style="
+                                                                align-items: center;
+                                                                border: none;
+                                                                outline: none">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>갯수당 판매 가격</th>
+                                                                    <td><input type="text" style="
+                                                                        align-items: center;
+                                                                        border: none;
+                                                                        outline: none">
+                                                                    </td>
+                                                                </tr>
+                                                                
+                                                                
+                                                            </tbody>
+
+                                                        </table>
+
+                                                    </div><div class="d-table-cell">
+                                                        <table class="info-table">
+                                                            <tbody>
+                                                            <tr>
+                                                                <th>판매 갯수</th>
+                                                                <td><input type="text" style="
+                                                                    align-items: center;
+                                                                    border: none;
+                                                                    outline: none">
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <th>상품판매 사진등록</th>
+                                                                <td><label style="display: flex">
+                                                                    <input type="file" id="img-file" style="display: none;">
+                                                                    <div style="display: flex"class="add-btn">
+                                                                        <i class="fas fa-plus"></i>
+                                                                    </div>
+                                                                    
+                                                                </label></td>
+                                                            </tr>
+                                                               
+                                                            </tbody>
+
+                                                        </table>
+
+                                                    </div>
+
+                                                </div>
+        
+
+                                            </div>
+                                            <div class="info-layout payment-info">
+                                                <div class="info-title justify-content-between">
+                                                    <div class="flex-left d-flex">
+                                                        <div class="title">사진 확인</div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="d-table w-100">
+                                                    <div class="d-table-cell">
+                                                        <table class="info-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>상품사진</th>
+                                                                    <td >
+                                                                       <div id="image-cell">
+
+                                                                       </div>
+                                                                    </td>
+                                                                </tr>
+                                                                
+                                                                
+                                                            </tbody>
+
+                                                        </table>
+                                                        
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            
 
                                         </div>
 
@@ -466,6 +560,11 @@
 
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn-close btn btn-outline-filter">판매등록</button>
+                        
 
                         </div>
 

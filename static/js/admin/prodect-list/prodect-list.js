@@ -21,7 +21,6 @@ const modalclose=document.getElementById("close")
 const body=document.getElementById("body")
 const modal=document.getElementById("modal")
 const modalopen=document.getElementById("modal-open")
-console.log(modalopen)
 
 menubtn1.addEventListener("click", (e) => {
     sublist1.classList.toggle("show");
@@ -83,4 +82,40 @@ modalopen.addEventListener("click",(e)=>{
     modal.style.display = "block";
     body.classList.add("modal-open");
     
+});
+const imgFile = document.getElementById("img-file");
+const imgContainer = document.getElementById("image-cell")
+imgFile.addEventListener("change", (e) => {
+    const [file] = e.target.files;
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.addEventListener("load", (e) => {
+        let text = `
+        <div class="pg-logo-wrapper">
+        <button type="button" class="delete-btn" style="
+        display: flex;
+        height: 25px;
+        align-items: center;
+    ">
+            <i class="fas fa-trash"></i>
+        </button>
+        <img src="${e.target.result}"style="display:flex; margin:0 auto; height:100px" ">
+    </div>
+                            
+       
+        `;
+
+        imgContainer.innerHTML += text;
+        
+    });
+    const deletebtn = document.querySelectorAll(".delete-btn")
+imgContainer.addEventListener("click", (e) => {
+    const btn = e.target.closest(".delete-btn");
+    if (btn) {
+        const wrapper = btn.closest(".pg-logo-wrapper");
+        if (wrapper) {
+            wrapper.remove();
+        }
+    }
+});
 });

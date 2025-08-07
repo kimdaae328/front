@@ -1478,3 +1478,6 @@ table.info-table td, table.info-table th {
         color: #16181b;
         text-decoration: none;
     }
+    .modal.show{
+display: block;
+    }
