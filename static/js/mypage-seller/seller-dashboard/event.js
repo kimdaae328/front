@@ -29,3 +29,30 @@ const searchInput = document.querySelector(".search-box-input");
 cancelButton.addEventListener("click", (e) => {
     searchInput.value = "";
 });
+
+const closePayoutModal = document.querySelector(".btn-close.popup-close");
+const openPayoutBtn = document.querySelector("div.request-payout-btn-wrap");
+const closePayoutBtn = document.querySelector(".btn-primary.popup-close");
+const payoutModal = document.querySelector("div.popup-wrapper#popup3");
+const openResultBtn = document.querySelector("div.popup-wrapper#popup5");
+const closeResultBtn = document.querySelector("button.btn-default.popup-close");
+const htmlScroll = document.querySelector("html");
+console.log(htmlScroll);
+
+closePayoutModal.addEventListener("click", (e) => {
+    htmlScroll.style.overflow = "none";
+    payoutModal.style.display = "none";
+});
+openPayoutBtn.addEventListener("click", (e) => {
+    htmlScroll.style.overflow = "hidden";
+    payoutModal.style.display = "block";
+});
+closePayoutBtn.addEventListener("click", (e) => {
+    payoutModal.style.display = "none";
+    htmlScroll.style.overflow = "hidden";
+    openResultBtn.style.display = "block";
+});
+closeResultBtn.addEventListener("click", (e) => {
+    htmlScroll.style.overflow = "";
+    openResultBtn.style.display = "none";
+});

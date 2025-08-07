@@ -12,7 +12,9 @@ th {
     margin: 0;
 }
 
-
+html, body, span, div, button, input, label, select, option, textarea {
+    font-family: "Pretendard","Pretendard Variable",-apple-system,BlinkMacSystemFont,system-ui,Roboto,"Helvetica Neue","Segoe UI","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
+}
 
 a,
 abbr,
@@ -191,7 +193,7 @@ button {
 
 .mypage-list {
     overflow: hidden;
-    width: 375px;
+    width: 255px;
     border-radius: 16px;
 }
 
@@ -289,7 +291,7 @@ button {
 /* 주문 목록 시작 */
 
 .seller-list-wrap {
-    width: 650px;
+    width: 730px;
     background-color: rgb(255, 255, 255);
     border-radius: 16px;
 }
@@ -309,9 +311,8 @@ button {
 }
 
 .seller-details-text {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
-    color: #333;
     letter-spacing: -0.5px;
     line-height: 28px;
 }
@@ -801,7 +802,7 @@ div.dashboard-title-container {
 }
 div.dashboard-title-container h3 {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 16px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 48px;
@@ -832,12 +833,12 @@ div.dashboard-statistics-item {
 }
 h3.item-title {
     color: rgb(50, 116, 63);
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.5px;
 }
 span.item-count {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
 }
 /* /상단 대시보드 */
@@ -908,14 +909,14 @@ div.payout-count-wrap {
 div.payout-date-wrap h3,
 div.payout-item-date h3 {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 16px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 30px;
 }
 div.payout-count-wrap h3 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 15px;
     color: rgb(50, 116, 63);
 }
 div.payout-list-container {
@@ -932,7 +933,7 @@ div.payout-item-date {
     position: relative;
 }
 div.payout-item-date h3 {
-    font-size: 19px;
+    font-size: 14px;
 }
 
 div.payout-item-date::after {
@@ -959,10 +960,435 @@ div.payout-item-info-wrap {
 
 div.text-wrap h3 {
     font-weight: 500;
-    font-size: 17px;
+    font-size: 14px;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 30px;
 }
 /* /네 번째 부분 */
 
+
+
+/* 정산하기 모달 부분 */
+
+
+.popup-inner {
+    position: fixed;
+    z-index: 1300;
+    inset: 0px;
+}
+
+.popup-container {
+    height: 100%;
+    outline: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    height: auto;
+    width: 360px;
+    border-radius: 12px;
+    box-shadow: none;
+    background: #fff;
+    overflow: hidden;
+}
+
+.popup-container.popup-payout {
+    padding: 0;
+}
+
+.popup-container.popup-payout .popup-content {
+    padding: 30px;
+    width: 440px;
+}
+
+.popup-container.popup-payout .popup-footer {
+    border: none;
+}
+
+.popup-message {
+    padding: 40px 30px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    line-height: 21px;
+    margin-top: 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+.popup-message .title {
+    font-size: 20px;
+}
+
+.popup-message p + p {
+    margin-top: 10px;
+}
+
+.popup-footer {
+    height: 56px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: flex;
+    border-top: 1px solid rgb(238, 238, 238);
+    justify-content: flex-start;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.popup-footer .btn-default:last-child {
+    border-left: 1px solid rgb(244, 244, 244);
+}
+
+.popup-footer.center {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    border-top: 1px solid rgb(244, 244, 244);
+    text-align: center;
+    padding-top: 20px;
+    height: auto;
+}
+
+.popup-footer.center button {
+    width: 160px;
+    height: 56px;
+    border-radius: 3px;
+}
+
+.popup-header {
+    display: flex;
+    padding: 5px 0px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+.popup-img {
+    flex: 0 0 50px;
+    overflow: hidden;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-right: 14px;
+    border-radius: 3px;  
+}
+
+.popup-title-wrap {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 2px;
+    word-break: break-all;
+}
+
+.popup-title {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.popup-payout-list {
+    overflow: hidden auto;
+    max-height: 355px;
+}
+
+.popup-payout-item {
+    padding: 12px 0px;
+    border-radius: 3px;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+.popup-payout-item .payout-name {
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 400;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.payout-price-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.payout-price-box {
+    padding-top: 3px;
+}
+
+.payout-price-box .payout-price {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.payout-price-box .payout-original-price {
+    margin-left: 4px;
+    font-weight: normal;
+    font-size: 12px;
+    text-decoration: line-through;
+    line-height: 16px;
+    letter-spacing: -0.5px;
+}
+
+.popup-button-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.popup-button-box button {
+    width: 50%;
+    margin: 0px 4px;
+    flex: 1;
+}
+
+.popup-button-box .btn-outline {
+    margin-left: 0px;
+    padding: 0px 10px;
+}
+
+.popup-button-box .btn-primary {
+    padding: 0px 10px;
+}
+
+.popup-container .payout-scroll-section {
+    overflow-y: auto;
+    margin-top: 20px;
+    height: calc(100% - 73px);
+}
+
+
+.popup-wrapper {
+    display: none;
+}
+
+.popup-wrapper .dim {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+
+    opacity: 1;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.popup-container-inner {
+    position: relative;
+    width: 800px;
+    height: 100%;
+    max-height: 738px;
+}
+.popup-content {
+    height: auto;
+    width: 360px;
+    border-radius: 12px;
+    box-shadow: none;
+    background: #fff;
+    overflow: hidden;
+}
+
+.scroll .popup-header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scroll .popup-title-wrap {
+    height: auto;
+    margin-top: 0;
+}
+
+.popup-title {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.payout-content-header {
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(244, 244, 244);
+    flex-direction: column;
+}
+
+.popup-container.scroll {
+    padding: 32px;
+}
+
+.popup-container.scroll .popup-content {
+    padding: 30px;
+    /* width: 800px;
+    height: 100%; */
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+}
+
+.scroll .popup-title {
+    display: inline;
+    padding: 0px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.5px;
+    color: rgb(51, 51, 51);
+    vertical-align: baseline;
+}
+
+div.payout-application-content{
+    display: flex;
+    /* padding: 12px 0px; */
+    align-items: start;
+}
+
+label.payout-lable{
+    font-size: 16px;
+    padding: 12px 0 12px 10px;
+    display: flex;
+}
+.popup-footer.center button{
+    width: 160px;
+    height: 56px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    height: 56px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(50, 116, 63);
+    border: 0px none;
+}
+
+div.popup-message{
+    padding: 40px 30px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    line-height: 21px;
+    margin-top: 0px;
+    display: inline-block;
+    width: 100%;
+}
+div.popup-footer{
+    height: 56px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: flex
+;
+    border-top: 1px solid rgb(238, 238, 238);
+    justify-content: flex-start;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+
+
+.popup-footer .btn-default:last-child {
+    border-left: 1px solid rgb(244, 244, 244);
+}
+.btn-default {
+    display: block;
+    width: 100%;
+    height: 56px;
+    padding: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(50, 116, 63);
+}
+/* /정산하기 모달 부분 */
+
+
+/* 검색결과없음 */
+span.no-search-text{
+    text-align: center;
+    font-size: 16px;
+    color: rgb(181, 181, 181);
+    line-height: 20px;
+}
+div.no-search-text-container{
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+/* /검색결과없음 */
+
+
+
+/* pagenation */
+.pagenation {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.pagenation button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.pagenation .prev {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-prev-activated.svg);
+}
+
+.pagenation .prev:disabled {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-prev-disabled.svg);
+    cursor: default;
+}
+
+.pagenation .prev:hover {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-prev-hover.svg);
+}
+
+.pagenation .next:hover {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-next-hover.svg);
+}
+
+.pagenation .next {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-next-activated.svg);
+}
+
+.pagenation .next:disabled {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-next-disabled.svg);
+    cursor: default;
+}
+/* /pagenation */

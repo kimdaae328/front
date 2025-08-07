@@ -70,7 +70,7 @@
                         <div class="seller-list-wrap">
                             <div class="seller-list-text">
                                 <div class="seller-details">
-                                    <h2 class="seller-details-text">상품 목록</h2>
+                                    <h2 class="seller-details-text">통계/정산 내역</h2>
                                 </div>
                             </div>
                             <div class="seller-list">
@@ -178,7 +178,6 @@
                                         </div>
                                     </div>
                                 <!-- /중간 왼쪽 부분-->
-
                                 <!-- 중간 오른쪽 부분 -->
                                 <div class="seller-list-card-wrap center">
                                     <div class="seller-list-cards-warp">
@@ -233,6 +232,7 @@
                                                     <div class="dashboard-title-container payout">
                                                         <h3>정산 내역</h3>
                                                     </div>
+                                                    <!-- 정산 내역이 있으면 나오는 부분 -->
                                                     <div class="payout-date-wrap">
                                                         <h3>2025.07.22</h3>
                                                     </div>
@@ -281,6 +281,21 @@
                                                             </li>
                                                         </ul>
                                                     </div>
+                                                    <!-- /정산 내역이 있으면 나오는 부분 -->
+                                                    <!-- 정산 내역이 없으면 나오는 부분 -->
+                                                    <div class="no-search-text-container">
+                                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_368_6766)"><path d="M22.0732 43.1463C33.7116 43.1463 43.1463 33.7116 43.1463 22.0732C43.1463 10.4348 33.7116 1 22.0732 1C10.4348 1 1 10.4348 1 22.0732C1 33.7116 10.4348 43.1463 22.0732 43.1463Z" stroke="#e2e2e2" stroke-width="2" stroke-linecap="round"></path><path d="M47.8293 47.8291L37.2927 37.2925" stroke="#e2e2e2" stroke-width="2" stroke-linecap="round"></path></g><defs><clipPath id="clip0_368_6766"><rect width="48" height="48" fill="#fff"></rect></clipPath></defs></svg>
+                                                        <span class="no-search-text">
+                                                            검색된 상품이 없습니다.
+                                                            <br>
+                                                            다른 검색어를 입력해 주세요.
+                                                        </span>
+                                                    </div>
+                                                    <div class="pagenation">
+                                                        <button type="button" class="prev" disabled></button>
+                                                        <button type="button" class="next"></button>
+                                                    </div>
+                                                    <!-- /정산 내역이 없으면 나오는 부분 -->
                                                 </div>
                                             </div>
                                         </div>
@@ -291,10 +306,63 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="add-cart-tap-wrap" style="z-index: 1; display: none;">
-                    <div class="add-cart-tap">
-                        <p class="add-cart-tap-p">테스트입니다.</p><br><!--이미 담은 상품의 수량을 추가했어요     *이미 장바구니에 있는 상품*--></p>
+                <div class="popup-wrapper" id="popup3">
+                    <div class="popup-inner">
+                        <div class="dim"></div>
+                        <div class="popup-container scroll">
+                            <div class="popup-container-inner">
+                                <div class="popup-content">
+                                    <div class="popup-header">
+                                        <div class="popup-title-wrap">
+                                            <p class="popup-title">정산 요청 내역</p>
+                                        </div>
+                                        <button type="button" class="btn-close popup-close">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2073_60924)"><path d="M26 26L6 6" stroke="#999" stroke-linecap="square" stroke-width="0"></path><path d="M6 26L26 6" stroke="#999" stroke-linecap="square" stroke-width="0"></path></g><path fill-rule="evenodd" clip-rule="evenodd" d="M6.28431 5.58859L6.35355 5.64645L16 15.293L25.6464 5.64645C25.8417 5.45118 26.1583 5.45118 26.3536 5.64645C26.5271 5.82001 26.5464 6.08944 26.4114 6.28431L26.3536 6.35355L16.707 16L26.3536 25.6464C26.5488 25.8417 26.5488 26.1583 26.3536 26.3536C26.18 26.5271 25.9106 26.5464 25.7157 26.4114L25.6464 26.3536L16 16.707L6.35355 26.3536C6.15829 26.5488 5.84171 26.5488 5.64645 26.3536C5.47288 26.18 5.4536 25.9106 5.58859 25.7157L5.64645 25.6464L15.293 16L5.64645 6.35355C5.45118 6.15829 5.45118 5.84171 5.64645 5.64645C5.82001 5.47288 6.08944 5.4536 6.28431 5.58859Z" fill="#999"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div class="payout-scroll-section btn-input-active">
+                                        <div class="payout-content-header">
+                                            <div class="payout-application-content">
+                                                <label class="payout-lable">정산 대상 금액 :</label>
+                                                <label class="payout-lable">752,610원</label>
+                                            </div>
+                                            <div class="payout-application-content">
+                                                <label class="payout-lable">정산 예정일 :</label>
+                                                <label class="payout-lable">2025-08-08</label>
+                                            </div>
+                                            <div class="payout-application-content">
+                                                <label class="payout-lable">정산 수단 :</label>
+                                                <label class="payout-lable">oo은행 123-456-789000</label>
+                                            </div>
+                                            <div class="payout-application-content">
+                                                <label class="payout-lable">예금주 :</label>
+                                                <label class="payout-lable">김다애</label>
+                                            </div>
+                                        </div>
+                                        <div class="payout-content-wrap">
+                                            <div class="popup-footer center">
+                                                <button type="button" class="btn-primary popup-close">등록</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-wrapper" id="popup5">
+                    <div class="popup-inner">
+                        <div class="dim"></div>
+                        <div class="popup-container">
+                            <div class="popup-content">
+                                <div class="popup-message">
+                                    <p>정산 완료!</p>
+                                </div>
+                                <div class="popup-footer">
+                                    <button type="button" class="btn-default popup-close">확인</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

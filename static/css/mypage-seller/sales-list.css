@@ -12,7 +12,10 @@ th {
     margin: 0;
 }
 
-
+html, body, span, div, button, input, label, 
+select, option, textarea {
+    font-family: "Pretendard","Pretendard Variable",-apple-system,BlinkMacSystemFont,system-ui,Roboto,"Helvetica Neue","Segoe UI","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
+}
 
 a,
 abbr,
@@ -181,6 +184,7 @@ button {
 }
 
 .mypage-sales {
+    height: 100vh;
     display: flex;
     align-items: flex-start;
     gap: 24px;
@@ -191,7 +195,7 @@ button {
 
 .mypage-list {
     overflow: hidden;
-    width: 375px;
+    width: 255px;
     border-radius: 16px;
 }
 
@@ -289,7 +293,7 @@ button {
 /* 주문 목록 시작 */
 
 .sales-list-wrap {
-    width: 650px;
+    width: 730px;
     background-color: rgb(255, 255, 255);
     border-radius: 16px;
 }
@@ -310,7 +314,8 @@ button {
 
 .sales-details-text {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 14px;
+    padding :9px 0;
     color: #333;
     letter-spacing: -0.5px;
     line-height: 28px;
@@ -570,8 +575,8 @@ button {
 .sales-product-img-wrap {
     position: relative;
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 56px;
+    height: 72px;
     border-radius: 8px;
     overflow: hidden;
     margin-right: 12px;
@@ -794,31 +799,51 @@ img.sales-icon {
 /* 판매 목록 카드 */
 div.info-wrap{
     font-weight: 500;
-    font-size: 17px;
+    font-size: 14px;
+    color: #565e67;
 }
 div.info-key-wrap{
     margin-right: 10px;
-    border-right: 1px solid black;
+    border-right: 1px solid #f4f4f4;
     padding-right: 10px;
 }
 div.info-val-wrap{
-    margin-right: 42px;
+    margin-right: 28px;
 }
 div.sales-product-info-container div.sales-details{
     display: flex;
     
 }
+
+div.sales-details.title h2.sales-details-text{
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    padding: 0px;
+    line-height: 28px;
+}
 div.sales-details.content{
-    margin-top: 19px;
+    margin-top: 8px;
+    font-size: 14px;
 }
 div.sales-product-content-wrap{
     display: flex;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #f4f4f4; 
     padding-bottom: 12px;
 }
 
 div.sales-summary{
+    gap: 14px;
     margin: 7px 0px;
+    display: flex;
+}
+
+div.sales-summary h2{
+    font-size: 14px;
+    font-weight: 400;
+}
+h2.order-num{
+    color: #848f9a;
 }
 /* /판매 목록 카드 */
 
@@ -828,7 +853,7 @@ span.no-serch-text{
     font-size: 16px;
     color: rgb(181, 181, 181);
     margin-top: 16px;
-    line-height: normal;
+    line-height: 20px;
 }
 div.no-search-text-container{
     display: flex;
@@ -888,3 +913,15 @@ div.no-search-text-container{
     cursor: default;
 }
 /* /pagenation */
+
+/* 결제 상태, 배송상태 색 */
+span.info-val.await{
+    color: rgb(250,98,47);
+}
+span.info-val.completed{
+    color: rgb(84,156,98);
+}
+span.info-val.transit{
+    color: rgb(77,190,215);
+}
+/*  /결제 상태, 배송상태 색 */
