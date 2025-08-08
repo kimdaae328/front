@@ -26,7 +26,7 @@ const createAlarm = (text, callback1, callback2) => {
                                     <div class="group_source">
                                         <div class="source_box">
                                             <div class="thumb">
-                                                <img width="26" height="26" src="../../static/images/main/logo.png">
+                                                <img width="26" height="26" src="/images/main/logo.png">
                                             </div>
                                             <span class="span-title">너도먹고나도먹고</span>
                                         </div>
