@@ -37,7 +37,7 @@
         <li>식품 낭비를 줄이는 지속 가능한 소비문화 조성</li>
         <li>지역 상생 기반의 친환경 유통 생태계 확대</li>
     </ul>
-    <h2>5. 개발환경</h2>
+    <h2>6. 개발환경</h2>
     <ul>
         <li>Java</li>
         <li>Thymeleaf</li>
@@ -52,8 +52,11 @@
         <li>Lombok</li>
         <li>Boot pay</li>
     </ul>
-    <h2>6. ERD</h2>
-    <h2>7. 담당업무</h2>
+    <h2>7. ERD</h2>
+    <div>
+        <img width="100%" height="auto" alt="erd" src="https://github.com/user-attachments/assets/bd154db5-1499-48bf-99b0-b62bf43b6905" />
+    </div>
+    <h2>8. 담당업무</h2>
     <strong>프론트엔드</strong>
     <p>▶ 식재료</p>
     <ul>
@@ -161,46 +164,12 @@
     <div>
       <img width="100%" height="auto" alt="백엔드" src="https://github.com/user-attachments/assets/4d95a222-8c6d-4c63-b2e7-2dc940f70c11" />
     </div>
-    <h2>트러블 슈팅</h2>
-    <h3>페이지네이션이 2페이지로 넘어가지 않던 문제</h3>
-    <strong>문제 상황</strong>
-    <p>회원 목록과 상품 현황 등 여러 리스트 페이지에서 1페이지까지만 정상적으로 표시되고,
-“다음 페이지” 버튼을 눌러도 계속 1페이지 데이터를 불러오는 문제가 발생했다.</p>
-    <strong>JS에서 page 값을 항상 1로 고정시켜 호출하는 실수를 했다.
-백엔드에서는 페이지 값이 잘 넘어오지 않아 페이징 로직(Criteria)이 정상적으로 동작하지 않았고,
-결과적으로 클라이언트에서는 페이지 이동이 되지 않는 것처럼 보였다.</strong>
-    <div>
-      <img width="100%" height="auto" alt="2 companyId 노출 문제(수정)" src="https://github.com/user-attachments/assets/4bad24bf-970f-443a-92fd-b8286e57f13e" />
-    </div>
-    <strong>해결방법</strong>
-    <p>JS 코드에서 이벤트 클릭 시 page 값을 동적으로 갱신하도록 수정했다.
-fetch 요청 시 현재 페이지 값을 파라미터로 전달하도록 변경하면서 문제 해결.
-그 과정에서 page 값이 서버로 정상 전달되는지 console.log로 추적하면서 로직을 안정화했다.</p>
-<strong>느낀점</strong>
-<p>단순히 백엔드 로직만 점검하면 될 줄 알았는데, 결국 원인은 JS 내부의 고정된 변수 처리였다.
-프론트엔드와 백엔드를 함께 바라보는 시야의 중요성을 다시 한 번 느꼈다.</p>
-    <div>
-      <img width="100%" height="auto" alt="2 companyId 노출 문제 해결(수정)" src="https://github.com/user-attachments/assets/09a83249-a27a-4222-9503-cf10ff7fc2a4" />
-    </div>
     <br/>
-    <h3>모든 페이지를 REST 구조로 구현하면서 JS 코드가 복잡해진 문제</h3>
-    <strong>문제 상황</strong>
-    <p>관리자 페이지의 모든 기능(회원, 상품, 문의, 결제 등)을 전부 REST 방식으로 구현해야 했다.
-각 페이지마다 새로운 JS 파일을 만들기보다는 하나의 JS 안에서 여러 기능을 분기 처리해야 했기 때문에
-코드가 길어지고 유지보수가 어려워졌다.</p>
-    <div><img width="100%" height="auto" alt="공고등록, 수정 부분 리팩토링 문제" src="https://github.com/user-attachments/assets/fde32110-f209-47dc-9a74-b2b18268f950" /></div>
-    <strong>해결방법</strong>
-    <p>기능별로 함수 단위 분리를 진행했다.
-예를 들어 getMemberList(), getSellerList(), getInquiryDetail() 등으로 나누어
-API 요청과 DOM 렌더링을 각각 별도의 블록으로 관리했다.
-또한 async/await를 활용해 비동기 흐름을 명확히 하면서 로직이 꼬이지 않게 정리했다.</p>
-    <div><img width="100%" height="auto" alt="공고등록, 수정 부분 리팩토링 문제" src="https://github.com/user-attachments/assets/9528bb1f-b384-44af-860b-80d7e7910dd5" /></div>
-    <br/>
-    <h3>느낀점</h3>
+    <h3>08. 느낀점</h3>
     <p>하나의 JS 안에서 모든 기능을 통합하려면 코드 구조화와 함수 책임 분리가 필수라는 걸 배웠다.
 단순히 작동만 되는 코드가 아니라, “운영하고 수정하기 좋은 구조”가 얼마나 중요한지도 체감했다.</p>
     <h3>배운 점 & 개선 포인트</h3>
-    <p>이번 문제들을 해결하면서 “작동하는 코드”보다 중요한 건 **“관리하기 쉬운 코드”**라는 걸 실감했다.
+    <p>프로젝트를 진행하면서 “작동하는 코드”보다 중요한 건 “관리하기 쉬운 코드”라는 걸 실감했다.
 작은 변수 하나가 전체 흐름을 막을 수 있다는 점에서, 코드 구조와 데이터 흐름을 꼼꼼히 검증하는 습관의 중요성을 배웠다.
 또한, 모든 기능을 하나의 JS 안에서 REST 구조로 구현하면서 코드의 일관성과 유지보수성을 동시에 챙기는 방법을 익혔다.
 앞으로는 초기 설계 단계부터 페이지 구조와 API 흐름을 함께 고려해 운영하기 좋은 구조를 만드는 데 더 집중할 것이다.</p>
